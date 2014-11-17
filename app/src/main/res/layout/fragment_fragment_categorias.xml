@@ -1,0 +1,94 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFCCAA"
+    tools:context="com.br.ksg.telas.fragment.FragmentCategorias" >
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView 
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                    <GridLayout	
+                        android:id="@+id/grid_categ"
+						android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:columnCount="2"
+                        android:rowCount="6" >
+                 
+                        <ImageView
+                            android:id="@+id/tx1"
+                            android:layout_width="150dp"
+                            android:layout_height="125dp"
+                            android:src="@drawable/carne" />
+                        
+                       <ImageView 
+                            android:id="@+id/tx2"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/frango" />
+                       <ImageView 
+                            android:id="@+id/tx3"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:src="@drawable/light" />
+                       <ImageView 
+                            android:id="@+id/tx4"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/massas" />
+                       <ImageView 
+                            android:id="@+id/tx5"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                            android:src="@drawable/salgados"/>
+                       <ImageView 
+                            android:id="@+id/tx6"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/refeicoes"/>
+                       <ImageView
+                            android:id="@+id/tx7"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                            android:src="@drawable/lanches"/>
+                       <ImageView 
+                            android:id="@+id/tx8"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/cafedamanha"/>
+                       <ImageView 
+                            android:id="@+id/tx9"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                            android:src="@drawable/aperitivo"/>
+                       <ImageView 
+                            android:id="@+id/tx10"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/doce"/>
+                       <ImageView 
+                            android:id="@+id/tx11"
+                            android:layout_width="150dp"
+                        	android:layout_height="125dp"
+                            android:src="@drawable/acompanhamento"/>
+                       <ImageView 
+                            android:id="@+id/tx12"
+                            android:layout_width="150dp"
+ 							android:layout_height="125dp"
+                        	android:layout_marginLeft="5dp"
+                            android:src="@drawable/salada"/>                        
+                        
+                </GridLayout>
+           </ScrollView>
+
+</FrameLayout>
