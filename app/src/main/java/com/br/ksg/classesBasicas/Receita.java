@@ -2,6 +2,7 @@ package com.br.ksg.classesBasicas;
 
 import java.util.List;
 
+//Testando pull !!!!
 public class Receita extends ReceitaBasica {
 	private String modo_preparo;
 	private double rating;
