@@ -38,7 +38,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 						
 				
 		ActionBar.Tab tab1 = actionBar.newTab();
-		tab1.setText("SUGEST�ES");
+		tab1.setText("SUGESTÕES");
 		tab1.setTabListener(this);
 		
 		ActionBar.Tab tab2 = actionBar.newTab();
