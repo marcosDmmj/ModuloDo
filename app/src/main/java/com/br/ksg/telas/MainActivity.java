@@ -18,7 +18,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-// lol eu consigo de novo??? De novo >.< sasahbsdahbasdkhbasdadsa
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 
 	ViewPager viewPager;
