@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+// lol
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 
 	ViewPager viewPager;
@@ -38,7 +39,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 						
 				
 		ActionBar.Tab tab1 = actionBar.newTab();
-		tab1.setText("SUGESTÕES");
+		tab1.setText("SUGESTï¿½ES");
 		tab1.setTabListener(this);
 		
 		ActionBar.Tab tab2 = actionBar.newTab();
@@ -118,9 +119,9 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 	}
 	
 	public void verReceita(View v) {
-		usarToast("Ainda não implementado! :'(");
+		usarToast("Ainda nï¿½o implementado! :'(");
 		
-		// Será usado em conjunto com a SS
+		// Serï¿½ usado em conjunto com a SS
 		// Intent intent = new Intent(this,ReceitaActivity.class);
 		// intent.putExtra("titulo", "receita inicial");
 		// startActivity(intent);
