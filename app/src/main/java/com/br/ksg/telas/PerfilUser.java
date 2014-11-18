@@ -12,7 +12,7 @@ public class PerfilUser extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_perfil_user);
 
-        // TOast eexempo
+        // TOast eexempocddffff
         Toast.makeText(this,"Por enquanto vai dar erro se você clicar ali :P",Toast.LENGTH_SHORT).show();
     }
 }
