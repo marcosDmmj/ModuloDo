@@ -112,13 +112,14 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
         }
         return super.onOptionsItemSelected(item);
     }
-    
+
+    // Meu exemplo mudado TAIGA
 	public void usarToast(String texto) {
 		Toast.makeText(getBaseContext(), texto, Toast.LENGTH_LONG).show();
 	}
 	
 	public void verReceita(View v) {
-		usarToast("Ainda n�o implementado! :'(");
+		usarToast("Ainda não implementado! :'(");
 		
 		// Ser� usado em conjunto com a SS
 		// Intent intent = new Intent(this,ReceitaActivity.class);
