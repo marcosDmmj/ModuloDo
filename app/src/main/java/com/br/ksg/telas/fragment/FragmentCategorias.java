@@ -51,10 +51,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"carne").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=carne");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast(getString(R.string.nao)+" funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -67,10 +67,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"ave").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=ave");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -83,10 +83,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"peixe").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=peixe");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -99,10 +99,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"massa").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=massa");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -115,10 +115,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"salgado").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salgado");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -129,12 +129,12 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"refeições").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=refei");
+						new DownloadReceitaPorCategoria(getActivity(),getString(R.string.refeicoes)).execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=refei");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -147,10 +147,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"lanche").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=lanche");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -161,12 +161,12 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"café").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=caf");
+						new DownloadReceitaPorCategoria(getActivity(),getString(R.string.cafe)).execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=caf");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -179,10 +179,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"aperitivo").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=aperitivo");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -196,10 +196,10 @@ public class FragmentCategorias extends Fragment {
 						new DownloadReceitaPorCategoria(getActivity(),"doce")
 								.execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=doce");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+                        // usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -212,10 +212,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"acompanhamento").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=acompanhamento");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+						// usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});
@@ -228,10 +228,10 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"salada").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salada");
 					} catch (Exception e) {
-						usarToast("Não funfou :'(");
+						// usarToast("Nï¿½o funfou :'(");
 					}
 				} else {
-					usarToast("Verifique sua conexão com a internet!");
+					usarToast(getString(R.string.verifica_conexao));
 				}
 			}
 		});

@@ -11,7 +11,7 @@ public class activiity_perfil extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activiity_perfil);
+        setContentView(R.layout.activity_perfil_user);
     }
 
 

@@ -118,7 +118,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 	}
 	
 	public void verReceita(View v) {
-		usarToast("Ainda n�o implementado! :'(");
+		usarToast("Ainda "+getString(R.string.nao)+" implementado! :'(");
 		
 		// Ser� usado em conjunto com a SS
 		// Intent intent = new Intent(this,ReceitaActivity.class);

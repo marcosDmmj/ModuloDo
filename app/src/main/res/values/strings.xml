@@ -19,5 +19,9 @@
     <string name="title_activity_final">FinalActivity</string>
     <string name="title_activity_activiity_perfil">activiity_perfil</string>
     <string name="title_activity_perfil_edicao">perfil_edicao</string>
+    <string name="nao">Não</string>
+    <string name="verifica_conexao">Verifique sua conexão com a internet!</string>
+    <string name="cafe">Café</string>
+    <string name="refeicoes">Refeições</string>
 
 </resources>

@@ -34,6 +34,6 @@ public class ReceitaActivity extends Activity {
 		txt_tempo.setText("Tempo de preparo: "+receita.getString("tempo")+" min");
 		
 		txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
-		txt_porcoes.setText("Porções: "+receita.getString("porcoes"));
+		txt_porcoes.setText(getString(R.string.porcoes)+": "+receita.getString("porcoes"));
 	}
 }

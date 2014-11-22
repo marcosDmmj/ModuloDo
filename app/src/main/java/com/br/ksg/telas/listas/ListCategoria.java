@@ -54,10 +54,10 @@ public class ListCategoria extends Activity {
 			try {
 				new DownloadReceitaPorId(this).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+id);
 			} catch (Exception e) {
-				usarToast("Não funfou :'("+e.getMessage());
+				usarToast(getString(R.string.nao)+" funfou :'("+e.getMessage());
 			}
 		} else {
-			usarToast("Verifique sua conexão com a internet!");
+			usarToast(getString(R.string.verifica_conexao));
 		}
 
 		// Intent i = new Intent(this,ReceitaActivity.class);
@@ -69,7 +69,7 @@ public class ListCategoria extends Activity {
 		List<ReceitaBasica> lista = new ArrayList<ReceitaBasica>();				
 		
 		for (int i = 0; i < l.getInt("tamanho"); i++) {
-			lista.add(new ReceitaBasica(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" porções"));	
+			lista.add(new ReceitaBasica(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" "+getString(R.string.porcoes)));
 		}	
 		
 		return lista;

@@ -2,6 +2,7 @@ package com.br.ksg.telas.fragment;
 
 import java.util.ArrayList;
 
+import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.telas.listas.ListSurvivalMode;
 import com.example.exempleswipetab.R;
 
@@ -51,10 +52,8 @@ public class FragmentSurvivalMode extends Fragment {
 		super.onActivityCreated(bundle);
 		listaAutoComplete = new ArrayList<String>();
 		listaElementos = new ArrayList<String>();
-		listaAutoComplete.add("sal");
-		listaAutoComplete.add("salgado");
-		listaAutoComplete.add("saleiro");
-		listaAutoComplete.add("salgadinho");
+
+        listaAutoComplete = listaCheia();
 		
 		adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,listaAutoComplete);
 		autoComplete = (AutoCompleteTextView) getActivity().findViewById(R.id.autoCompleteTextView1); 
@@ -67,10 +66,9 @@ public class FragmentSurvivalMode extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				
-				if((autoComplete.getText().toString().equals(""))){
-					return;
-				}
+			if((autoComplete.getText().toString().equals(""))){
+				return;
+			}
 			else{
 				listaElementos.add(autoComplete.getText().toString());
 				adapterListView = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,listaElementos);
@@ -96,7 +94,7 @@ public class FragmentSurvivalMode extends Fragment {
 								toast.show();
 							}
 						});
-						bld.setNegativeButton("Não",new DialogInterface.OnClickListener() {
+						bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
 								return ;							}
@@ -126,6 +124,11 @@ public class FragmentSurvivalMode extends Fragment {
 		
 		
 	}
-	
-	
+
+    public ArrayList<String> listaCheia(){
+        IngredienteDAO ingDAO = new IngredienteDAO(getActivity());
+        return ingDAO.getListaIngredientes();
+
+    }
+
 }
