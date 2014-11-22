@@ -12,7 +12,7 @@ package com.br.ksg.bancoDeDados;
 
 public class BancoDeDados extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 3;
+    public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "KSG";
 
     private static final String SQL_CREATE_TABLE_INGREDIENTES = "CREATE TABLE Ingredientes(id integer, INGREDIENTE TEXT)";
@@ -60,8 +60,8 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Ingredientes VALUES(13,'aba')");
 
         db.execSQL(SQL_CREATE_TABLE_RECEITAS);
-        db.execSQL("INSERT INTO Receitas VALUES(1,'pao segura marido','10min','2 porções','bla bla bla',3,'la la la','fácil')");
-        db.execSQL("INSERT INTO Receitas VALUES(2,'pao segura esposa','5min','3 porções','bla bla bla 2',6,'ta ta ta','difícil')");
+        db.execSQL("INSERT INTO Receitas VALUES(1,'pao segura marido','10','2','bla bla bla',3,'la la la','fácil')");
+        db.execSQL("INSERT INTO Receitas VALUES(2,'pao segura esposa','5','3','bla bla bla 2',6,'ta ta ta','difícil')");
 
 
         db.execSQL(SQL_CREATE_TABLE_RECEITA_INGREDIENTES);

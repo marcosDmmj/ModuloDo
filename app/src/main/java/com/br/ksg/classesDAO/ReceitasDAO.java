@@ -46,7 +46,7 @@ public class ReceitasDAO {
             String cmd = "SELECT nome,tempo,porcoes FROM Receitas";
             Cursor cursor = bancoDeDados.rawQuery(cmd,null);
             while(cursor.moveToNext()){
-                favoritos.add( new ReceitaBasica(cursor.getString(0), cursor.getString(1), cursor.getString(2)));
+                favoritos.add(new ReceitaBasica(cursor.getString(0), cursor.getString(1)+ "min", cursor.getString(2)+" prato(s)"));
             }
             cursor.close();
             return favoritos ;

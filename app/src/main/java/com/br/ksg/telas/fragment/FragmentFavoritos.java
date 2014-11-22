@@ -58,7 +58,6 @@ private ListView myListView;
     public ArrayList<ReceitaBasica> listaCheia(){
         ReceitasDAO receitaBasicaDAO = new ReceitasDAO(getActivity());
         return receitaBasicaDAO.getListaFavoritos();
-
     }
 
 }
