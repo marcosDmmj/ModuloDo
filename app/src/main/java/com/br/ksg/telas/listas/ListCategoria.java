@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
+import com.br.ksg.telas.MainActivity;
 import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
@@ -31,22 +32,28 @@ public class ListCategoria extends Activity {
 		Intent i = getIntent();
 		
 		String que_categoria = i.getStringExtra("categoria");
-		Bundle list = i.getBundleExtra("lista");  
-		itemList = BundleToList(list);
-		
-		setTitle("Resultados para: "+que_categoria);
-				
-        ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
-        ListView lv = (ListView) findViewById(R.id.listdel);
-        lv.setAdapter(ad);
-        
-        lv.setOnItemClickListener(new OnItemClickListener() {
-        	@SuppressWarnings({ "rawtypes" })
-            public void onItemClick(AdapterView parent, View view,
-                    int position, long id) {
-            	acessa_a_receita(itemList.get(position).getId_receita());
-            }
-        });                
+		Bundle list = i.getBundleExtra("lista");
+        if (list.getInt("tamanho") == 0){
+            usarToast(getString(R.string.verifica_conexao));
+            finish();
+        }
+        else {
+            itemList = BundleToList(list);
+
+            setTitle("Resultados para: " + que_categoria);
+
+            ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
+            ListView lv = (ListView) findViewById(R.id.listdel);
+            lv.setAdapter(ad);
+
+            lv.setOnItemClickListener(new OnItemClickListener() {
+                @SuppressWarnings({"rawtypes"})
+                public void onItemClick(AdapterView parent, View view,
+                                        int position, long id) {
+                    acessa_a_receita(itemList.get(position).getId_receita());
+                }
+            });
+        }
 	}
 	
 	public void acessa_a_receita(String id){
