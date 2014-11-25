@@ -2,10 +2,13 @@ package com.br.ksg.telas;
 
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
+import com.example.exempleswipetab.TextJustifyUtils;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +43,24 @@ public class ReceitaActivity extends Activity {
 
             txt_modo_preparo = (TextView) findViewById(R.id.txt_modo_de_preparo_receita);
             txt_modo_preparo.setText(receita.getString("modo_preparo"));
+
+            txt_modo_preparo.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
+            {
+                boolean isJustified = false;
+
+                @Override
+                public boolean onPreDraw()
+                {
+                    if(!isJustified)
+                    {
+                        TextJustifyUtils.run(txt_modo_preparo,5);
+                        isJustified = true;
+                    }
+
+                    return true;
+                }
+
+            });
 
             txt_tempo = (TextView) findViewById(R.id.txt_tempo_de_preparo);
             txt_tempo.setText("Tempo de preparo: " + receita.getString("tempo") + " min");
