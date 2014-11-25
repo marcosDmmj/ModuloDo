@@ -94,7 +94,8 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
 				receita = new JSONObject(receitasL.getString(i));
 				
 				b.putString("id", receita.getString("id_receita"));
-				b.putString("nome", receita.getString("nome"));
+                String nome = receita.getString("nome");
+				b.putString("nome", nome.substring(0,1).toUpperCase()+nome.substring(1));
 				b.putString("modo_preparo", receita.getString("modo_preparo"));
 				b.putString("porcoes", receita.getString("porcoes"));
 				b.putString("categoria", receita.getString("categoria"));
