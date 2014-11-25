@@ -108,6 +108,7 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
 				}
 
 			}
+            b.putInt("tamanho", 1);
 			return b;
 		} catch (Exception e) {
             b.putInt("tamanho", 0);
