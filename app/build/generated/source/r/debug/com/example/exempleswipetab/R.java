@@ -21,18 +21,19 @@ public final class R {
         public static final int carne=0x7f020003;
         public static final int compartilhar=0x7f020004;
         public static final int cookie_star_icon=0x7f020005;
-        public static final int doce=0x7f020006;
-        public static final int frango=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int lanches=0x7f020009;
-        public static final int light=0x7f02000a;
-        public static final int massas=0x7f02000b;
-        public static final int noimage=0x7f02000c;
-        public static final int peixe=0x7f02000d;
-        public static final int refeicoes=0x7f02000e;
-        public static final int salada=0x7f02000f;
-        public static final int salgados=0x7f020010;
-        public static final int unknown=0x7f020011;
+        public static final int cookie_star_icon_select=0x7f020006;
+        public static final int doce=0x7f020007;
+        public static final int frango=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int lanches=0x7f02000a;
+        public static final int light=0x7f02000b;
+        public static final int massas=0x7f02000c;
+        public static final int noimage=0x7f02000d;
+        public static final int peixe=0x7f02000e;
+        public static final int refeicoes=0x7f02000f;
+        public static final int salada=0x7f020010;
+        public static final int salgados=0x7f020011;
+        public static final int unknown=0x7f020012;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080000;

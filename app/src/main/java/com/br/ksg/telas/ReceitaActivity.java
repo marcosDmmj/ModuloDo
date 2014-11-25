@@ -5,6 +5,7 @@ import com.example.exempleswipetab.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class ReceitaActivity extends Activity {
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
 	private ImageView img_receita;
+    private ImageView star01, star02, star03, star04, star05;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,65 @@ public class ReceitaActivity extends Activity {
             } catch (Exception e){
                 usarToast("Deu erro! "+e.getMessage());
             }
+
+            star01 = (ImageView) findViewById(R.id.star01);
+            star02 = (ImageView) findViewById(R.id.star02);
+            star03 = (ImageView) findViewById(R.id.star03);
+            star04 = (ImageView) findViewById(R.id.star04);
+            star05 = (ImageView) findViewById(R.id.star05);
+
+            star01.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    star01.setImageResource(R.drawable.cookie_star_icon_select);
+                    star02.setImageResource(R.drawable.cookie_star_icon);
+                    star03.setImageResource(R.drawable.cookie_star_icon);
+                    star04.setImageResource(R.drawable.cookie_star_icon);
+                    star05.setImageResource(R.drawable.cookie_star_icon);
+                }
+            });
+            star02.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    star01.setImageResource(R.drawable.cookie_star_icon_select);
+                    star02.setImageResource(R.drawable.cookie_star_icon_select);
+                    star03.setImageResource(R.drawable.cookie_star_icon);
+                    star04.setImageResource(R.drawable.cookie_star_icon);
+                    star05.setImageResource(R.drawable.cookie_star_icon);
+                }
+            });
+            star03.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    star01.setImageResource(R.drawable.cookie_star_icon_select);
+                    star02.setImageResource(R.drawable.cookie_star_icon_select);
+                    star03.setImageResource(R.drawable.cookie_star_icon_select);
+                    star04.setImageResource(R.drawable.cookie_star_icon);
+                    star05.setImageResource(R.drawable.cookie_star_icon);
+                }
+            });
+            star04.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    star01.setImageResource(R.drawable.cookie_star_icon_select);
+                    star02.setImageResource(R.drawable.cookie_star_icon_select);
+                    star03.setImageResource(R.drawable.cookie_star_icon_select);
+                    star04.setImageResource(R.drawable.cookie_star_icon_select);
+                    star05.setImageResource(R.drawable.cookie_star_icon);
+                }
+            });
+            star05.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    star01.setImageResource(R.drawable.cookie_star_icon_select);
+                    star02.setImageResource(R.drawable.cookie_star_icon_select);
+                    star03.setImageResource(R.drawable.cookie_star_icon_select);
+                    star04.setImageResource(R.drawable.cookie_star_icon_select);
+                    star05.setImageResource(R.drawable.cookie_star_icon_select);
+                }
+            });
+
+
         }
 	}
 
