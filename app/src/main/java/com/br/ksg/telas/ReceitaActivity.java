@@ -19,7 +19,7 @@ public class ReceitaActivity extends Activity {
 	private TextView txt_modo_preparo;
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
-	private ImageView img_receita;
+	private ImageView img_receita;           // lala
     private ImageView star01, star02, star03, star04, star05;
 	
 	@Override
