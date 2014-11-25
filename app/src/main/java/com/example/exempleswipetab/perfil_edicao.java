@@ -4,14 +4,27 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 
 public class perfil_edicao extends Activity {
-
+    ImageButton btn_salvar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_edicao);
+
+        btn_salvar = (ImageButton) findViewById(R.id.imageButton);
+        btn_salvar.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                clicarPerfil();
+            }
+        });
+
     }
 
 
@@ -35,5 +48,9 @@ public class perfil_edicao extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void clicarPerfil() {
+        Toast.makeText(this, "Apenas teste...Num ta salvaldo nada..  :P", Toast.LENGTH_SHORT).show();
     }
 }

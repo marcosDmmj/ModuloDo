@@ -1,8 +1,13 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
     <ImageView
         android:layout_width="100dp"
@@ -211,7 +216,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@android:drawable/ic_menu_edit"
-        android:onClick="clicarEditar" />
+         />
 
     <TextView
         android:layout_width="wrap_content"
@@ -280,3 +285,4 @@
         android:layout_marginLeft="5dp" />
 
 </RelativeLayout>
+</ScrollView>

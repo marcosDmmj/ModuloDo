@@ -1,9 +1,12 @@
 package com.example.exempleswipetab;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.br.ksg.telas.PerfilUser;
 
 
 public class activiity_perfil extends Activity {
@@ -36,4 +39,5 @@ public class activiity_perfil extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
