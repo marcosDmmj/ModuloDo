@@ -8,22 +8,20 @@ import android.widget.TextView;
  */
 public class TextJustifyUtils
 {
-
     private static String HYPHEN_SYMBOL = "-";
-    private static String block;
-    private static Paint paint;
-    private static float spaceOffset, textWrapWidth;
+
     // Please use run(...) instead
     public static void justify(TextView textView)
     {
-        paint = new Paint();
+        Paint paint = new Paint();
 
         String [] blocks;
-        spaceOffset = 0;
-        textWrapWidth = 0;
+        float spaceOffset = 0;
+        float textWrapWidth = 0;
 
         int spacesToSpread;
         float wrappedEdgeSpace;
+        String block;
         String [] lineAsWords;
         String wrappedLine;
         String smb = "";
@@ -61,7 +59,7 @@ public class TextJustifyUtils
 
             if(block.length() == 0) continue;
 
-            wrappedObj = TextJustifyUtils.createWrappedLine(block, paint, spaceOffset, textWrapWidth, true, " ");
+            wrappedObj = TextJustifyUtils.createWrappedLine(block, paint, spaceOffset, textWrapWidth,true,"-");
             wrappedLine = ((String) wrappedObj[0]);
             wrappedEdgeSpace = (Float) wrappedObj[1];
             lineAsWords = wrappedLine.split(" ");
