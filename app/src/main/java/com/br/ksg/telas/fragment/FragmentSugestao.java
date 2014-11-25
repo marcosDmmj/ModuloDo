@@ -54,10 +54,10 @@ public class FragmentSugestao extends Fragment {
             public void onClick(View v) {
                 usarToast("Ainda "+getString(R.string.nao)+" implementado! :'(");
                 try {
-                    DownloadImagemReceita b = (DownloadImagemReceita) new DownloadImagemReceita(getActivity()).execute("http://ksmapi.besaba.com/imagens/130.jpg");
-                    Drawable result = b.get();
-                    if (result != null)
-                        imageView.setImageDrawable(result);
+                    //DownloadImagemReceita b = (DownloadImagemReceita) new DownloadImagemReceita(getActivity()).execute("http://ksmapi.besaba.com/imagens/130.jpg");
+                    //Drawable result = b.get();
+                    //if (result != null)
+                      //  imageView.setImageDrawable(result);
                 } catch (Exception e){
                     usarToast("Deu um erro considerado! " + e.getMessage());
                 }

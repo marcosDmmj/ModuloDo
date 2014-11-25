@@ -1,12 +1,15 @@
 package com.br.ksg.webService;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.widget.ImageView;
 
 import com.br.ksg.telas.listas.ListCategoria;
+import com.example.exempleswipetab.R;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -27,15 +30,17 @@ import java.net.URL;
 public class DownloadImagemReceita extends AsyncTask<String, Void, Drawable> {
     ProgressDialog dialog;
     Context c;
+    Activity activity;
 
-    public DownloadImagemReceita(Context c) {
+    public DownloadImagemReceita(Context c,Activity activity) {
         this.c = c;
+        this.activity = activity;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
+        // dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
     }
 
 
@@ -63,6 +68,9 @@ public class DownloadImagemReceita extends AsyncTask<String, Void, Drawable> {
     @Override
     protected void onPostExecute(Drawable result) {
         super.onPostExecute(result);
-        dialog.dismiss();
+        ImageView imageView = (ImageView) activity.findViewById(R.id.img_receita);
+        imageView.setImageDrawable(result);
+
+        // dialog.dismiss();
     }
 }

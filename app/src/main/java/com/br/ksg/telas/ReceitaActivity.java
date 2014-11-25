@@ -1,9 +1,11 @@
 package com.br.ksg.telas;
 
+import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,7 +15,7 @@ public class ReceitaActivity extends Activity {
 	private TextView txt_modo_preparo;
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
-	
+	private ImageView img_receita;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +44,19 @@ public class ReceitaActivity extends Activity {
 
             txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
             txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
+
+            img_receita = (ImageView) findViewById(R.id.img_receita);
+            try {
+                new DownloadImagemReceita(getApplication(),this).execute("http://ksmapi.besaba.com/imagens/"+receita.getString("id")+".jpg");
+            } catch (Exception e){
+
+            }
         }
 	}
 
     public void usarToast(String texto) {
         Toast.makeText(getBaseContext(), texto, Toast.LENGTH_LONG).show();
     }
+
+
 }
