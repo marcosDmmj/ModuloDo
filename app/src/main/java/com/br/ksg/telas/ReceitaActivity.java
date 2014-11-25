@@ -49,7 +49,7 @@ public class ReceitaActivity extends Activity {
             try {
                 new DownloadImagemReceita(getApplication(),this).execute("http://ksmapi.besaba.com/imagens/"+receita.getString("id")+".jpg");
             } catch (Exception e){
-
+                usarToast("Deu erro! "+e.getMessage());
             }
         }
 	}
