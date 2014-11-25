@@ -27,7 +27,7 @@ private ListView myListView;
             Bundle savedInstanceState) {
  		
         View rootView = inflater.inflate(R.layout.activity_main_categoria, container, false); 
-        List<ReceitaBasica> item_l_f = listaCheia();
+        final List<ReceitaBasica> item_l_f = listaCheia();
         ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(getActivity(), R.layout.item, item_l_f);
         myListView = (ListView) rootView.findViewById(R.id.myListView);
         myListView.setAdapter(ad);
@@ -36,6 +36,7 @@ private ListView myListView;
             @SuppressWarnings({ "rawtypes" })            
 			public void onItemClick( AdapterView parent, View view,
                     int position, long id) {
+                usarToast("receita clicada: "+item_l_f.get(position).getNome());
             	acessa_a_receita();
             }
         });
@@ -43,12 +44,7 @@ private ListView myListView;
         return rootView;
     }
 	public void acessa_a_receita(){
-		usarToast("metodo acessa_a_receita");
-		/*
-		Intent i = new Intent(getActivity(),FinalActivity.class);
-		i.putExtra("titulo", rct);
-		startActivity(i);
-		*/
+
 	}
 
 	public void usarToast(String texto) {

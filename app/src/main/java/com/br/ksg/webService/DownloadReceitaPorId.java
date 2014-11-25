@@ -59,7 +59,10 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
             }
 		} catch (Exception e) {
 		}
-		return null;
+
+        Bundle b = new Bundle();
+        b.putInt("tamanho", 0);
+        return b;
 	}
 
 	@Override
@@ -107,8 +110,8 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
 			}
 			return b;
 		} catch (Exception e) {
-
+            b.putInt("tamanho", 0);
+            return b;
 		}
-		return null;
 	}	
 }

@@ -57,10 +57,12 @@ public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>
                 return getReceitasBasicas(json);
             }
 		} catch (Exception e) {
-		}
-		
-		return null;
-	}
+
+        }
+        Bundle b = new Bundle();
+        b.putInt("tamanho", 0);
+        return b;
+    }
 
 	@Override
 	protected void onPostExecute(Bundle result) {
@@ -68,7 +70,7 @@ public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>
 		try {
             dialog.dismiss();
             Intent receitas = new Intent(c,ListCategoria.class);
-            
+
             receitas.putExtra("lista", result);
             receitas.putExtra("categoria", categoria);
             
@@ -105,9 +107,9 @@ public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>
 			}
 			b.putInt("tamanho", receitasL.length());
 			return b;
-		} catch (Exception e) {
-
-		}
-		return null;
+        } catch (Exception e) {
+            b.putInt("tamanho", 0);
+            return b;
+        }
 	}	
 }
