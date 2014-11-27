@@ -68,8 +68,10 @@ public class DownloadImagemReceita extends AsyncTask<String, Void, Drawable> {
     @Override
     protected void onPostExecute(Drawable result) {
         super.onPostExecute(result);
+
         ImageView imageView = (ImageView) activity.findViewById(R.id.img_receita);
-        imageView.setImageDrawable(result);
+        if (result != null)
+            imageView.setImageDrawable(result);
 
         // dialog.dismiss();
     }

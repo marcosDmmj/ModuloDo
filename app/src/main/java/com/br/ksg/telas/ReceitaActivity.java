@@ -53,7 +53,7 @@ public class ReceitaActivity extends Activity {
                 {
                     if(!isJustified)
                     {
-                        TextJustifyUtils.run(txt_modo_preparo,5);
+                        TextJustifyUtils.run(txt_modo_preparo,230);
                         isJustified = true;
                     }
 
