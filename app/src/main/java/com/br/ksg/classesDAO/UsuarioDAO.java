@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.br.ksg.bancoDeDados.BancoDeDados;
 import com.br.ksg.classesBasicas.Ingrediente;
 import com.br.ksg.classesBasicas.Receita;
-import com.br.ksg.classesBasicas.Usuario;
 
 import java.util.List;
 
@@ -24,10 +23,11 @@ public class UsuarioDAO {
         }
     }
 
-    public boolean setRestricaoVegetariano(int status){
+    public boolean setUsuario(int status1,int status2,int status3,int status4,int status5,int status6,int status7,int status8,int status9,int status10,int status11){
         try{
-            String comando = "INSERT INTO Usuario (vegetariano) VALUES (" + status +");";
+            String comando = "INSERT INTO Usuario VALUES ("+ status1 +","+ status2 +","+ status3 +","+ status3 +","+ status4 +","+status5+","+ status6 +","+ status7 + ","+ status8 +","+ status9 +","+ status10 +","+ status11 +");";
             bancoDeDados.execSQL(comando);
+            System.out.println("Funcionou !!!");
             return true ;
         }
         catch(SQLException e){
@@ -35,114 +35,5 @@ public class UsuarioDAO {
         }
     }
 
-    public boolean setRestricaoDiabetico(int status){
-        try{
-            String comando = "INSERT INTO Usuario (diabetico) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setRestricaoHipertenso(int status){
-        try{
-            String comando = "INSERT INTO Usuario (hipertenso) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaFruto(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_fruto) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaAmendoim(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_amendoim) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaLeite(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_leite) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaNozes(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_nozes) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaOvos(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_ovos) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaPeixes(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_peixes) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaSoja(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_soja) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
-
-    public boolean setAlergiaTrigo(int status){
-        try{
-            String comando = "INSERT INTO Usuario (alergia_trigo) VALUES (" + status +");";
-            bancoDeDados.execSQL(comando);
-            return true ;
-        }
-        catch(SQLException e){
-            return false ;
-        }
-    }
 
 }

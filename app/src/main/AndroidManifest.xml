@@ -57,6 +57,10 @@
             android:name="com.example.exempleswipetab.perfil_edicao"
             android:label="@string/title_activity_perfil_edicao" >
         </activity>
+        <activity
+            android:name="com.br.ksg.telas.PerfilEdit"
+            android:label="@string/title_activity_perfil_edit" >
+        </activity>
     </application>
 
 </manifest>

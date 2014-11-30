@@ -1,13 +1,12 @@
 package com.br.ksg.telas;
 
 import com.example.exempleswipetab.R;
-import com.example.exempleswipetab.perfil_edicao;
+import com.br.ksg.telas.PerfilEdit;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -31,7 +30,7 @@ public class PerfilUser extends Activity {
     }
     public void clicarEditar(){
         usarToast("entrou no clicarEditar()");
-        Intent i = new Intent(this,perfil_edicao.class);
+        Intent i = new Intent(this,PerfilEdit.class);
         startActivity(i);
     }
     public void usarToast(String texto) {
