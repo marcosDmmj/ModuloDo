@@ -25,17 +25,30 @@ public class BancoDeDados extends SQLiteOpenHelper {
             "rating integer," +
             "categoria TEXT," +
             "dificuldade TEXT)";
+
     private static final String SQL_CREATE_TABLE_RECEITA_INGREDIENTES = "CREATE TABLE Receita_Ingrediente(" +
             "id_ingrediente integer," +
             "id_receita integer," +
             "quantidade TEXT)";
 
-
+    private static final String SQL_CREATE_TABLE_USUARIO = "CREATE TABLE Usuario(" +
+            "vegetariano integer, " +
+            "diabetico integer," +
+            "hipertenso integer," +
+            "alergia_fruto integer," +
+            "alergia_amedoim integer," +
+            "alergia_leite integer," +
+            "alergia_nozes integer," +
+            "alergia_ovos integer," +
+            "alergia_peixes integer," +
+            "alergia_soja integer," +
+            "alergia_trigo integer)";
 
 
     private static final String SQL_DELETE_INGREDIENTES ="DROP TABLE IF EXISTS Ingredientes" ;
     private static final String SQL_DELETE_RECEITAS ="DROP TABLE IF EXISTS Receitas" ;
     private static final String SQL_DELETE_TABLE_RECEITA_INGREDIENTES ="DROP TABLE IF EXISTS Receita_Ingrediente" ;
+    private static final String SQL_DELETE_TABLE_USUARIO ="DROP TABLE IF EXISTS Usuario" ;
 
     public BancoDeDados(Context context) {
         super(context, DATABASE_NAME, null,DATABASE_VERSION );
@@ -63,12 +76,14 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO Receitas VALUES(1,'pao segura marido','10','2','bla bla bla',3,'la la la','fácil')");
         db.execSQL("INSERT INTO Receitas VALUES(2,'pao segura esposa','5','3','bla bla bla 2',6,'ta ta ta','difícil')");
 
-
         db.execSQL(SQL_CREATE_TABLE_RECEITA_INGREDIENTES);
         db.execSQL("INSERT INTO Receita_Ingrediente VALUES(1,1,'3 ml')");
         db.execSQL("INSERT INTO Receita_Ingrediente VALUES(10,1,'5 ml')");
         db.execSQL("INSERT INTO Receita_Ingrediente VALUES(3,2,'10 ml')");
         db.execSQL("INSERT INTO Receita_Ingrediente VALUES(5,2,'502 ml')");
+
+        db.execSQL(SQL_CREATE_TABLE_USUARIO);
+        db.execSQL("INSERT INTO Usuario VALUES(0,0,0,0,0,0,0,0,0,0,0)");
 
     }
 
@@ -77,6 +92,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_INGREDIENTES);
         db.execSQL(SQL_DELETE_RECEITAS);
         db.execSQL(SQL_DELETE_TABLE_RECEITA_INGREDIENTES);
+        db.execSQL(SQL_DELETE_TABLE_USUARIO);
         onCreate(db);
     }
 
