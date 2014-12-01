@@ -9,16 +9,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
-
-    <TextView
-        android:id="@+id/txt_nome_receita"
-        android:layout_marginTop="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textAllCaps="true"
-        android:text="@string/n_rec" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/txt_nome_receita"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/n_rec" />
+        <ImageView
+            android:id="@+id/img_favorito"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/favorito"/>
+    </LinearLayout>
 	<ImageView 
 	    android:id="@+id/img_receita"
         android:layout_marginTop="5dp"

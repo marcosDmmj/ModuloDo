@@ -13,13 +13,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                    <GridLayout	
+                    <TableLayout
                         android:id="@+id/grid_categ"
 						android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:columnCount="2"
-                        android:rowCount="6" >
-                 
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                       >
+                        <TableRow>
                         <ImageView
                             android:id="@+id/tx1"
                             android:layout_width="150dp"
@@ -30,9 +32,10 @@
                             android:id="@+id/tx2"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                        	android:layout_marginLeft="5dp"
                             android:src="@drawable/frango" />
-                       <ImageView 
+                        </TableRow>
+                        <TableRow>
+                       <ImageView
                             android:id="@+id/tx3"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
@@ -43,6 +46,8 @@
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
                             android:src="@drawable/massas" />
+                        </TableRow>
+                        <TableRow>
                        <ImageView 
                             android:id="@+id/tx5"
                             android:layout_width="150dp"
@@ -54,6 +59,8 @@
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
                             android:src="@drawable/refeicoes"/>
+                        </TableRow>
+                        <TableRow>
                        <ImageView
                             android:id="@+id/tx7"
                             android:layout_width="150dp"
@@ -65,6 +72,8 @@
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
                             android:src="@drawable/cafedamanha"/>
+                        </TableRow>
+                        <TableRow>
                        <ImageView 
                             android:id="@+id/tx9"
                             android:layout_width="150dp"
@@ -76,6 +85,8 @@
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
                             android:src="@drawable/doce"/>
+                        </TableRow>
+                        <TableRow>
                        <ImageView 
                             android:id="@+id/tx11"
                             android:layout_width="150dp"
@@ -86,9 +97,9 @@
                             android:layout_width="150dp"
  							android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/salada"/>                        
-                        
-                </GridLayout>
+                            android:src="@drawable/salada"/>
+                        </TableRow>
+                </TableLayout>
            </ScrollView>
 
 </FrameLayout>

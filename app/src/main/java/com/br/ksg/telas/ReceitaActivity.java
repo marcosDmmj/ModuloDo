@@ -1,5 +1,7 @@
 package com.br.ksg.telas;
 
+import com.br.ksg.classesBasicas.ReceitaBasica;
+import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import com.example.exempleswipetab.TextJustifyUtils;
@@ -13,13 +15,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class ReceitaActivity extends Activity {
 	
 	private TextView txt_titulo;
 	private TextView txt_modo_preparo;
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
-	private ImageView img_receita;           // lalasera?
+	private ImageView img_receita, favorito;
     private ImageView star01, star02, star03, star04, star05;
 	
 	@Override
@@ -75,11 +79,30 @@ public class ReceitaActivity extends Activity {
                 usarToast("Deu erro! "+e.getMessage());
             }
 
+            favorito = (ImageView) findViewById(R.id.img_favorito);
+
             star01 = (ImageView) findViewById(R.id.star01);
             star02 = (ImageView) findViewById(R.id.star02);
             star03 = (ImageView) findViewById(R.id.star03);
             star04 = (ImageView) findViewById(R.id.star04);
             star05 = (ImageView) findViewById(R.id.star05);
+
+            /*
+            Usar esse metodo pra saber se a receita havia se favoritado anteriormente para saber que imagem mostrar
+            public ArrayList<ReceitaBasica> listaCheia(){
+                ReceitasDAO receitaBasicaDAO = new ReceitasDAO(getActivity());
+                return receitaBasicaDAO.getListaFavoritos();
+            }
+            */
+            favorito.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //se a imagem ainda nao tiver sido favoritada poderei realizar o seguinte procedimento...
+                    favorito.setImageResource(R.drawable.favorito_selected);
+                    usarToast("Adicionado aos favoritos! -sqn");
+                }
+            });
+
 
             star01.setOnClickListener(new View.OnClickListener() {
                 @Override
