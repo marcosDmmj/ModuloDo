@@ -23,5 +23,6 @@
     <string name="verifica_conexao">Verifique sua conexão com a internet!</string>
     <string name="cafe">Café</string>
     <string name="refeicoes">Refeições</string>
+    <string name="title_activity_perfil_edit">PerfilEdit</string>
 
 </resources>

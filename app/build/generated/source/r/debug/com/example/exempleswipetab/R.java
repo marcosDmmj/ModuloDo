@@ -129,7 +129,7 @@ public final class R {
         public static final int activity_list_t=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int activity_main_categoria=0x7f030004;
-        public static final int activity_perfil_edicao=0x7f030005;
+        public static final int activity_perfil_edit=0x7f030005;
         public static final int activity_perfil_user=0x7f030006;
         public static final int fragment_fragment_categorias=0x7f030007;
         public static final int fragment_fragment_favoritos=0x7f030008;
@@ -141,6 +141,7 @@ public final class R {
         public static final int main=0x7f070000;
         public static final int menu_activiity_perfil=0x7f070001;
         public static final int menu_perfil_edicao=0x7f070002;
+        public static final int menu_perfil_edit=0x7f070003;
     }
     public static final class string {
         public static final int action_settings=0x7f050000;
@@ -161,10 +162,11 @@ public final class R {
         public static final int title_activity_final=0x7f05000f;
         public static final int title_activity_list_t=0x7f050010;
         public static final int title_activity_perfil_edicao=0x7f050011;
-        public static final int title_activity_perfil_user=0x7f050012;
-        public static final int title_activity_pos_survival=0x7f050013;
-        public static final int ver_receita=0x7f050014;
-        public static final int verifica_conexao=0x7f050015;
+        public static final int title_activity_perfil_edit=0x7f050012;
+        public static final int title_activity_perfil_user=0x7f050013;
+        public static final int title_activity_pos_survival=0x7f050014;
+        public static final int ver_receita=0x7f050015;
+        public static final int verifica_conexao=0x7f050016;
     }
     public static final class style {
         /** 

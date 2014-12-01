@@ -30,7 +30,7 @@ public class ReceitaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_final);
-		
+
 		Intent i = getIntent();
 		Bundle receita = i.getBundleExtra("receita");
 
