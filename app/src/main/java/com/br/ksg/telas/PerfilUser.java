@@ -29,9 +29,8 @@ public class PerfilUser extends Activity {
     }
     public void clicarEditar(){
         usarToast("entrou no clicarEditar()");
-        // TODO: Enviar para o GITHUB a classe que faz isso aqui :P
-        // Intent i = new Intent(this,PerfilEdit.class);
-        // startActivity(i);
+        Intent i = new Intent(this,PerfilEdit.class);
+        startActivity(i);
     }
     public void usarToast(String texto) {
         Toast.makeText(getBaseContext(), texto, Toast.LENGTH_SHORT).show();
