@@ -87,6 +87,7 @@ public class ReceitaActivity extends Activity {
             star04 = (ImageView) findViewById(R.id.star04);
             star05 = (ImageView) findViewById(R.id.star05);
 
+            // TODO: Ver abaixo!
             /*
             Usar esse metodo pra saber se a receita havia se favoritado anteriormente para saber que imagem mostrar
             public ArrayList<ReceitaBasica> listaCheia(){
