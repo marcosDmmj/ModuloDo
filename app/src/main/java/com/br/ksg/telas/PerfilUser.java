@@ -1,7 +1,6 @@
 package com.br.ksg.telas;
 
 import com.example.exempleswipetab.R;
-import com.br.ksg.telas.PerfilEdit;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -30,8 +29,9 @@ public class PerfilUser extends Activity {
     }
     public void clicarEditar(){
         usarToast("entrou no clicarEditar()");
-        Intent i = new Intent(this,PerfilEdit.class);
-        startActivity(i);
+        // TODO: Enviar para o GITHUB a classe que faz isso aqui :P
+        // Intent i = new Intent(this,PerfilEdit.class);
+        // startActivity(i);
     }
     public void usarToast(String texto) {
         Toast.makeText(getBaseContext(), texto, Toast.LENGTH_SHORT).show();

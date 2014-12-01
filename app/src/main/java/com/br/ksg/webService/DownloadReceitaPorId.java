@@ -102,10 +102,10 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
 				b.putString("tempo", receita.getString("tempo_preparo"));
 				b.putString("dificuldade", receita.getString("dificuldade"));
 				b.putString("rating", receita.getString("rating"));
-				b.putString("tamanho", receita.getString("quant"));
+				b.putString("quant", receita.getString("quant"));
 				
 				for (int j = 0; j < receita.getInt("quant"); j++) {
-					b.putString("ingrediente"+i, receita.getString("ingrediente"+(i+1)));
+					b.putString("ingrediente"+j, receita.getString("ingrediente"+(j+1)));
 				}
 
 			}

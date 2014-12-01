@@ -23,6 +23,7 @@ public class ReceitaActivity extends Activity {
 	private TextView txt_modo_preparo;
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
+    private TextView txt_ingredientes;
 	private ImageView img_receita, favorito;
     private ImageView star01, star02, star03, star04, star05;
 	
@@ -44,6 +45,13 @@ public class ReceitaActivity extends Activity {
 
             txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
             txt_titulo.setText(receita.getString("nome"));
+
+            txt_ingredientes = (TextView) findViewById(R.id.txt_ingredientes_receita);
+            String ingredientes = receita.getString("quant");
+            for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
+                ingredientes += receita.getString("ingrediente"+j)+"\n";
+            }
+            txt_ingredientes.setText(ingredientes);
 
             txt_modo_preparo = (TextView) findViewById(R.id.txt_modo_de_preparo_receita);
             txt_modo_preparo.setText(receita.getString("modo_preparo"));
@@ -95,6 +103,7 @@ public class ReceitaActivity extends Activity {
                 return receitaBasicaDAO.getListaFavoritos();
             }
             */
+
             favorito.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
