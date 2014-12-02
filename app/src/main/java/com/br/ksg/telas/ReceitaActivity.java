@@ -6,9 +6,13 @@ import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import com.example.exempleswipetab.TextJustifyUtils;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -24,13 +28,16 @@ public class ReceitaActivity extends Activity {
 	private TextView txt_tempo;
 	private TextView txt_porcoes;
     private TextView txt_ingredientes;
-	private ImageView img_receita, favorito;
+	private ImageView img_receita;
     private ImageView star01, star02, star03, star04, star05;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_final);
+
+        ActionBar actionBar = getActionBar();
+        // actionBar.setTitle("Funfou?");
 
 		Intent i = getIntent();
 		Bundle receita = i.getBundleExtra("receita");
@@ -87,7 +94,7 @@ public class ReceitaActivity extends Activity {
                 usarToast("Deu erro! "+e.getMessage());
             }
 
-            favorito = (ImageView) findViewById(R.id.img_favorito);
+            // favorito = (ImageView) findViewById(R.id.img_favorito);
 
             star01 = (ImageView) findViewById(R.id.star01);
             star02 = (ImageView) findViewById(R.id.star02);
@@ -102,8 +109,6 @@ public class ReceitaActivity extends Activity {
                 ReceitasDAO receitaBasicaDAO = new ReceitasDAO(getActivity());
                 return receitaBasicaDAO.getListaFavoritos();
             }
-            */
-
             favorito.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -113,6 +118,7 @@ public class ReceitaActivity extends Activity {
                 }
             });
 
+            */
 
             star01.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -173,5 +179,23 @@ public class ReceitaActivity extends Activity {
         Toast.makeText(getBaseContext(), texto, Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_receita_final, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_favorito:
+                Toast.makeText(this, "Tocou aqui o/", Toast.LENGTH_SHORT)
+                        .show();
+                break;
+        }
+
+        return true;
+    }
 
 }
