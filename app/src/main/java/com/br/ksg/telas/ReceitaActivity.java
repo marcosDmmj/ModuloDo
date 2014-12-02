@@ -1,12 +1,9 @@
 package com.br.ksg.telas;
 
-import com.br.ksg.classesBasicas.ReceitaBasica;
-import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import com.example.exempleswipetab.TextJustifyUtils;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -20,28 +17,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class ReceitaActivity extends Activity {
 	
-	private TextView txt_titulo;
-	private TextView txt_modo_preparo;
-	private TextView txt_tempo;
-	private TextView txt_porcoes;
-    private TextView txt_ingredientes;
-	private ImageView img_receita;
-    private ImageView star01, star02, star03, star04, star05;
+	TextView txt_titulo;
+	TextView txt_modo_preparo;
+	TextView txt_tempo;
+	TextView txt_porcoes;
+    TextView txt_ingredientes;
+    ImageView star01, star02, star03, star04, star05;
+    boolean verificaBD;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_final);
 
-        ActionBar actionBar = getActionBar();
-        // actionBar.setTitle("Funfou?");
-
 		Intent i = getIntent();
 		Bundle receita = i.getBundleExtra("receita");
+        verificaBD = false;
 
         if (receita.getInt("tamanho") == 0){
             usarToast(getString(R.string.verifica_conexao));
@@ -105,7 +98,6 @@ public class ReceitaActivity extends Activity {
             txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
             txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
-            img_receita = (ImageView) findViewById(R.id.img_receita);
             try {
                 new DownloadImagemReceita(getApplication(),this).execute("http://ksmapi.besaba.com/imagens/"+receita.getString("id")+".jpg");
             } catch (Exception e){
@@ -206,9 +198,16 @@ public class ReceitaActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorito:
-                item.setIcon(R.drawable.favorito_selected);
-                Toast.makeText(this, "Add aos favoritos! -sqn", Toast.LENGTH_SHORT)
-                        .show();
+                verificaBD = !verificaBD;
+                if (verificaBD) {
+                    item.setIcon(R.drawable.favorito_selected);
+                    Toast.makeText(this, "Add aos favoritos! -sqn", Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    item.setIcon(R.drawable.favorito);
+                    Toast.makeText(this, "Removido dos favoritos! -sqn", Toast.LENGTH_SHORT)
+                            .show();
+                }
                 break;
         }
 
