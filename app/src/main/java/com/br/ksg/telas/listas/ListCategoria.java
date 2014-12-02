@@ -6,6 +6,8 @@ import java.util.List;
 import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.br.ksg.telas.MainActivity;
+import com.br.ksg.webService.DownloadImagemListaReceita;
+import com.br.ksg.webService.DownloadImagemReceita;
 import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
@@ -40,6 +42,14 @@ public class ListCategoria extends Activity {
         else {
             itemList = BundleToList(list);
 
+            for (int j = 0; j < itemList.size(); j++) {
+                try {
+                    new DownloadImagemListaReceita(getApplication(),this,j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                } catch (Exception e){
+                    usarToast("Deu erro! "+e.getMessage());
+                }
+            }
+
             setTitle("Resultados para: " + que_categoria);
 
             ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
@@ -66,10 +76,6 @@ public class ListCategoria extends Activity {
 		} else {
 			usarToast(getString(R.string.verifica_conexao));
 		}
-
-		// Intent i = new Intent(this,ReceitaActivity.class);
-		// i.putExtra("titulo", rct);
-		// startActivity(i);
 	}	
 	
 	private List<ReceitaBasica> BundleToList(Bundle l){

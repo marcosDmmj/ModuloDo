@@ -3,12 +3,11 @@ package com.br.ksg.webService;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.widget.ImageView;
+import android.widget.ListView;
 
-import com.br.ksg.telas.listas.ListCategoria;
 import com.example.exempleswipetab.R;
 
 import org.apache.http.HttpEntity;
@@ -16,24 +15,21 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 /**
- * Created by Marcos on 24/11/2014.
+ * Created by Marcos on 02/12/2014.
  */
-public class DownloadImagemReceita extends AsyncTask<String, Void, Drawable> {
+public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable> {
     Context c;
     Activity activity;
+    int position;
 
-    public DownloadImagemReceita(Context c,Activity activity) {
+    public DownloadImagemListaReceita(Context c,Activity activity,int position) {
         this.c = c;
         this.activity = activity;
+        this.position = position;
     }
 
     @Override
@@ -67,7 +63,8 @@ public class DownloadImagemReceita extends AsyncTask<String, Void, Drawable> {
     protected void onPostExecute(Drawable result) {
         super.onPostExecute(result);
 
-        ImageView imageView = (ImageView) activity.findViewById(R.id.img_receita);
+        ListView lv = (ListView) activity.findViewById(R.id.listdel);
+        ImageView imageView = (ImageView) lv.getChildAt(position).findViewById(R.id.image);
         if (result != null)
             imageView.setImageDrawable(result);
     }
