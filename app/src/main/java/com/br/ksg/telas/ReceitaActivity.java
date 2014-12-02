@@ -9,6 +9,7 @@ import com.example.exempleswipetab.TextJustifyUtils;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -93,8 +94,6 @@ public class ReceitaActivity extends Activity {
             } catch (Exception e){
                 usarToast("Deu erro! "+e.getMessage());
             }
-
-            // favorito = (ImageView) findViewById(R.id.img_favorito);
 
             star01 = (ImageView) findViewById(R.id.star01);
             star02 = (ImageView) findViewById(R.id.star02);
@@ -190,7 +189,8 @@ public class ReceitaActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_favorito:
-                Toast.makeText(this, "Tocou aqui o/", Toast.LENGTH_SHORT)
+                item.setIcon(R.drawable.favorito_selected);
+                Toast.makeText(this, "Add aos favoritos! -sqn", Toast.LENGTH_SHORT)
                         .show();
                 break;
         }
