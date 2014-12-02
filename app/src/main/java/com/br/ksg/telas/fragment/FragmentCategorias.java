@@ -97,7 +97,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"massa").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=massa");
+						new DownloadReceitaPorCategoria(getActivity(),"refeicoes").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=refei");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -113,7 +113,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"salgado").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salgado");
+						new DownloadReceitaPorCategoria(getActivity(),"salada").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salada");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -129,7 +129,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),getString(R.string.refeicoes)).execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=refei");
+						new DownloadReceitaPorCategoria(getActivity(),"massa").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=massa");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -145,7 +145,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"lanche").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=lanche");
+						new DownloadReceitaPorCategoria(getActivity(),"acompanhamento").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=acompanhamento");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -161,7 +161,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),getString(R.string.cafe)).execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=caf");
+						new DownloadReceitaPorCategoria(getActivity(),"aperitivo").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=aperitivo");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -177,7 +177,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"aperitivo").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=aperitivo");
+						new DownloadReceitaPorCategoria(getActivity(),"cafe da manha").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=caf");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -193,8 +193,8 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"doce")
-								.execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=doce");
+						new DownloadReceitaPorCategoria(getActivity(),"lanche")
+								.execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=lanche");
 					} catch (Exception e) {
                         // usarToast("N�o funfou :'(");
 					}
@@ -210,7 +210,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"acompanhamento").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=acompanhamento");
+						new DownloadReceitaPorCategoria(getActivity(),"doce").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=doce");
 					} catch (Exception e) {
 						// usarToast("N�o funfou :'(");
 					}
@@ -226,7 +226,7 @@ public class FragmentCategorias extends Fragment {
 			public void onClick(View v) {
 				if (verificaConexao()) {					
 					try {
-						new DownloadReceitaPorCategoria(getActivity(),"salada").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salada");
+						new DownloadReceitaPorCategoria(getActivity(),"salgado").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salgado");
 					} catch (Exception e) {
 						// usarToast("N�o funfou :'(");
 					}

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFCCAA"
+    android:background="@drawable/background"
     tools:context="com.br.ksg.telas.fragment.FragmentCategorias" >
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,8 +10,9 @@
     <ScrollView 
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
 
                     <TableLayout
                         android:id="@+id/grid_categ"
@@ -26,78 +27,78 @@
                             android:id="@+id/tx1"
                             android:layout_width="150dp"
                             android:layout_height="125dp"
-                            android:src="@drawable/carne" />
+                            android:src="@drawable/carness" />
                         
                        <ImageView 
                             android:id="@+id/tx2"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                            android:src="@drawable/frango" />
+                            android:src="@drawable/avess" />
                         </TableRow>
                         <TableRow>
                        <ImageView
                             android:id="@+id/tx3"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                        	android:src="@drawable/light" />
+                        	android:src="@drawable/peixess" />
                        <ImageView 
                             android:id="@+id/tx4"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/massas" />
+                            android:src="@drawable/refeicoooes" />
                         </TableRow>
                         <TableRow>
                        <ImageView 
                             android:id="@+id/tx5"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                            android:src="@drawable/salgados"/>
+                            android:src="@drawable/salaaadas"/>
                        <ImageView 
                             android:id="@+id/tx6"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/refeicoes"/>
+                            android:src="@drawable/maaassa"/>
                         </TableRow>
                         <TableRow>
                        <ImageView
                             android:id="@+id/tx7"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                            android:src="@drawable/lanches"/>
+                            android:src="@drawable/acomp"/>
                        <ImageView 
                             android:id="@+id/tx8"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/cafedamanha"/>
+                            android:src="@drawable/aperit"/>
                         </TableRow>
                         <TableRow>
                        <ImageView 
                             android:id="@+id/tx9"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                            android:src="@drawable/aperitivo"/>
+                            android:src="@drawable/cafe_manha"/>
                        <ImageView 
                             android:id="@+id/tx10"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/doce"/>
+                            android:src="@drawable/lanchess"/>
                         </TableRow>
                         <TableRow>
                        <ImageView 
                             android:id="@+id/tx11"
                             android:layout_width="150dp"
                         	android:layout_height="125dp"
-                            android:src="@drawable/acompanhamento"/>
+                            android:src="@drawable/docess"/>
                        <ImageView 
                             android:id="@+id/tx12"
                             android:layout_width="150dp"
  							android:layout_height="125dp"
                         	android:layout_marginLeft="5dp"
-                            android:src="@drawable/salada"/>
+                            android:src="@drawable/salgadooooss"/>
                         </TableRow>
                 </TableLayout>
            </ScrollView>
