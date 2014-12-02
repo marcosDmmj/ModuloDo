@@ -24,13 +24,17 @@ import android.view.View;
 
 public class ListCategoria extends Activity {
 	List<ReceitaBasica> itemList;
+    public static boolean verificaStatus;
+    List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_t);		
 		
 		Intent i = getIntent();
-		
+
+        verificaStatus = true;
 		String que_categoria = i.getStringExtra("categoria");
 		Bundle list = i.getBundleExtra("lista");
         if (list.getInt("tamanho") == 0){
@@ -42,7 +46,8 @@ public class ListCategoria extends Activity {
 
             for (int j = 0; j < itemList.size(); j++) {
                 try {
-                    new DownloadImagemListaReceita(getApplication(),this,j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                    imagens.add(j,new DownloadImagemListaReceita(getApplication(),this,j));
+                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
                 } catch (Exception e){
                     usarToast("Deu erro! "+e.getMessage());
                 }
@@ -67,7 +72,15 @@ public class ListCategoria extends Activity {
 	public void acessa_a_receita(String id){
 		if (verificaConexao()) {					
 			try {
-				new DownloadReceitaPorId(this).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+id);
+                for (int j = 0; j < itemList.size(); j++) {
+                    try {
+                        imagens.get(j).cancel(true);
+                    } catch (Exception e){
+                        usarToast("Deu erro! "+e.getMessage());
+                    }
+                }
+                verificaStatus = false;
+                new DownloadReceitaPorId(this).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+id);
 			} catch (Exception e) {
 				usarToast(getString(R.string.nao)+" funfou :'("+e.getMessage());
 			}

@@ -4,6 +4,7 @@ import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import com.example.exempleswipetab.TextJustifyUtils;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -32,6 +33,8 @@ public class ReceitaActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_final);
 
+        ActionBar actionBar = getActionBar();
+        // actionBar.set
 		Intent i = getIntent();
 		Bundle receita = i.getBundleExtra("receita");
         verificaBD = false;

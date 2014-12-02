@@ -5,9 +5,11 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.br.ksg.telas.listas.ListCategoria;
 import com.example.exempleswipetab.R;
 
 import org.apache.http.HttpEntity;
@@ -40,21 +42,23 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
 
     @Override
     protected Drawable doInBackground(String... params) {
-        String urlString = params[0];
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet(urlString);
+        if (!isCancelled()){
+            String urlString = params[0];
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpGet httpget = new HttpGet(urlString);
 
-        try {
-            HttpResponse response = httpclient.execute(httpget);
-            HttpEntity entity = response.getEntity();
+            try {
+                HttpResponse response = httpclient.execute(httpget);
+                HttpEntity entity = response.getEntity();
 
-            if(entity != null) {
-                InputStream instream = entity.getContent();
-                Drawable d = Drawable.createFromStream(instream, "src");
-                return d;
+                if(entity != null) {
+                    InputStream instream = entity.getContent();
+                    Drawable d = Drawable.createFromStream(instream, "src");
+                    return d;
+                }
+            } catch (Exception e) {
+                return null;
             }
-        } catch (Exception e) {
-            return null;
         }
         return null;
     }
@@ -63,9 +67,21 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
     protected void onPostExecute(Drawable result) {
         super.onPostExecute(result);
 
-        ListView lv = (ListView) activity.findViewById(R.id.listdel);
-        ImageView imageView = (ImageView) lv.getChildAt(position).findViewById(R.id.image);
-        if (result != null)
-            imageView.setImageDrawable(result);
+        try {
+            if (ListCategoria.verificaStatus) {
+                ListView lv = (ListView) activity.findViewById(R.id.listdel);
+
+                if (lv != null){
+                    ImageView imageView = (ImageView) lv.getChildAt(position).findViewById(R.id.image);
+
+                    if ((result != null)&&(imageView != null)) {
+                        imageView.setImageDrawable(result);
+                    }
+                }
+            }
+        } catch (Exception e){
+            Log.i("KSG","Erro ainda >.< "+e.getMessage());
+        }
+
     }
 }
