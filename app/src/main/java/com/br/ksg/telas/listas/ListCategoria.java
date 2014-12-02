@@ -44,7 +44,7 @@ public class ListCategoria extends Activity {
 
             for (int j = 0; j < itemList.size(); j++) {
                 try {
-                    new DownloadImagemListaReceita(getApplication(),this,j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                 //   new DownloadImagemListaReceita(getApplication(),this,j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
                 } catch (Exception e){
                     usarToast("Deu erro! "+e.getMessage());
                 }

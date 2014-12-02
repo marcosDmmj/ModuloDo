@@ -60,6 +60,23 @@ public class ReceitaActivity extends Activity {
                 ingredientes += receita.getString("ingrediente"+j)+"\n";
             }
             txt_ingredientes.setText(ingredientes);
+            txt_ingredientes.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
+            {
+                boolean isJustified = false;
+
+                @Override
+                public boolean onPreDraw()
+                {
+                    if(!isJustified)
+                    {
+                        TextJustifyUtils.run(txt_modo_preparo,240);
+                        isJustified = true;
+                    }
+
+                    return true;
+                }
+
+            });
 
             txt_modo_preparo = (TextView) findViewById(R.id.txt_modo_de_preparo_receita);
             txt_modo_preparo.setText(receita.getString("modo_preparo"));
