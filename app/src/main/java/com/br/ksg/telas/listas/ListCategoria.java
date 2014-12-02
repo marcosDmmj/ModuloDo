@@ -46,6 +46,7 @@ public class ListCategoria extends Activity {
 
             for (int j = 0; j < itemList.size(); j++) {
                 try {
+                    // TODO: Verificar se essa parte foi pra lá!
                     imagens.add(j,new DownloadImagemListaReceita(getApplication(),this,j));
                     imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
                 } catch (Exception e){
