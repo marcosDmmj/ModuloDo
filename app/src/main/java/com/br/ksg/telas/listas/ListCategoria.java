@@ -5,9 +5,7 @@ import java.util.List;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
-import com.br.ksg.telas.MainActivity;
 import com.br.ksg.webService.DownloadImagemListaReceita;
-import com.br.ksg.webService.DownloadImagemReceita;
 import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
@@ -22,7 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.view.View;;
+import android.view.View;
 
 public class ListCategoria extends Activity {
 	List<ReceitaBasica> itemList;
