@@ -21,32 +21,7 @@ public class PerfilEdit extends Activity {
         setContentView(R.layout.activity_perfil_edit);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_perfil_edit, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     public void clicarSalvar(View view){
-
-
 
         UsuarioDAO u = new UsuarioDAO(this);
         int status1;
@@ -73,7 +48,36 @@ public class PerfilEdit extends Activity {
         if(((CheckBox)findViewById(R.id.checkBoxSoja)).isChecked()) status10=1; else status10=0;
         if(((CheckBox)findViewById(R.id.checkBoxTrigo)).isChecked()) status11=1; else status11=0;
 
-        u.setUsuario(status1, status2, status3, status4, status5, status6, status7, status8, status9, status10, status11);
+        String str1;
+        String str2;
+        String str3;
+        String str4;
+        String str5;
+        String str6;
+        String str7;
+        String str8;
+        String str9;
+        String str10;
+        String str11;
+        String str12 = "";
+        String str13 = "" ;
+        if(status1==1){ str1 = "sim"; str12 += "Vegetariano  "; }else { str1 = "nao"; str12 += ""; }
+        if(status2==1){ str2 = "sim"; str12 += "Diabético  "; }else { str2 = "nao"; str12 += ""; }
+        if(status3==1){ str3 = "sim"; str12 += "Hipertenso  "; }else { str3 = "nao"; str12 += ""; }
+        if(status4==1){ str4 = "sim"; str13 += "Frutos do Mar  "; }else { str4 = "nao"; str13 += ""; }
+        if(status5==1){ str5 = "sim"; str13 += "Amendoim  "; }else { str5 = "nao"; str13 += ""; }
+        if(status6==1){ str6 = "sim"; str13 += "Leite  "; }else { str6 = "nao"; str13 += ""; }
+        if(status7==1){ str7 = "sim"; str13 += "Nozes  "; }else { str7 = "nao"; str13 += ""; }
+        if(status8==1){ str8 = "sim"; str13 += "Ovos  "; }else { str8 = "nao"; str13 += ""; }
+        if(status9==1){ str9 = "sim"; str13 += "Peixes  "; }else { str9 = "nao"; str13 += ""; }
+        if(status10==1){ str10 = "sim"; str13 += "Soja  "; }else { str10 = "nao"; str13 += ""; }
+        if(status11==1){ str11 = "sim"; str13 += "Trigo  "; }else { str11 = "nao"; str13 += ""; }
+        if(str12.equals("")) str12 = "Nenhuma";
+        if(str13.equals("")) str13 = "Nenhuma";
+
+        u.setUsuarioCaracteristicas(str1, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, str13);
+
+        Toast.makeText(this, str1+str2+str3+str4+str5+str6+str7+str8+str9+str10+str11 ,Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, PerfilUser.class);
         startActivity(intent);
