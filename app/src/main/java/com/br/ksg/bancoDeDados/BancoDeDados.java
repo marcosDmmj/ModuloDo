@@ -12,7 +12,7 @@ package com.br.ksg.bancoDeDados;
 
 public class BancoDeDados extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 4;
+    public static final int DATABASE_VERSION = 5;
     public static final String DATABASE_NAME = "KSG";
 
     private static final String SQL_CREATE_TABLE_INGREDIENTES = "CREATE TABLE Ingredientes(id integer, INGREDIENTE TEXT)";
