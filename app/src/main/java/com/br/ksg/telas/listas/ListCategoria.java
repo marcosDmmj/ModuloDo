@@ -27,6 +27,7 @@ public class ListCategoria extends Activity {
     public static boolean verificaStatus;
     public static ArrayAdapter<ReceitaBasica> ad;
     private List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
+    boolean create;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +46,6 @@ public class ListCategoria extends Activity {
         else {
             itemList = BundleToList(list);
 
-            for (int j = 0; j < itemList.size(); j++) {
-                try {
-                    imagens.add(j,new DownloadImagemListaReceita(getApplication(),this,j));
-                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                } catch (Exception e){
-                    usarToast("Deu erro! "+e.getMessage());
-                }
-            }
-
             setTitle("Resultados para: " + que_categoria);
 
             ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
@@ -67,10 +59,36 @@ public class ListCategoria extends Activity {
                     acessa_a_receita(itemList.get(position).getId_receita());
                 }
             });
+
+            create = true;
         }
 	}
-	
-	public void acessa_a_receita(String id){
+
+    @Override
+    protected void onResume() {
+        int j = 0;
+        super.onResume();
+        for (j = 0; j < itemList.size(); j++) {
+            try {
+                if (create) {
+                    imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
+                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                }
+                else {
+                    if (itemList.get(j).getImg() == null) {
+                        imagens.remove(j);
+                        imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
+                        imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                    }
+                }
+            } catch (Exception e){
+                usarToast("Deu erro! "+j+" OnResume: "+e.getMessage());
+            }
+        }
+        create = false;
+    }
+
+    public void acessa_a_receita(String id){
 		if (verificaConexao()) {					
 			try {
                 for (int j = 0; j < itemList.size(); j++) {

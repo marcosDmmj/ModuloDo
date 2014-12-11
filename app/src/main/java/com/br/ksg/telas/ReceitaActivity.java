@@ -2,24 +2,19 @@ package com.br.ksg.telas;
 
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
-import com.example.exempleswipetab.TextJustifyUtils;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.File;
 
 public class ReceitaActivity extends Activity {
 	
@@ -108,7 +103,8 @@ public class ReceitaActivity extends Activity {
             txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
             try {
-                new DownloadImagemReceita(getApplication(),this).execute("http://ksmapi.besaba.com/imagens/"+receita.getString("id")+".jpg");
+                // if (receita.get("img") == null)
+                    new DownloadImagemReceita(getApplication(),this).execute("http://ksmapi.besaba.com/imagens/"+receita.getString("id")+".jpg");
             } catch (Exception e){
                 usarToast("Deu erro! "+e.getMessage());
             }
