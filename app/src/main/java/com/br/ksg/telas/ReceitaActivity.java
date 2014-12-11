@@ -4,11 +4,12 @@ import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 import com.example.exempleswipetab.TextJustifyUtils;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+
 public class ReceitaActivity extends Activity {
 	
 	TextView txt_titulo;
@@ -25,16 +28,15 @@ public class ReceitaActivity extends Activity {
 	TextView txt_tempo;
 	TextView txt_porcoes;
     TextView txt_ingredientes;
-    ImageView star01, star02, star03, star04, star05;
+    ImageView star01, star02, star03, star04, star05,compartilhar;
     boolean verificaBD;
+    private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_final);
 
-        ActionBar actionBar = getActionBar();
-        // actionBar.set
 		Intent i = getIntent();
 		Bundle receita = i.getBundleExtra("receita");
         verificaBD = false;
@@ -51,12 +53,15 @@ public class ReceitaActivity extends Activity {
             txt_titulo.setText(receita.getString("nome"));
 
             txt_ingredientes = (TextView) findViewById(R.id.txt_ingredientes_receita);
-            String ingredientes = receita.getString("quant");
+            String ingredientes = "";
             for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
                 ingredientes += receita.getString("ingrediente"+j)+"\n";
             }
             txt_ingredientes.setText(ingredientes);
-            txt_ingredientes.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
+
+            /*
+
+                        txt_ingredientes.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
             {
                 boolean isJustified = false;
 
@@ -74,26 +79,27 @@ public class ReceitaActivity extends Activity {
 
             });
 
+             */
             txt_modo_preparo = (TextView) findViewById(R.id.txt_modo_de_preparo_receita);
             txt_modo_preparo.setText(receita.getString("modo_preparo"));
 
-            txt_modo_preparo.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
-            {
-                boolean isJustified = false;
+            // txt_modo_preparo.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener()
+            //{
+              //  boolean isJustified = false;
 
-                @Override
-                public boolean onPreDraw()
-                {
-                    if(!isJustified)
-                    {
-                        TextJustifyUtils.run(txt_modo_preparo,230);
-                        isJustified = true;
-                    }
+                //@Override
+                //public boolean onPreDraw()
+                //{
+                   // if(!isJustified)
+                    //{
+                        // TextJustifyUtils.run(txt_modo_preparo,230);
+                      //  isJustified = true;
+                    //}
 
-                    return true;
-                }
+                    //return true;
+                //}
 
-            });
+            //});
 
             txt_tempo = (TextView) findViewById(R.id.txt_tempo_de_preparo);
             txt_tempo.setText("Tempo de preparo: " + receita.getString("tempo") + " min");
@@ -182,7 +188,19 @@ public class ReceitaActivity extends Activity {
                 }
             });
 
+            compartilhar = (ImageView) findViewById(R.id.btn_compartilhar);
+            compartilhar.setOnClickListener(new View.OnClickListener() {
+                private Uri fileUri;
 
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    // i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageFile));
+                    // fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+                    i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+                    startActivityForResult(i,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+                }
+            });
         }
 	}
 
@@ -217,4 +235,21 @@ public class ReceitaActivity extends Activity {
         return true;
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                // Image captured and saved to fileUri specified in the Intent
+                Toast.makeText(this, "Image saved to:\n" +
+                        data.getData(), Toast.LENGTH_LONG).show();
+                // compartilhar.setImageDrawable();
+                compartilhar.setImageURI(data.getData());
+            } else if (resultCode == RESULT_CANCELED) {
+                // User cancelled the image capture
+            } else {
+                // Image capture failed, advise user
+            }
+        }
+    }
 }

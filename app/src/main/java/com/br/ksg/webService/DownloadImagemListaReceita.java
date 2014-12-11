@@ -1,7 +1,6 @@
 package com.br.ksg.webService;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
@@ -20,7 +19,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
 
-/**
+/*
  * Created by Marcos on 02/12/2014.
  */
 public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable> {
@@ -52,9 +51,9 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
                 HttpEntity entity = response.getEntity();
 
                 if(entity != null) {
-                    InputStream instream = entity.getContent();
-                    Drawable d = Drawable.createFromStream(instream, "src");
-                    return d;
+                    InputStream instream = entity.getContent();       
+
+                    return Drawable.createFromStream(instream, "src");
                 }
             } catch (Exception e) {
                 return null;
@@ -76,6 +75,7 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
 
                     if ((result != null)&&(imageView != null)) {
                         imageView.setImageDrawable(result);
+                        // lv.get;
                     }
                 }
             }

@@ -14,7 +14,7 @@ package com.br.ksg.classesDAO;
         import com.br.ksg.classesBasicas.Receita;
         import com.br.ksg.classesBasicas.ReceitaBasica;
 
-/**
+/*
  * Created by Marcos and Josias on 22/11/2014.
  */
 
@@ -38,7 +38,6 @@ public class ReceitasDAO {
             return false ;
         }
     }
-
 
     public ArrayList<ReceitaBasica> getListaFavoritos(){
         ArrayList<ReceitaBasica> favoritos = new ArrayList<ReceitaBasica>() ;

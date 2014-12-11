@@ -46,7 +46,6 @@ public class ListCategoria extends Activity {
 
             for (int j = 0; j < itemList.size(); j++) {
                 try {
-                    // TODO: Verificar se essa parte foi pra lá!
                     imagens.add(j,new DownloadImagemListaReceita(getApplication(),this,j));
                     imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
                 } catch (Exception e){
@@ -105,19 +104,7 @@ public class ListCategoria extends Activity {
 		if (connectivity != null) {
 			NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
 
-			if (netInfo == null) {
-				return false;
-			}
-
-			int netType = netInfo.getType();
-
-			if (netType == ConnectivityManager.TYPE_WIFI
-					|| netType == ConnectivityManager.TYPE_MOBILE) {
-				return netInfo.isConnected();
-
-			} else {
-				return false;
-			}
+			return (netInfo != null) && (netInfo.isConnected());
 		} else {
 			return false;
 		}

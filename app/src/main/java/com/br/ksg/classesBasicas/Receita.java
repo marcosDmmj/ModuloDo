@@ -21,10 +21,6 @@ public class Receita extends ReceitaBasica {
 		this.ingredientes = ingredientes;
 	}
 
-	public Receita(String id, String title, String time, String qtd) {
-		super(id,title, time, qtd);
-	}
-
 	public String getModo_preparo() {
 		return modo_preparo;
 	}

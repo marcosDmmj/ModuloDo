@@ -1,12 +1,10 @@
 package com.br.ksg.bancoDeDados;
 
-        import java.util.List;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
-        import android.content.Context;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.database.sqlite.SQLiteOpenHelper;
-
-/**
+/*
  * Created by Marcos and Josias on 21/11/2014.
  */
 
