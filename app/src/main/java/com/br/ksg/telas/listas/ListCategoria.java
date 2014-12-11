@@ -26,7 +26,7 @@ public class ListCategoria extends Activity {
 	private List<ReceitaBasica> itemList;
     public static boolean verificaStatus;
     public static ArrayAdapter<ReceitaBasica> ad;
-    List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
+    private List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

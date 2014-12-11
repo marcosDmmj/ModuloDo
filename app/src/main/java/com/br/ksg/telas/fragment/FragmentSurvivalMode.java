@@ -27,11 +27,11 @@ import android.widget.Toast;
 public class FragmentSurvivalMode extends Fragment {
 
 	private AutoCompleteTextView autoComplete ;
-	private ArrayList<String> listaAutoComplete ;
-	private ArrayList<String> listaElementos ;
-	private ListView listView ;
-	private Button buttonPlus,buttonSearch ;
-	private ArrayAdapter<String> adapter,adapterListView;
+    private ListView listView ;
+	ArrayList<String> listaAutoComplete ;
+	ArrayList<String> listaElementos ;
+	Button buttonPlus,buttonSearch ;
+	ArrayAdapter<String> adapter,adapterListView;
 	
 	private int pos;
 	
@@ -66,10 +66,7 @@ public class FragmentSurvivalMode extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-			if((autoComplete.getText().toString().equals(""))){
-				return;
-			}
-			else{
+			if(!(autoComplete.getText().toString().equals(""))){
 				listaElementos.add(autoComplete.getText().toString());
 				adapterListView = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,listaElementos);
 				listView = (ListView) getActivity().findViewById(R.id.listView1);
@@ -96,8 +93,7 @@ public class FragmentSurvivalMode extends Fragment {
 						});
 						bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
 							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								return ;							}
+							public void onClick(DialogInterface dialog, int which) {}
 						});
 						bld.show();
 					}
@@ -111,10 +107,7 @@ public class FragmentSurvivalMode extends Fragment {
 		buttonSearch.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if(listaElementos.isEmpty()){
-					return ;
-				}
-				else{
+				if(!listaElementos.isEmpty()){
 					Intent intent = new Intent(getActivity(),ListSurvivalMode.class);
 					intent.putStringArrayListExtra("listaIngredientes",listaElementos);
 					startActivity(intent);

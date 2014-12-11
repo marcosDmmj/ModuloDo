@@ -5,11 +5,8 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.br.ksg.telas.listas.ListCategoria;
 import com.example.exempleswipetab.R;
@@ -21,7 +18,6 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
-import java.util.List;
 
 /*
  * Created by Marcos on 02/12/2014.
