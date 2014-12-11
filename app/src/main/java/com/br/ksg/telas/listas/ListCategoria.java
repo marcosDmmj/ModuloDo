@@ -23,8 +23,9 @@ import android.widget.Toast;
 import android.view.View;
 
 public class ListCategoria extends Activity {
-	List<ReceitaBasica> itemList;
+	private List<ReceitaBasica> itemList;
     public static boolean verificaStatus;
+    public static ArrayAdapter<ReceitaBasica> ad;
     List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
 
 	@Override
@@ -55,7 +56,7 @@ public class ListCategoria extends Activity {
 
             setTitle("Resultados para: " + que_categoria);
 
-            ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
+            ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
             ListView lv = (ListView) findViewById(R.id.listdel);
             lv.setAdapter(ad);
 

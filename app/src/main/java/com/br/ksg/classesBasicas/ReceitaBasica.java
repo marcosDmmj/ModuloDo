@@ -23,7 +23,6 @@ public class ReceitaBasica {
 		this.nome = nome;
 		this.tempo = tempo;
 		this.porcoes = porcoes;
-        // TODO: Continuar apartir daqui!!!
         img = null;
 	}
 

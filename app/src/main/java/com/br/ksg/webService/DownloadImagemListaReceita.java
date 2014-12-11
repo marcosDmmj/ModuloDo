@@ -5,9 +5,12 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.br.ksg.adapters.CustomAdapterCategoria;
+import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.br.ksg.telas.listas.ListCategoria;
 import com.example.exempleswipetab.R;
 
@@ -18,6 +21,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.InputStream;
+import java.util.List;
 
 /*
  * Created by Marcos on 02/12/2014.
@@ -70,14 +74,13 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
             if (ListCategoria.verificaStatus) {
                 ListView lv = (ListView) activity.findViewById(R.id.listdel);
 
-                if (lv != null){
-                    ImageView imageView = (ImageView) lv.getChildAt(position).findViewById(R.id.image);
+                ListCategoria.ad.getItem(position).setImg(result);
+                ListCategoria.ad.notifyDataSetChanged();
 
-                    if ((result != null)&&(imageView != null)) {
-                        imageView.setImageDrawable(result);
-                        // lv.get;
-                    }
-                }
+                int p = lv.getSelectedItemPosition();
+
+                lv.setAdapter(ListCategoria.ad);
+                lv.setSelection(p);
             }
         } catch (Exception e){
             Log.i("KSG","Erro ainda >.< "+e.getMessage());
