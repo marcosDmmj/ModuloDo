@@ -1,16 +1,20 @@
 package com.br.ksg.classesBasicas;
 
+import android.graphics.drawable.Drawable;
+
 public class ReceitaBasica {
 	private String id_receita;
 	private String nome;
 	private String tempo;
-	private String porcoes;	
-	
+	private String porcoes;
+    private Drawable img;
+
 	public ReceitaBasica(String title, String time, String qtd){
 		this.setNome(title);
 		this.setTempo(time);
-		this.setPorcoes(qtd);		
-	}	
+		this.setPorcoes(qtd);
+        img = null;
+	}
 
 	public ReceitaBasica(String id_receita, String nome, String tempo,
 			String porcoes) {
@@ -19,6 +23,7 @@ public class ReceitaBasica {
 		this.nome = nome;
 		this.tempo = tempo;
 		this.porcoes = porcoes;
+        img = null;
 	}
 
 
@@ -54,4 +59,12 @@ public class ReceitaBasica {
 	public void setId_receita(String id_receita) {
 		this.id_receita = id_receita;
 	}
+
+    public Drawable getImg() {
+        return img;
+    }
+
+    public void setImg(Drawable img) {
+        this.img = img;
+    }
 }

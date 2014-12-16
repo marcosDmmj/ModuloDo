@@ -1,6 +1,6 @@
 package com.br.ksg.classesBasicas;
 
-/**
+/*
  * Created by Marcos and Josias on 21/11/2014.
  */
 

@@ -8,7 +8,7 @@ import android.util.Log;
 import android.widget.ListView;
 
 import com.br.ksg.classesBasicas.ReceitaBasica;
-import com.br.ksg.telas.listas.ListCategoria;
+import com.br.ksg.telas.listas.ListSurvivalMode;
 import com.example.exempleswipetab.R;
 
 import org.apache.http.HttpEntity;
@@ -22,12 +22,12 @@ import java.io.InputStream;
 /*
  * Created by Marcos on 02/12/2014.
  */
-public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable> {
+public class DownloadImagemListaReceita2 extends AsyncTask<String, Void, Drawable> {
     Context c;
     Activity activity;
     int position;
 
-    public DownloadImagemListaReceita(Context c,Activity activity,int position) {
+    public DownloadImagemListaReceita2(Context c, Activity activity, int position) {
         this.c = c;
         this.activity = activity;
         this.position = position;
@@ -67,11 +67,11 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
         super.onPostExecute(result);
 
         try {
-            if ((ListCategoria.verificaStatus)&&(result != null)) {
+            if ((ListSurvivalMode.verificaStatus)&&(result != null)) {
                 ListView lv = (ListView) activity.findViewById(R.id.listdel);
 
-                ListCategoria.ad.getItem(position).setImg(result);
-                ListCategoria.ad.notifyDataSetChanged();
+                ListSurvivalMode.ad.getItem(position).setImg(result);
+                ListSurvivalMode.ad.notifyDataSetChanged();
 
                 ((ReceitaBasica) lv.getItemAtPosition(position)).setImg(result);
             }

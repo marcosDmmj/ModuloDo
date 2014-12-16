@@ -1,8 +1,9 @@
 package com.br.ksg.classesBasicas;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.List;
 
-//Testando pull !!!!
 public class Receita extends ReceitaBasica {
 	private String modo_preparo;
 	private double rating;
@@ -19,10 +20,6 @@ public class Receita extends ReceitaBasica {
 		this.categoria = categoria;
 		this.dificuldade = dificuldade;
 		this.ingredientes = ingredientes;
-	}
-
-	public Receita(String id, String title, String time, String qtd) {
-		super(id,title, time, qtd);
 	}
 
 	public String getModo_preparo() {
@@ -63,6 +60,5 @@ public class Receita extends ReceitaBasica {
 
 	public void setIngredientes(List<String> ingredientes) {
 		this.ingredientes = ingredientes;
-	}		
-
+	}
 }

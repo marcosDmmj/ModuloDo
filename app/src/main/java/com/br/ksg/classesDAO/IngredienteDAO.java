@@ -1,17 +1,16 @@
 package com.br.ksg.classesDAO;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
 
-        import com.br.ksg.bancoDeDados.BancoDeDados;
+import com.br.ksg.bancoDeDados.BancoDeDados;
 
-        import android.content.Context;
-        import android.database.Cursor;
-        import android.database.SQLException;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.util.Log;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
-/**
+/*
  * Created by Marcos and Josias on 21/11/2014.
  */
 

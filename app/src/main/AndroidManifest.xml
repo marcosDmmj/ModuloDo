@@ -10,11 +10,15 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <android:uses-permission
+        android:name="android.permission.READ_PHONE_STATE" />
+
     <android:uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
@@ -52,10 +56,6 @@
         <activity
             android:name="com.example.exempleswipetab.activiity_perfil"
             android:label="@string/title_activity_activiity_perfil" >
-        </activity>
-        <activity
-            android:name="com.example.exempleswipetab.perfil_edicao"
-            android:label="@string/title_activity_perfil_edicao" >
         </activity>
         <activity
             android:name="com.br.ksg.telas.PerfilEdit"

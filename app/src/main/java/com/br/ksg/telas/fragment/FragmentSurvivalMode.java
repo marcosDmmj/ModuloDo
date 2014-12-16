@@ -3,12 +3,14 @@ package com.br.ksg.telas.fragment;
 import java.util.ArrayList;
 
 import com.br.ksg.classesDAO.IngredienteDAO;
-import com.br.ksg.telas.listas.ListSurvivalMode;
+import com.br.ksg.webService.DownloadReceitaPorSurvivalMode;
 import com.example.exempleswipetab.R;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,11 +29,11 @@ import android.widget.Toast;
 public class FragmentSurvivalMode extends Fragment {
 
 	private AutoCompleteTextView autoComplete ;
-	private ArrayList<String> listaAutoComplete ;
-	private ArrayList<String> listaElementos ;
-	private ListView listView ;
-	private Button buttonPlus,buttonSearch ;
-	private ArrayAdapter<String> adapter,adapterListView;
+    private ListView listView ;
+	ArrayList<String> listaAutoComplete ;
+	ArrayList<String> listaElementos ;
+	Button buttonPlus,buttonSearch ;
+	ArrayAdapter<String> adapter,adapterListView;
 	
 	private int pos;
 	
@@ -66,10 +68,7 @@ public class FragmentSurvivalMode extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-			if((autoComplete.getText().toString().equals(""))){
-				return;
-			}
-			else{
+			if(!(autoComplete.getText().toString().equals(""))){
 				listaElementos.add(autoComplete.getText().toString());
 				adapterListView = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,listaElementos);
 				listView = (ListView) getActivity().findViewById(R.id.listView1);
@@ -87,7 +86,6 @@ public class FragmentSurvivalMode extends Fragment {
 							public void onClick(DialogInterface dialog, int which) {
 								
 								adapterListView.remove(listaElementos.get(pos));
-								//listaElementos.remove(pos);
 								adapterListView.notifyDataSetChanged();
 								listView.setAdapter(adapterListView);
 								Toast toast = Toast.makeText(getActivity(), "Item removido!", Toast.LENGTH_SHORT);
@@ -96,8 +94,7 @@ public class FragmentSurvivalMode extends Fragment {
 						});
 						bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
 							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								return ;							}
+							public void onClick(DialogInterface dialog, int which) {}
 						});
 						bld.show();
 					}
@@ -111,13 +108,20 @@ public class FragmentSurvivalMode extends Fragment {
 		buttonSearch.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if(listaElementos.isEmpty()){
-					return ;
-				}
-				else{
-					Intent intent = new Intent(getActivity(),ListSurvivalMode.class);
-					intent.putStringArrayListExtra("listaIngredientes",listaElementos);
-					startActivity(intent);
+				if(!listaElementos.isEmpty()){
+                    if (verificaConexao()) {
+                        try {
+                            new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id=10");
+                        } catch (Exception e) {
+                            usarToast("Erro: "+e.getMessage());
+                        }
+                    } else {
+                        usarToast(getString(R.string.verifica_conexao));
+                    }
+
+					//Intent intent = new Intent(getActivity(),ListSurvivalMode.class);
+					//intent.putStringArrayListExtra("listaIngredientes",listaElementos);
+					//startActivity(intent);
 				}
 			}
 		});
@@ -129,6 +133,33 @@ public class FragmentSurvivalMode extends Fragment {
         IngredienteDAO ingDAO = new IngredienteDAO(getActivity());
         return ingDAO.getListaIngredientes();
 
+    }
+
+    public boolean verificaConexao() {
+        ConnectivityManager connectivity = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
+
+            if (netInfo == null) {
+                return false;
+            }
+
+            int netType = netInfo.getType();
+
+            if (netType == ConnectivityManager.TYPE_WIFI
+                    || netType == ConnectivityManager.TYPE_MOBILE) {
+                return netInfo.isConnected();
+
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public void usarToast(String texto) {
+        Toast.makeText(getActivity(), texto, Toast.LENGTH_LONG).show();
     }
 
 }

@@ -29,8 +29,6 @@ public class PerfilUser extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_user);
 
-        // TOast eexempocddf
-        usarToast("Por enquanto vai dar erro se você clicar ali :P");
         btn_editar = (ImageButton) findViewById(R.id.imageButton2);
         btn_editar.setOnClickListener(new View.OnClickListener() {
 

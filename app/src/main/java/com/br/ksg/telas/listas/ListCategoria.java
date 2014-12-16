@@ -23,9 +23,11 @@ import android.widget.Toast;
 import android.view.View;
 
 public class ListCategoria extends Activity {
-	List<ReceitaBasica> itemList;
+	private List<ReceitaBasica> itemList;
     public static boolean verificaStatus;
-    List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
+    public static ArrayAdapter<ReceitaBasica> ad;
+    private List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
+    boolean create;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,19 +46,9 @@ public class ListCategoria extends Activity {
         else {
             itemList = BundleToList(list);
 
-            for (int j = 0; j < itemList.size(); j++) {
-                try {
-                    // TODO: Verificar se essa parte foi pra lá!
-                    imagens.add(j,new DownloadImagemListaReceita(getApplication(),this,j));
-                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                } catch (Exception e){
-                    usarToast("Deu erro! "+e.getMessage());
-                }
-            }
-
             setTitle("Resultados para: " + que_categoria);
 
-            ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
+            ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
             ListView lv = (ListView) findViewById(R.id.listdel);
             lv.setAdapter(ad);
 
@@ -67,10 +59,48 @@ public class ListCategoria extends Activity {
                     acessa_a_receita(itemList.get(position).getId_receita());
                 }
             });
+
+            create = true;
         }
 	}
-	
-	public void acessa_a_receita(String id){
+
+    @Override
+    protected void onResume() {
+        int j = 0;
+        super.onResume();
+        for (j = 0; j < itemList.size(); j++) {
+            try {
+                if (create) {
+                    imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
+                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                }
+                else {
+                    if (itemList.get(j).getImg() == null) {
+                        imagens.remove(j);
+                        imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
+                        imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
+                    }
+                }
+            } catch (Exception e){
+                usarToast("Deu erro! "+j+" OnResume: "+e.getMessage());
+            }
+        }
+        create = false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        for (int j = 0; j < itemList.size(); j++) {
+            try {
+                imagens.get(j).cancel(true);
+            } catch (Exception e){
+                usarToast("Deu erro! "+e.getMessage());
+            }
+        }
+    }
+
+    public void acessa_a_receita(String id){
 		if (verificaConexao()) {					
 			try {
                 for (int j = 0; j < itemList.size(); j++) {
@@ -105,19 +135,7 @@ public class ListCategoria extends Activity {
 		if (connectivity != null) {
 			NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
 
-			if (netInfo == null) {
-				return false;
-			}
-
-			int netType = netInfo.getType();
-
-			if (netType == ConnectivityManager.TYPE_WIFI
-					|| netType == ConnectivityManager.TYPE_MOBILE) {
-				return netInfo.isConnected();
-
-			} else {
-				return false;
-			}
+			return (netInfo != null) && (netInfo.isConnected());
 		} else {
 			return false;
 		}
