@@ -88,6 +88,18 @@ public class ListCategoria extends Activity {
         create = false;
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        for (int j = 0; j < itemList.size(); j++) {
+            try {
+                imagens.get(j).cancel(true);
+            } catch (Exception e){
+                usarToast("Deu erro! "+e.getMessage());
+            }
+        }
+    }
+
     public void acessa_a_receita(String id){
 		if (verificaConexao()) {					
 			try {
