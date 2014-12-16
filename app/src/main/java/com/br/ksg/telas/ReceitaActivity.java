@@ -15,7 +15,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class ReceitaActivity extends Activity {
 	
 	TextView txt_titulo;
@@ -25,6 +24,7 @@ public class ReceitaActivity extends Activity {
     TextView txt_ingredientes;
     ImageView star01, star02, star03, star04, star05,compartilhar;
     boolean verificaBD;
+    int id_receita;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	
 	@Override
@@ -41,6 +41,7 @@ public class ReceitaActivity extends Activity {
             finish();
         }
         else {
+            id_receita = Integer.parseInt(receita.getString("id"));
 
             setTitle("Receita: " + receita.getString("nome"));
 
