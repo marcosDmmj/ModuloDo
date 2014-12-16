@@ -15,62 +15,94 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int acomp=0x7f020000;
-        public static final int acompanhamento=0x7f020001;
-        public static final int aperit=0x7f020002;
-        public static final int aperitivo=0x7f020003;
-        public static final int avess=0x7f020004;
-        public static final int background=0x7f020005;
-        public static final int cafe_manha=0x7f020006;
-        public static final int cafedamanha=0x7f020007;
-        public static final int carne=0x7f020008;
-        public static final int carness=0x7f020009;
-        public static final int compartilhar=0x7f02000a;
-        public static final int cookie_star_icon=0x7f02000b;
-        public static final int cookie_star_icon_select=0x7f02000c;
-        public static final int doce=0x7f02000d;
-        public static final int docess=0x7f02000e;
-        public static final int favorito=0x7f02000f;
-        public static final int favorito_selected=0x7f020010;
-        public static final int frango=0x7f020011;
-        public static final int ic_launcher=0x7f020012;
-        public static final int iconeksg=0x7f020013;
-        public static final int lanches=0x7f020014;
-        public static final int lanchess=0x7f020015;
-        public static final int light=0x7f020016;
-        public static final int maaassa=0x7f020017;
-        public static final int massas=0x7f020018;
-        public static final int noimage=0x7f020019;
-        public static final int peixe=0x7f02001a;
-        public static final int peixess=0x7f02001b;
-        public static final int progress_0=0x7f02001c;
-        public static final int progress_10=0x7f02001d;
-        public static final int progress_100=0x7f02001e;
-        public static final int progress_15=0x7f02001f;
-        public static final int progress_20=0x7f020020;
-        public static final int progress_25=0x7f020021;
-        public static final int progress_30=0x7f020022;
-        public static final int progress_35=0x7f020023;
-        public static final int progress_40=0x7f020024;
-        public static final int progress_45=0x7f020025;
-        public static final int progress_5=0x7f020026;
-        public static final int progress_50=0x7f020027;
-        public static final int progress_55=0x7f020028;
-        public static final int progress_60=0x7f020029;
-        public static final int progress_65=0x7f02002a;
-        public static final int progress_70=0x7f02002b;
-        public static final int progress_75=0x7f02002c;
-        public static final int progress_80=0x7f02002d;
-        public static final int progress_85=0x7f02002e;
-        public static final int progress_90=0x7f02002f;
-        public static final int progress_95=0x7f020030;
-        public static final int refeicoes=0x7f020031;
-        public static final int refeicoooes=0x7f020032;
-        public static final int salaaadas=0x7f020033;
-        public static final int salada=0x7f020034;
-        public static final int salgadooooss=0x7f020035;
-        public static final int salgados=0x7f020036;
-        public static final int unknown=0x7f020037;
+        public static final int ab_background_textured_=0x7f020000;
+        public static final int ab_bottom_solid_=0x7f020001;
+        public static final int ab_solid_=0x7f020002;
+        public static final int ab_stacked_solid_=0x7f020003;
+        public static final int ab_texture_tile_=0x7f020004;
+        public static final int ab_transparent_=0x7f020005;
+        public static final int acomp=0x7f020006;
+        public static final int acompanhamento=0x7f020007;
+        public static final int aperit=0x7f020008;
+        public static final int aperitivo=0x7f020009;
+        public static final int avess=0x7f02000a;
+        public static final int background=0x7f02000b;
+        public static final int btn_cab_done_=0x7f02000c;
+        public static final int btn_cab_done_default_=0x7f02000d;
+        public static final int btn_cab_done_focused_=0x7f02000e;
+        public static final int btn_cab_done_pressed_=0x7f02000f;
+        public static final int cab_background_bottom_=0x7f020010;
+        public static final int cab_background_top_=0x7f020011;
+        public static final int cafe_manha=0x7f020012;
+        public static final int cafedamanha=0x7f020013;
+        public static final int carne=0x7f020014;
+        public static final int carness=0x7f020015;
+        public static final int compartilhar=0x7f020016;
+        public static final int cookie_star_icon=0x7f020017;
+        public static final int cookie_star_icon_select=0x7f020018;
+        public static final int doce=0x7f020019;
+        public static final int docess=0x7f02001a;
+        public static final int favorito=0x7f02001b;
+        public static final int favorito_selected=0x7f02001c;
+        public static final int frango=0x7f02001d;
+        public static final int ic_launcher=0x7f02001e;
+        public static final int iconeksg=0x7f02001f;
+        public static final int lanches=0x7f020020;
+        public static final int lanchess=0x7f020021;
+        public static final int light=0x7f020022;
+        public static final int list_focused_=0x7f020023;
+        public static final int list_pressed_=0x7f020024;
+        public static final int maaassa=0x7f020025;
+        public static final int massas=0x7f020026;
+        public static final int menu_dropdown_panel_=0x7f020027;
+        public static final int noimage=0x7f020028;
+        public static final int peixe=0x7f020029;
+        public static final int peixess=0x7f02002a;
+        public static final int progress_0=0x7f02002b;
+        public static final int progress_10=0x7f02002c;
+        public static final int progress_100=0x7f02002d;
+        public static final int progress_15=0x7f02002e;
+        public static final int progress_20=0x7f02002f;
+        public static final int progress_25=0x7f020030;
+        public static final int progress_30=0x7f020031;
+        public static final int progress_35=0x7f020032;
+        public static final int progress_40=0x7f020033;
+        public static final int progress_45=0x7f020034;
+        public static final int progress_5=0x7f020035;
+        public static final int progress_50=0x7f020036;
+        public static final int progress_55=0x7f020037;
+        public static final int progress_60=0x7f020038;
+        public static final int progress_65=0x7f020039;
+        public static final int progress_70=0x7f02003a;
+        public static final int progress_75=0x7f02003b;
+        public static final int progress_80=0x7f02003c;
+        public static final int progress_85=0x7f02003d;
+        public static final int progress_90=0x7f02003e;
+        public static final int progress_95=0x7f02003f;
+        public static final int progress_bg_=0x7f020040;
+        public static final int progress_horizontal_=0x7f020041;
+        public static final int progress_primary_=0x7f020042;
+        public static final int progress_secondary_=0x7f020043;
+        public static final int refeicoes=0x7f020044;
+        public static final int refeicoooes=0x7f020045;
+        public static final int salaaadas=0x7f020046;
+        public static final int salada=0x7f020047;
+        public static final int salgadooooss=0x7f020048;
+        public static final int salgados=0x7f020049;
+        public static final int selectable_background_=0x7f02004a;
+        public static final int spinner_ab_default_=0x7f02004b;
+        public static final int spinner_ab_disabled_=0x7f02004c;
+        public static final int spinner_ab_focused_=0x7f02004d;
+        public static final int spinner_ab_pressed_=0x7f02004e;
+        public static final int spinner_background_ab_=0x7f02004f;
+        public static final int tab_indicator_ab_=0x7f020050;
+        public static final int tab_selected_=0x7f020051;
+        public static final int tab_selected_focused_=0x7f020052;
+        public static final int tab_selected_pressed_=0x7f020053;
+        public static final int tab_unselected_=0x7f020054;
+        public static final int tab_unselected_focused_=0x7f020055;
+        public static final int tab_unselected_pressed_=0x7f020056;
+        public static final int unknown=0x7f020057;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f080000;
@@ -208,6 +240,10 @@ public final class R {
         public static final int verifica_conexao=0x7f050016;
     }
     public static final class style {
+        public static final int ActionBar_Solid_=0x7f060000;
+        public static final int ActionBar_Transparent_=0x7f060001;
+        public static final int ActionBarTabStyle_=0x7f060002;
+        public static final int ActionButton_CloseMode_=0x7f060003;
         /** 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -216,9 +252,16 @@ public final class R {
  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f060004;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f060005;
+        public static final int DropDownListView_=0x7f060006;
+        public static final int DropDownNav_=0x7f060007;
+        public static final int PopupMenu_=0x7f060008;
+        public static final int ProgressBar_=0x7f060009;
+        public static final int TabTextColor_=0x7f06000a;
+        public static final int Theme_=0x7f06000b;
+        public static final int Theme__Widget=0x7f06000c;
     }
 }

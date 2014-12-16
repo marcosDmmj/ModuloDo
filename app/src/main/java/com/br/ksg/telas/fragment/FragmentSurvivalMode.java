@@ -90,7 +90,7 @@ public class FragmentSurvivalMode extends Fragment {
 								//listaElementos.remove(pos);
 								adapterListView.notifyDataSetChanged();
 								listView.setAdapter(adapterListView);
-								Toast toast = Toast.makeText(getActivity(), "Excluiu", Toast.LENGTH_SHORT);
+								Toast toast = Toast.makeText(getActivity(), "Item removido!", Toast.LENGTH_SHORT);
 								toast.show();
 							}
 						});
