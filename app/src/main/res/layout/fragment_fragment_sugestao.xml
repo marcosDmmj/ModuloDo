@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context="com.br.ksg.telas.fragment.FragmentSugestao" >
 
     <!-- TODO: Update blank fragment layout -->
@@ -27,7 +28,7 @@
         	android:layout_height="match_parent"
         	android:layout_marginLeft="30dp"
         	/>
-    	<ImageView 
+    	<ImageView
     	    android:id="@+id/img_opcao"
         	android:layout_width="250dp"
         	android:layout_height="250dp"

@@ -1,39 +1,37 @@
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="wrap_content"
     android:background="#FBEDA5"
-    tools:context="com.example.exempleswipetab.perfil_edicao">
+    tools:context="${relativePackage}.${activityClass}"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FBEDA5"
+    android:layout_alignParentTop="true"
+    >
 
     <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vegetariano"
         android:id="@+id/switchVegetariano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Vegetariano"
         android:checked="false"
         android:textOff="Não"
         android:textOn="Sim"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:textSize="20dp" />
 
     <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diabético"
         android:id="@+id/switchDiabetico"
-        android:layout_below="@+id/switchVegetariano"
-        android:layout_alignLeft="@+id/switchVegetariano"
-        android:layout_alignStart="@+id/switchVegetariano"
-        android:layout_alignRight="@+id/switchVegetariano"
-        android:layout_alignEnd="@+id/switchVegetariano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Diabético     "
         android:checked="false"
         android:textOff="Não"
         android:textOn="Sim"
@@ -42,122 +40,113 @@
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hipertenso"
+        android:text="Hipertenso  "
+        android:layout_gravity="center_horizontal"
         android:id="@+id/switchHipertenso"
-        android:layout_below="@+id/switchDiabetico"
         android:checked="false"
-        android:layout_alignLeft="@+id/switchDiabetico"
-        android:layout_alignStart="@+id/switchDiabetico"
-        android:layout_alignRight="@+id/switchDiabetico"
-        android:layout_alignEnd="@+id/switchDiabetico"
         android:textOff="Não"
         android:textOn="Sim"
         android:textSize="20dp"/>
 
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Alergias:"
-        android:id="@+id/textView"
-        android:layout_above="@+id/checkBoxFrutos"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="38dp" />
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"/>
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp">
 
+    <TableRow
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp">
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Frutos do mar"
         android:id="@+id/checkBoxFrutos"
         android:checked="false"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/imageButton"
-        android:layout_toStartOf="@+id/imageButton" />
+        />
 
     <CheckBox
+        android:id="@+id/checkBoxAmendoim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:text="Amendoim"
-        android:id="@+id/checkBoxAmendoim"
-        android:layout_toStartOf="@+id/checkBoxOvos"
         android:checked="false"
-        android:layout_below="@+id/checkBoxFrutos"
-        android:layout_alignLeft="@+id/checkBoxFrutos"
-        android:layout_alignStart="@+id/checkBoxFrutos" />
-
+        />
+    </TableRow>
+    <TableRow
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp">
     <CheckBox
+        android:id="@+id/checkBoxLeite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Leite"
-        android:id="@+id/checkBoxLeite"
-        android:layout_below="@+id/checkBoxAmendoim"
-        android:layout_alignLeft="@+id/checkBoxAmendoim"
-        android:layout_alignStart="@+id/checkBoxAmendoim"
         android:checked="false" />
 
     <CheckBox
+        android:id="@+id/checkBoxNozes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:text="Nozes"
-        android:id="@+id/checkBoxNozes"
-        android:layout_toStartOf="@+id/checkBoxOvos"
         android:checked="false"
-        android:layout_below="@+id/checkBoxLeite"
-        android:layout_alignLeft="@+id/checkBoxLeite"
-        android:layout_alignStart="@+id/checkBoxLeite" />
-
+        />
+    </TableRow>
+    <TableRow
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp">
     <CheckBox
+        android:id="@+id/checkBoxOvos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ovos"
-        android:id="@+id/checkBoxOvos"
-        android:layout_above="@+id/checkBoxAmendoim"
-        android:layout_toRightOf="@+id/checkBoxFrutos"
-        android:layout_toEndOf="@+id/checkBoxFrutos"
-        android:layout_marginLeft="15dp"
         android:checked="false" />
 
     <CheckBox
+        android:id="@+id/checkBoxPeixes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:text="Peixes"
-        android:id="@+id/checkBoxPeixes"
-        android:layout_above="@+id/checkBoxLeite"
-        android:layout_alignLeft="@+id/checkBoxOvos"
-        android:layout_alignStart="@+id/checkBoxOvos"
         android:checked="false" />
-
+    </TableRow>
+    <TableRow
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp">
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Soja"
         android:id="@+id/checkBoxSoja"
-        android:layout_below="@+id/checkBoxPeixes"
-        android:layout_alignLeft="@+id/checkBoxPeixes"
-        android:layout_alignStart="@+id/checkBoxPeixes"
         android:checked="false" />
 
     <CheckBox
+        android:id="@+id/checkBoxTrigo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
         android:text="Trigo"
-        android:id="@+id/checkBoxTrigo"
-        android:layout_below="@+id/checkBoxSoja"
-        android:layout_alignLeft="@+id/checkBoxSoja"
-        android:layout_alignStart="@+id/checkBoxSoja"
         android:checked="false" />
-
+    </TableRow>
+</TableLayout>
     <ImageButton
         android:layout_width="@android:dimen/notification_large_icon_width"
         android:layout_height="@android:dimen/notification_large_icon_height"
         android:id="@+id/imageButton"
         android:background="@android:drawable/ic_menu_save"
-        android:layout_marginTop="30dp"
-        android:baselineAlignBottom="false"
+        android:layout_alignParentTop="true"
         android:clickable="true"
-        android:layout_below="@+id/checkBoxNozes"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:onClick="clicarSalvar"/>
 
-</RelativeLayout>
+</LinearLayout>
+</ScrollView>
