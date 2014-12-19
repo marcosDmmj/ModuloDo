@@ -2,6 +2,8 @@ package com.br.ksg.telas.fragment;
 
 import java.util.Calendar;
 
+import com.br.ksg.classesDAO.IngredienteDAO;
+import com.br.ksg.webService.DownloadAtualizaIng;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
@@ -52,12 +54,9 @@ public class FragmentSugestao extends Fragment {
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                usarToast("Ainda "+getString(R.string.nao)+" implementado! :'(");
+                usarToast("Size = "+IngredienteDAO.sizeBD());
                 try {
-                    //DownloadImagemReceita b = (DownloadImagemReceita) new DownloadImagemReceita(getActivity()).execute("http://ksmapi.besaba.com/imagens/130.jpg");
-                    //Drawable result = b.get();
-                    //if (result != null)
-                      //  imageView.setImageDrawable(result);
+                    new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
                 } catch (Exception e){
                     usarToast("Deu um erro considerado! " + e.getMessage());
                 }

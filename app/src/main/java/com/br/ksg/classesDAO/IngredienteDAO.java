@@ -53,4 +53,22 @@ public class IngredienteDAO {
         }
 
     }
+
+    public static int sizeBD(){
+        try{
+            String cmd = "SELECT INGREDIENTE FROM Ingredientes";
+            Cursor cursor = bancoDeDados.rawQuery(cmd,null);
+            int result;
+            if (cursor != null)
+                 result = cursor.getCount();
+            else
+                return 0;
+            cursor.close();
+            return result;
+        }
+        catch(SQLException e){
+            Log.i("APPBD", e.getMessage());
+            return -1;
+        }
+    }
 }
