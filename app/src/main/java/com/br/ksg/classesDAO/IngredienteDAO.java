@@ -67,7 +67,7 @@ public class IngredienteDAO {
             return result;
         }
         catch(SQLException e){
-            Log.i("APPBD", e.getMessage());
+            Log.i("APPBD bla bla bla", e.getMessage());
             return -1;
         }
     }
