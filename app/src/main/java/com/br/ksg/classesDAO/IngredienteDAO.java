@@ -3,6 +3,7 @@ package com.br.ksg.classesDAO;
 import java.util.ArrayList;
 
 import com.br.ksg.bancoDeDados.BancoDeDados;
+import com.br.ksg.classesBasicas.Ingrediente;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -46,6 +47,25 @@ public class IngredienteDAO {
             }
             cursor.close();
             return ingredientes ;
+        }
+        catch(SQLException e){
+            Log.i("APPBD", e.getMessage());
+            return null;
+        }
+
+    }
+
+    public Ingrediente getIngrediente(String nome){
+        Ingrediente ingrediente = new Ingrediente();
+        try{
+            String cmd = "SELECT * FROM Ingredientes WHERE INGREDIENTE ='"+nome+"'";
+            Cursor cursor = bancoDeDados.rawQuery(cmd,null);
+            if (cursor.moveToNext()){
+                ingrediente.setId_ingrediente(cursor.getInt(0));
+                ingrediente.setNome(cursor.getString(1));
+            }
+            cursor.close();
+            return ingrediente;
         }
         catch(SQLException e){
             Log.i("APPBD", e.getMessage());

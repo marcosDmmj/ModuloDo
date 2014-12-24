@@ -2,6 +2,7 @@ package com.br.ksg.telas.fragment;
 
 import java.util.ArrayList;
 
+import com.br.ksg.classesBasicas.Ingrediente;
 import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.webService.DownloadReceitaPorSurvivalMode;
 import com.example.exempleswipetab.R;
@@ -68,39 +69,51 @@ public class FragmentSurvivalMode extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-			if(!(autoComplete.getText().toString().equals(""))){
-				listaElementos.add(autoComplete.getText().toString());
-				adapterListView = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,listaElementos);
-				listView = (ListView) getActivity().findViewById(R.id.listView1);
-				listView.setAdapter(adapterListView);
-				listView.setOnItemClickListener(new OnItemClickListener() {
-					@Override
-					public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-						pos = position ;
-						AlertDialog.Builder bld = new AlertDialog.Builder(getActivity());
-						bld.setMessage("Deseja excluir este item?");
-						bld.setTitle("Aviso");
-						
-						bld.setPositiveButton("Sim",new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								
-								adapterListView.remove(listaElementos.get(pos));
-								adapterListView.notifyDataSetChanged();
-								listView.setAdapter(adapterListView);
-								Toast toast = Toast.makeText(getActivity(), "Item removido!", Toast.LENGTH_SHORT);
-								toast.show();
-							}
-						});
-						bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog, int which) {}
-						});
-						bld.show();
-					}
-				});
-				autoComplete.setText("");
-			}
+                if ((listaElementos.size() < 5)) {
+			    if ((!(autoComplete.getText().toString().equals("")))&&(!listaElementos.contains(autoComplete.getText().toString().toLowerCase()))) {
+                IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
+                Ingrediente ingrediente = ingredienteDAO.getIngrediente(autoComplete.getText().toString().toLowerCase());
+
+                if (ingrediente != null) {
+                    listaElementos.add(autoComplete.getText().toString());
+                    adapterListView = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listaElementos);
+                    listView = (ListView) getActivity().findViewById(R.id.listView1);
+                    listView.setAdapter(adapterListView);
+                    listView.setOnItemClickListener(new OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            pos = position;
+                            AlertDialog.Builder bld = new AlertDialog.Builder(getActivity());
+                            bld.setMessage("Deseja excluir este item?");
+                            bld.setTitle("Aviso");
+
+                            bld.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    adapterListView.remove(listaElementos.get(pos));
+                                    adapterListView.notifyDataSetChanged();
+                                    listView.setAdapter(adapterListView);
+                                    Toast toast = Toast.makeText(getActivity(), "Item removido!", Toast.LENGTH_SHORT);
+                                    toast.show();
+                                }
+                            });
+                            bld.setNegativeButton(getString(R.string.nao), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+                            bld.show();
+                        }
+                    });
+                    autoComplete.setText("");
+                } else {
+                    usarToast("Ingrediente não cadastrado!");
+                }
+			    }
+                } else {
+                    usarToast("Limite máximo de 5 ingredientes!");
+                }
 			}
 		});												
 		
@@ -118,11 +131,9 @@ public class FragmentSurvivalMode extends Fragment {
                     } else {
                         usarToast(getString(R.string.verifica_conexao));
                     }
-
-					//Intent intent = new Intent(getActivity(),ListSurvivalMode.class);
-					//intent.putStringArrayListExtra("listaIngredientes",listaElementos);
-					//startActivity(intent);
-				}
+				} else {
+                    usarToast("Adicione pelo menos 1 ingrediente!");
+                }
 			}
 		});
 		

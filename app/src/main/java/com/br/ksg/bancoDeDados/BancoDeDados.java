@@ -15,7 +15,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
 
     private static final String SQL_CREATE_TABLE_INGREDIENTES = "CREATE TABLE Ingredientes(" +
             "id integer," +
-            " INGREDIENTE TEXT)";
+            "INGREDIENTE TEXT)";
     private static final String SQL_CREATE_TABLE_RECEITAS = "CREATE TABLE Receitas(" +
             "id_receita integer," +
             "nome TEXT, " +
