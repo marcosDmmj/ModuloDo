@@ -20,13 +20,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class FragmentFavoritos extends Fragment {
 
-    private ListView myListView;
-    private String nome ;
+    ListView myListView;
+    String nome;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -84,10 +83,6 @@ public class FragmentFavoritos extends Fragment {
         }catch (Exception e) {
             Log.i("KSG", "Chore aqui ToT "+e.getMessage());
         }
-    }
-
-    public void usarToast(String texto) {
-        Toast.makeText(getActivity(), texto, Toast.LENGTH_LONG).show();
     }
 
     public ArrayList<ReceitaBasica> listaCheia(){

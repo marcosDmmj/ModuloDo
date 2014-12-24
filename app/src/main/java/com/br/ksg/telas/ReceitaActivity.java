@@ -33,7 +33,6 @@ public class ReceitaActivity extends Activity {
     Bundle receita ;
     boolean verificaBD;
     int id_receita;
-    MenuItem item ;
     boolean status ;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 

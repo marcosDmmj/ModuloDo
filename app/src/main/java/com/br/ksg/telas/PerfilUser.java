@@ -210,8 +210,7 @@ public class PerfilUser extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            finish();
             return true;
         }
 

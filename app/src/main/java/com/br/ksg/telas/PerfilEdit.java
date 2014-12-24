@@ -79,7 +79,6 @@ public class PerfilEdit extends Activity {
 
         Toast.makeText(this, str1+str2+str3+str4+str5+str6+str7+str8+str9+str10+str11 ,Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, PerfilUser.class);
-        startActivity(intent);
+        finish();
     }
 }
