@@ -105,6 +105,8 @@ public class ListSurvivalMode extends Activity {
         // TODO: Os filtros do Survival Mode serão feitos aqui!
         // TODO: Qqr coisa pode me chamar ;)
 
+
+
         return list;
     }
 

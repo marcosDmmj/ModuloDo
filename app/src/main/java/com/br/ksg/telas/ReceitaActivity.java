@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.br.ksg.classesBasicas.Receita;
+import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.classesDAO.ReceitasDAO;
+import com.br.ksg.classesDAO.UsuarioDAO;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
@@ -35,6 +37,8 @@ public class ReceitaActivity extends Activity {
     int id_receita;
     boolean status ;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+    ArrayList<String> ing = new ArrayList<String>();
+    int controleEstrela = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +62,23 @@ public class ReceitaActivity extends Activity {
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
 
+                // Verificar se a receita já tem pontuacao
+                final UsuarioDAO usuarioDAO = new UsuarioDAO(this);
+
+                if (usuarioDAO.receita_existe(id_receita)) {
+                    List<String> id_ingredientes = new ArrayList<String>();
+                    for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
+                        id_ingredientes.add(j, receita.getString("id_ing"+j));
+                    }
+
+                    usuarioDAO.addReceita(id_receita,id_ingredientes);
+                }
+
                 txt_ingredientes = (TextView) findViewById(R.id.txt_ingredientes_receita);
                 String ingredientes = "";
                 for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
                     ingredientes += receita.getString("ingrediente"+j)+"\n";
+                    ing.add(j, receita.getString("ingrediente"+j));
                 }
                 txt_ingredientes.setText(ingredientes);
 
@@ -95,6 +112,7 @@ public class ReceitaActivity extends Activity {
                         star03.setImageResource(R.drawable.cookie_star_icon);
                         star04.setImageResource(R.drawable.cookie_star_icon);
                         star05.setImageResource(R.drawable.cookie_star_icon);
+                        controleEstrela = -3;
                     }
                 });
                 star02.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +123,7 @@ public class ReceitaActivity extends Activity {
                         star03.setImageResource(R.drawable.cookie_star_icon);
                         star04.setImageResource(R.drawable.cookie_star_icon);
                         star05.setImageResource(R.drawable.cookie_star_icon);
+                        controleEstrela = -1;
                     }
                 });
                 star03.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +134,7 @@ public class ReceitaActivity extends Activity {
                         star03.setImageResource(R.drawable.cookie_star_icon_select);
                         star04.setImageResource(R.drawable.cookie_star_icon);
                         star05.setImageResource(R.drawable.cookie_star_icon);
+                        controleEstrela = 1;
                     }
                 });
                 star04.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +145,7 @@ public class ReceitaActivity extends Activity {
                         star03.setImageResource(R.drawable.cookie_star_icon_select);
                         star04.setImageResource(R.drawable.cookie_star_icon_select);
                         star05.setImageResource(R.drawable.cookie_star_icon);
+                        controleEstrela = 3;
                     }
                 });
                 star05.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +156,7 @@ public class ReceitaActivity extends Activity {
                         star03.setImageResource(R.drawable.cookie_star_icon_select);
                         star04.setImageResource(R.drawable.cookie_star_icon_select);
                         star05.setImageResource(R.drawable.cookie_star_icon_select);
+                        controleEstrela = 5;
                     }
                 });
 
@@ -144,9 +166,27 @@ public class ReceitaActivity extends Activity {
 
                     @Override
                     public void onClick(View v) {
-                        Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-                        startActivityForResult(i,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+
+                        UsuarioDAO u = new UsuarioDAO(getBaseContext());
+                        ArrayList<String> aux = new ArrayList<String>();
+
+                        ArrayList<String> id_ingredientes = new ArrayList<String>();
+                        for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
+                            id_ingredientes.add(j, receita.getString("id_ing"+j));
+                        }
+
+                        u.update_experiencia(receita.getString("tempo"));
+                        u.update_pontos(id_ingredientes,controleEstrela);
+
+                        //u.update_pontos(ing, controleEstrela);
+                        //aux = u.mostra_pontos();
+
+                        for(int i=0; i < ing.size(); i++)
+                            Toast.makeText(getBaseContext(), ing.get(i), Toast.LENGTH_SHORT).show();
+
+                        //Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                        //i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+                        //startActivityForResult(i,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
                     }
                 });
             } catch (Exception e) {

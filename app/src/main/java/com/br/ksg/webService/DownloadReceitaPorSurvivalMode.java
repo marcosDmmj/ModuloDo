@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.br.ksg.telas.fragment.FragmentSurvivalMode;
 import com.br.ksg.telas.listas.ListSurvivalMode;
 
 import org.apache.http.HttpEntity;
@@ -20,6 +21,7 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class DownloadReceitaPorSurvivalMode extends AsyncTask<String, Void, Bundle>{
     ProgressDialog dialog;
@@ -97,13 +99,12 @@ public class DownloadReceitaPorSurvivalMode extends AsyncTask<String, Void, Bund
 			JSONObject receita;
 			for (int i = 0; i < receitasL.length(); i++) {
 				receita = new JSONObject(receitasL.getString(i));
-				
-				b.putString("id"+i, receita.getString("id_receita"));
-                String nome = receita.getString("nome");
-                b.putString("nome"+i, nome.substring(0,1).toUpperCase()+nome.substring(1));
-				b.putString("tempo"+i, receita.getString("tempo_preparo"));
-				b.putString("porcoes"+i, receita.getString("porcoes"));
 
+                    b.putString("id" + i, receita.getString("id_receita"));
+                    String nome = receita.getString("nome");
+                    b.putString("nome" + i, nome.substring(0, 1).toUpperCase() + nome.substring(1));
+                    b.putString("tempo" + i, receita.getString("tempo_preparo"));
+                    b.putString("porcoes" + i, receita.getString("porcoes"));
 			}
 			b.putInt("tamanho", receitasL.length());
 			return b;
