@@ -13,7 +13,7 @@ import com.br.ksg.bancoDeDados.BancoDeDados;
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesBasicas.ReceitaBasica;
 
-/**
+/*
  * Created by Marcos and Josias on 22/11/2014.
  */
 
@@ -30,7 +30,7 @@ public class ReceitasDAO {
 
 
     public boolean addReceitas(Receita receita,List<String> ing,List<String> id_ing){
-        int x = 0 ;
+        int x;
         if(buscaReceita(receita.getNome())){
             Log.i("Adicionou", "não adedou");
             return true ;
@@ -73,27 +73,9 @@ public class ReceitasDAO {
         }
     }
 
-    public int buscaIng(String nome){
-        try{
-            String cmd = "SELECT id FROM Ingredientes WHERE INGREDIENTE = '"+nome+"'";
-            Cursor cursor = bancoDeDados.rawQuery(cmd,null);
-            while(cursor.moveToNext()){
-                int result = cursor.getInt(0);
-                cursor.close();
-                return result;
-            }
-
-        }
-        catch(SQLException e){
-            Log.i("APPBD", e.getMessage());
-        }
-        return 0;
-    }
-
-
     //Método que verifica se o registro já está presente no banco de dados
     public boolean buscaReceita(String receita){
-        String novaReceita = null ;
+        String novaReceita;
         try{
             String cmd = "SELECT nome FROM Receitas";
             Cursor cursor = bancoDeDados.rawQuery(cmd,null);
@@ -114,10 +96,7 @@ public class ReceitasDAO {
     }
 
     public boolean pesquisa(String receita,String novaReceita){
-        if(receita.equals(novaReceita)){
-            return true ;
-        }
-        return false ;
+        return receita.equals(novaReceita);
     }
 
     public int quantIngredientes(int id_receita){

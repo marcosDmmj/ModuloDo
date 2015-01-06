@@ -8,7 +8,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,9 +20,9 @@ import android.widget.Toast;
 public class FragmentCategorias extends Fragment {
 	ImageView img01, img02, img03, img04, img05, img06, img07, img08, img09, img10, img11, img12;
 	@Override
-	public View onCreateView(LayoutInflater inflater,
-			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
 		return inflater.inflate(R.layout.fragment_fragment_categorias,container, false);
 	}
 	
@@ -51,7 +50,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"carne").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=carne");
 					} catch (Exception e) {
-                        // usarToast(getString(R.string.nao)+" funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -67,7 +65,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"ave").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=ave");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -83,7 +80,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"peixe").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=peixe");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -99,7 +95,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"refeicoes").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=refei");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -115,7 +110,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"salada").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salada");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -131,7 +125,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"massa").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=massa");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -147,7 +140,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"acompanhamento").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=acompanhamento");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -163,7 +155,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"aperitivo").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=aperitivo");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -179,7 +170,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"cafe da manha").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=caf");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -196,7 +186,6 @@ public class FragmentCategorias extends Fragment {
 						new DownloadReceitaPorCategoria(getActivity(),"lanche")
 								.execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=lanche");
 					} catch (Exception e) {
-                        // usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -212,7 +201,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"doce").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=doce");
 					} catch (Exception e) {
-						// usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));
@@ -228,7 +216,6 @@ public class FragmentCategorias extends Fragment {
 					try {
 						new DownloadReceitaPorCategoria(getActivity(),"salgado").execute("http://ksmapi.besaba.com/sql/selectRecByCat.php?id=salgado");
 					} catch (Exception e) {
-						// usarToast("N�o funfou :'(");
 					}
 				} else {
 					usarToast(getString(R.string.verifica_conexao));

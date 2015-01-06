@@ -60,10 +60,6 @@ public class BancoDeDados extends SQLiteOpenHelper {
             "id_ingredientes TEXT, " +
             "pontos TEXT)";
 
-    private static final String SQL_CREATE_TABLE_INGREDIENTES2 = "CREATE TABLE Ingredientes2(" +
-            "id TEXT, " +
-            "nome TEXT)";
-
     private static final String SQL_DELETE_INGREDIENTES ="DROP TABLE IF EXISTS Ingredientes" ;
     private static final String SQL_DELETE_RECEITAS ="DROP TABLE IF EXISTS Receitas" ;
     private static final String SQL_DELETE_TABLE_RECEITA_INGREDIENTES ="DROP TABLE IF EXISTS Receita_Ingrediente" ;

@@ -111,9 +111,5 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
         }
         return super.onOptionsItemSelected(item);
     }
-    
-	public void usarToast(String texto) {
-		Toast.makeText(getBaseContext(), texto, Toast.LENGTH_LONG).show();
-	}
 }
 

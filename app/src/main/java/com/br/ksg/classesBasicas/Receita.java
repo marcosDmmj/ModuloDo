@@ -1,7 +1,5 @@
 package com.br.ksg.classesBasicas;
 
-import android.graphics.drawable.Drawable;
-
 import java.util.List;
 
 public class Receita extends ReceitaBasica {

@@ -65,7 +65,6 @@ public class FragmentFavoritos extends Fragment {
             b.putString("dificuldade", receita.getDificuldade());
             b.putDouble("rating", receita.getRating());
             int q = receitaFav.quantIngredientes(Integer.parseInt(receita.getId_receita()));
-            // usarToast("q = "+q);
             b.putString("quant", ""+q);
 
             List <String> ing = receitaFav.getListaIngrediente(Integer.parseInt(receita.getId_receita()));

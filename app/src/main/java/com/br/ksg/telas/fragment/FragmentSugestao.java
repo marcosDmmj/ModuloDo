@@ -4,12 +4,9 @@ import java.util.Calendar;
 
 import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.webService.DownloadAtualizaIng;
-import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +16,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 public class FragmentSugestao extends Fragment {
 	int mHour;
 	TextView txtSaudacao, txtDica;
@@ -27,7 +23,7 @@ public class FragmentSugestao extends Fragment {
     Button btnVerReceita;
 
     @Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		return inflater.inflate(R.layout.fragment_fragment_sugestao,container, false);
 	}
 	
