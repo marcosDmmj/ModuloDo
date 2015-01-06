@@ -5,10 +5,7 @@ import com.example.exempleswipetab.R;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,8 +13,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -51,7 +46,7 @@ public class PerfilUser extends Activity {
         TextView pratosDificeis = (TextView)findViewById(R.id.textViewPratoDificil);
 
         UsuarioDAO u = new UsuarioDAO(this);
-        ArrayList<String> info = new ArrayList<String>();
+        ArrayList<String> info;
         float aux;
 
         info = u.getInfoUsuario();

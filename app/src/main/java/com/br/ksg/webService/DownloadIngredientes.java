@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.br.ksg.telas.listas.ListCategoria;
 
@@ -20,7 +21,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
+/*
  * Created by Marcos on 24/11/2014.
  */
 public class DownloadIngredientes extends AsyncTask<String, Void, Bundle> {
@@ -58,7 +59,7 @@ public class DownloadIngredientes extends AsyncTask<String, Void, Bundle> {
                 return getReceitasBasicas(json);
             }
         } catch (Exception e) {
-
+            Log.i("KSG","Nem to usando como veio pra cá?");
         }
         Bundle b = new Bundle();
         b.putInt("tamanho", 0);
@@ -76,7 +77,7 @@ public class DownloadIngredientes extends AsyncTask<String, Void, Bundle> {
 
             c.startActivity(receitas);
         } catch (Exception e) {
-
+            Log.i("KSG","Nem to usando como veio pra cá?");
         }
 
     }

@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 
 public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
     ProgressDialog dialog;
@@ -58,6 +59,7 @@ public class DownloadReceitaPorId extends AsyncTask<String, Void, Bundle> {
                 return getReceita(json);
             }
 		} catch (Exception e) {
+            Log.i("KSG", "Acho q não devia fazer isso... " + e.getMessage());
 		}
 
         Bundle b = new Bundle();

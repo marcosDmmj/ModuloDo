@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
-import com.br.ksg.telas.fragment.FragmentSurvivalMode;
 import com.br.ksg.telas.listas.ListSurvivalMode;
 
 import org.apache.http.HttpEntity;
@@ -21,7 +21,6 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class DownloadReceitaPorSurvivalMode extends AsyncTask<String, Void, Bundle>{
     ProgressDialog dialog;
@@ -58,7 +57,7 @@ public class DownloadReceitaPorSurvivalMode extends AsyncTask<String, Void, Bund
                 return getReceitasBasicas(json);
             }
 		} catch (Exception e) {
-
+            Log.i("KSG", "Veio pra cá é? Porque!?" + e.getMessage());
         }
         Bundle b = new Bundle();
         b.putInt("tamanho", 0);

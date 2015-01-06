@@ -20,7 +20,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
+/*
  * Created by Marcos on 19/12/2014.
  */
 public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
@@ -70,7 +70,7 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
             dialog.dismiss();
             Toast.makeText(c,"Foi :D com "+IngredienteDAO.sizeBD(),Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
-
+            Log.i("KSG","Preocupante! "+e.getMessage());
         }
 
     }

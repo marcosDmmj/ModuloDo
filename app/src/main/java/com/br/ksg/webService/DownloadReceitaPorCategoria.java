@@ -19,6 +19,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 
 public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>{
     ProgressDialog dialog;
@@ -57,7 +58,7 @@ public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>
                 return getReceitasBasicas(json);
             }
 		} catch (Exception e) {
-
+            Log.i("KSG", "Veio pra cá é? "+e.getMessage());
         }
         Bundle b = new Bundle();
         b.putInt("tamanho", 0);
@@ -76,7 +77,7 @@ public class DownloadReceitaPorCategoria extends AsyncTask<String, Void, Bundle>
             
             c.startActivity(receitas);
         } catch (Exception e) {
-
+            Log.i("KSG", "Veio pra cá é? "+e.getMessage());
         }
 		
 	}

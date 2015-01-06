@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.br.ksg.classesBasicas.Receita;
-import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
 import com.br.ksg.webService.DownloadImagemReceita;
@@ -14,9 +13,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -162,13 +159,12 @@ public class ReceitaActivity extends Activity {
 
                 compartilhar = (ImageView) findViewById(R.id.btn_compartilhar);
                 compartilhar.setOnClickListener(new View.OnClickListener() {
-                    private Uri fileUri;
+                    // private Uri fileUri;
 
                     @Override
                     public void onClick(View v) {
 
                         UsuarioDAO u = new UsuarioDAO(getBaseContext());
-                        ArrayList<String> aux = new ArrayList<String>();
 
                         ArrayList<String> id_ingredientes = new ArrayList<String>();
                         for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
@@ -178,15 +174,8 @@ public class ReceitaActivity extends Activity {
                         u.update_experiencia(receita.getString("tempo"));
                         u.update_pontos(id_ingredientes,controleEstrela);
 
-                        //u.update_pontos(ing, controleEstrela);
-                        //aux = u.mostra_pontos();
-
                         for(int i=0; i < ing.size(); i++)
                             Toast.makeText(getBaseContext(), ing.get(i), Toast.LENGTH_SHORT).show();
-
-                        //Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        //i.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-                        //startActivityForResult(i,CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
                     }
                 });
             } catch (Exception e) {
@@ -319,15 +308,8 @@ public class ReceitaActivity extends Activity {
         }
     }
 
-    public void remove(){
-        Toast toast = Toast.makeText(this, "Receita removida dos Favoritos!", Toast.LENGTH_LONG);
-        //item.setIcon(R.drawable.favorito);
-        toast.show();
-    }
-
     public void add(){
         Toast toast = Toast.makeText(this, "Receita adicionada aos Favoritos!", Toast.LENGTH_LONG);
-        //item.setIcon(R.drawable.favorito_selected);
         toast.show();
     }
 }

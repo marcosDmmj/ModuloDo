@@ -66,7 +66,7 @@ public class ListCategoria extends Activity {
 
     @Override
     protected void onResume() {
-        int j = 0;
+        int j;
         super.onResume();
         for (j = 0; j < itemList.size(); j++) {
             try {
