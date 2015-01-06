@@ -1,7 +1,6 @@
 package com.br.ksg.telas;
 
 import com.br.ksg.adapters.OrganizedAdapter;
-import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
 import android.app.ActionBar;
@@ -9,17 +8,13 @@ import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
