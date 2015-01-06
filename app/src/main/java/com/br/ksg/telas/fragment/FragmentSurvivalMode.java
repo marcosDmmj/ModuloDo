@@ -124,6 +124,7 @@ public class FragmentSurvivalMode extends Fragment {
 				if(!listaElementos.isEmpty()){
                     if (verificaConexao()) {
                         try {
+
                             new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id=10");
                         } catch (Exception e) {
                             usarToast("Erro: "+e.getMessage());

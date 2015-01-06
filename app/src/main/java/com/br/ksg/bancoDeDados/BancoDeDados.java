@@ -10,12 +10,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BancoDeDados extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 7;
+    public static final int DATABASE_VERSION = 10;
     public static final String DATABASE_NAME = "KSG";
 
     private static final String SQL_CREATE_TABLE_INGREDIENTES = "CREATE TABLE Ingredientes(" +
             "id integer," +
             "INGREDIENTE TEXT)";
+
     private static final String SQL_CREATE_TABLE_RECEITAS = "CREATE TABLE Receitas(" +
             "id_receita integer," +
             "nome TEXT, " +
@@ -54,11 +55,21 @@ public class BancoDeDados extends SQLiteOpenHelper {
             "pratosmedianos TEXT, " +
             "pratosdificeis TEXT)";
 
+    private static final String SQL_CREATE_TABLE_PONTUACAO = "CREATE TABLE Pontuacao(" +
+            "id_pratos TEXT, " +
+            "id_ingredientes TEXT, " +
+            "pontos TEXT)";
+
+    private static final String SQL_CREATE_TABLE_INGREDIENTES2 = "CREATE TABLE Ingredientes2(" +
+            "id TEXT, " +
+            "nome TEXT)";
+
     private static final String SQL_DELETE_INGREDIENTES ="DROP TABLE IF EXISTS Ingredientes" ;
     private static final String SQL_DELETE_RECEITAS ="DROP TABLE IF EXISTS Receitas" ;
     private static final String SQL_DELETE_TABLE_RECEITA_INGREDIENTES ="DROP TABLE IF EXISTS Receita_Ingrediente" ;
     private static final String SQL_DELETE_TABLE_USUARIOINFO ="DROP TABLE IF EXISTS UsuarioInfo" ;
-    private static final String SQL_DELETE_TABLE_SCORE ="DROP TABLE IF EXISTS Score" ;
+    private static final String SQL_DELETE_PONTUACAO ="DROP TABLE IF EXISTS Pontuacao" ;
+    private static final String SQL_DELETE_INGREDIENTES2 ="DROP TABLE IF EXISTS Ingredientes2" ;
 
     public BancoDeDados(Context context) {
         super(context, DATABASE_NAME, null,DATABASE_VERSION );
@@ -76,6 +87,7 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_TABLE_USUARIOINFO);
         db.execSQL("INSERT INTO UsuarioInfo VAlUES('1','nao','nao','nao','nao','nao','nao','nao','nao','nao','nao','nao','Iniciante','Nenhuma','Nenhuma','0','0','0','0','0','0')");
 
+        db.execSQL(SQL_CREATE_TABLE_PONTUACAO);
     }
 
     @Override
@@ -84,7 +96,8 @@ public class BancoDeDados extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_RECEITAS);
         db.execSQL(SQL_DELETE_TABLE_RECEITA_INGREDIENTES);
         db.execSQL(SQL_DELETE_TABLE_USUARIOINFO);
-        db.execSQL(SQL_DELETE_TABLE_SCORE);
+        db.execSQL(SQL_DELETE_PONTUACAO);
+        db.execSQL(SQL_DELETE_INGREDIENTES2);
         onCreate(db);
     }
 

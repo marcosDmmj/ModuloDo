@@ -92,8 +92,96 @@ public class UsuarioDAO {
 
     }
 
+    public boolean receita_existe(int id){
+        String sqlQuery = "SELECT * FROM Pontuacao WHERE id_pratos = '"+id+"'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        if(cursor.moveToNext()) {
+            cursor.close();
+            return true;
+        }
+        else {
+            cursor.close();
+            return false;
+        }
+    }
+
+    public void addReceita(int id_receita,List<String> id_ingredientes){
+
+        for(int i=0; i < id_ingredientes.size(); i++) {
+            String sqlQuery2 = "SELECT pontos FROM Pontuacao WHERE id_ingredientes ='"+id_ingredientes.get(i)+"'";
+            Cursor cursor2 = bancoDeDados.rawQuery(sqlQuery2, null);
+
+            if (cursor2.moveToNext()) {
+                String sqlQuery1 = "INSERT INTO Pontuacao VALUE('" + id_receita + "', '"+id_ingredientes.get(i)+"', '"+Integer.parseInt(cursor2.getString(0))+"')";
+                Cursor cursor = bancoDeDados.rawQuery(sqlQuery1, null);
+                cursor.close();
+            } else {
+                String sqlQuery3 = "INSERT INTO Pontuacao VALUE('" + id_receita + "', '"+id_ingredientes.get(i)+"', '0')";
+                Cursor cursor = bancoDeDados.rawQuery(sqlQuery3, null);
+                cursor.close();
+            }
+            cursor2.close();
+        }
+    }
 
 
+    public void update_experiencia(String horas){
+        ArrayList<String> info = new ArrayList<String>();
+        String horastotal = "";
+        String pratostotal = "";
+        String dificuldadePrato = "";
 
+        // TODO: Dificuldades dos pratos
+        // if()
+
+        String sqlQuery = "SELECT horastotal, pratostotal, pratosfaceis, pratosmedianos, pratosdificeis FROM UsuarioInfo WHERE id='1'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        if(cursor.moveToNext()){
+            info.add(cursor.getString(0));
+            info.add(cursor.getString(1));
+            info.add(cursor.getString(2));
+            info.add(cursor.getString(3));
+            info.add(cursor.getString(4));
+        }
+
+        horastotal = Integer.toString(Integer.parseInt(info.get(0)) + Integer.parseInt(horas));
+        pratostotal = Integer.toString(Integer.parseInt(info.get(1)) + 1);
+
+        cursor.close();
+
+        try{
+            String comando = "UPDATE UsuarioInfo SET horastotal='"+horastotal+"', pratostotal='"+pratostotal+"' WHERE id='1'";
+            bancoDeDados.execSQL(comando);
+        }
+        catch(SQLException e){}
+    }
+
+    public void update_pontos(ArrayList<String> lista, int ponto){
+
+        int aux = 0;
+        for(int i=0; i < lista.size(); i++){
+            String comando1 = "SELECT pontos FROM Pontuacao WHERE id_ingredientes ='"+lista.get(i)+"'";
+            Cursor cursor = bancoDeDados.rawQuery(comando1, null);
+
+            if(cursor.moveToNext()){
+                aux = Integer.parseInt(cursor.getString(0)) + ponto;
+                String comando2 = "UPDATE Pontuacao SET pontos='"+ aux +"' WHERE id_ingredientes='"+lista.get(i)+"'";
+            }
+        }
+    }
+
+    public int contagem_pontos(int id_receita){
+        String sqlQuery = "SELECT pontos FROM Pontuacao id_pratos = '"+id_receita+"'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        int result = 0;
+        while(cursor.moveToNext()){
+            result+= Integer.parseInt(cursor.getString(0));
+        }
+
+        return result;
+    }
 
 }
