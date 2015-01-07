@@ -226,20 +226,21 @@ public final class R {
         public static final int modo_de_preparo=0x7f050006;
         public static final int n_rec=0x7f050007;
         public static final int nao=0x7f050008;
-        public static final int perfil=0x7f050009;
-        public static final int pesquisar=0x7f05000a;
-        public static final int porcoes=0x7f05000b;
-        public static final int refeicoes=0x7f05000c;
-        public static final int tempo_de_preparo=0x7f05000d;
-        public static final int title_activity_activiity_perfil=0x7f05000e;
-        public static final int title_activity_final=0x7f05000f;
-        public static final int title_activity_list_t=0x7f050010;
-        public static final int title_activity_perfil_edicao=0x7f050011;
-        public static final int title_activity_perfil_edit=0x7f050012;
-        public static final int title_activity_perfil_user=0x7f050013;
-        public static final int title_activity_pos_survival=0x7f050014;
-        public static final int ver_receita=0x7f050015;
-        public static final int verifica_conexao=0x7f050016;
+        public static final int ok=0x7f050009;
+        public static final int perfil=0x7f05000a;
+        public static final int pesquisar=0x7f05000b;
+        public static final int porcoes=0x7f05000c;
+        public static final int refeicoes=0x7f05000d;
+        public static final int tempo_de_preparo=0x7f05000e;
+        public static final int title_activity_activiity_perfil=0x7f05000f;
+        public static final int title_activity_final=0x7f050010;
+        public static final int title_activity_list_t=0x7f050011;
+        public static final int title_activity_perfil_edicao=0x7f050012;
+        public static final int title_activity_perfil_edit=0x7f050013;
+        public static final int title_activity_perfil_user=0x7f050014;
+        public static final int title_activity_pos_survival=0x7f050015;
+        public static final int ver_receita=0x7f050016;
+        public static final int verifica_conexao=0x7f050017;
     }
     public static final class style {
         public static final int ActionBar_Solid_=0x7f060000;

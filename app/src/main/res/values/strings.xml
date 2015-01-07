@@ -24,5 +24,6 @@
     <string name="cafe">Café</string>
     <string name="refeicoes">Refeições</string>
     <string name="title_activity_perfil_edit">PerfilEdit</string>
+    <string name="ok">Ok</string>
 
 </resources>

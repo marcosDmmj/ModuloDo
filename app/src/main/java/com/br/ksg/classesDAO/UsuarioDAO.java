@@ -132,9 +132,6 @@ public class UsuarioDAO {
         String pratostotal = "";
         String dificuldadePrato = "";
 
-        // TODO: Dificuldades dos pratos
-        // if()
-
         String sqlQuery = "SELECT horastotal, pratostotal, pratosfaceis, pratosmedianos, pratosdificeis FROM UsuarioInfo WHERE id='1'";
         Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
 
@@ -151,11 +148,35 @@ public class UsuarioDAO {
 
         cursor.close();
 
-        try{
-            String comando = "UPDATE UsuarioInfo SET horastotal='"+horastotal+"', pratostotal='"+pratostotal+"' WHERE id='1'";
-            bancoDeDados.execSQL(comando);
+        if(Integer.parseInt(horas) <= 30){
+            dificuldadePrato = Integer.toString(Integer.parseInt(info.get(2)) + 1);
+            try{
+                String comando = "UPDATE UsuarioInfo SET horastotal='"+horastotal+"', pratostotal='"+pratostotal+"', pratosfaceis='"+dificuldadePrato+"' WHERE id='1'";
+                bancoDeDados.execSQL(comando);
+            }
+            catch(SQLException e){}
         }
-        catch(SQLException e){}
+        if(Integer.parseInt(horas) > 30 && Integer.parseInt(horas) <= 90)  {
+            dificuldadePrato = Integer.toString(Integer.parseInt(info.get(3)) + 1);
+            try{
+                String comando = "UPDATE UsuarioInfo SET horastotal='"+horastotal+"', pratostotal='"+pratostotal+"', pratosmedianos='"+dificuldadePrato+"' WHERE id='1'";
+                bancoDeDados.execSQL(comando);
+            }
+            catch(SQLException e){}
+        }
+        if(Integer.parseInt(horas) > 90) {
+            dificuldadePrato = Integer.toString(Integer.parseInt(info.get(4)) + 1);
+            try{
+                String comando = "UPDATE UsuarioInfo SET horastotal='"+horastotal+"', pratostotal='"+pratostotal+"', pratosdificeis='"+dificuldadePrato+"' WHERE id='1'";
+                bancoDeDados.execSQL(comando);
+            }
+            catch(SQLException e){}
+        }
+
+
+
+
+
     }
 
     public void update_pontos(ArrayList<String> lista, int ponto){
@@ -183,5 +204,28 @@ public class UsuarioDAO {
 
         return result;
     }
+
+    public String[] getRestricoes (){
+        String[] info = {"" ,"", "", "", "", "", "", "", "", "", ""};
+
+        String sqlQuery = "SELECT * From UsuarioInfo WHERE id='1'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        if(cursor.moveToNext()){
+            info[0] = cursor.getString(1);
+            info[1] = cursor.getString(2);
+            info[2] = cursor.getString(3);
+            info[3] = cursor.getString(4);
+            info[7] = cursor.getString(5);
+            info[4] = cursor.getString(6);
+            info[8] = cursor.getString(7);
+            info[5] = cursor.getString(8);
+            info[9] = cursor.getString(9);
+            info[6] = cursor.getString(10);
+            info[10] = cursor.getString(11);
+        }
+
+        return info;
+   }
 
 }

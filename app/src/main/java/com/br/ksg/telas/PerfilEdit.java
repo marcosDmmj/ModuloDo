@@ -16,6 +16,22 @@ public class PerfilEdit extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_edit);
+
+        UsuarioDAO u = new UsuarioDAO(this);
+        String[] aux = u.getRestricoes();
+
+        if(aux[0].equals("sim")) ((Switch)findViewById(R.id.switchVegetariano)).setChecked(true);
+        if(aux[1].equals("sim")) ((Switch)findViewById(R.id.switchDiabetico)).setChecked(true);
+        if(aux[2].equals("sim")) ((Switch)findViewById(R.id.switchHipertenso)).setChecked(true);
+        if(aux[3].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxFrutos)).setChecked(true);
+        if(aux[4].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxLeite)).setChecked(true);
+        if(aux[5].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxOvos)).setChecked(true);
+        if(aux[6].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxSoja)).setChecked(true);
+        if(aux[7].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxAmendoim)).setChecked(true);
+        if(aux[8].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxNozes)).setChecked(true);
+        if(aux[9].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxPeixes)).setChecked(true);
+        if(aux[10].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxTrigo)).setChecked(true);
+
     }
 
     public void clicarSalvar(View view){
@@ -73,8 +89,6 @@ public class PerfilEdit extends Activity {
         if(str13.equals("")) str13 = "Nenhuma";
 
         u.setUsuarioCaracteristicas(str1, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, str12, str13);
-
-        Toast.makeText(this, str1+str2+str3+str4+str5+str6+str7+str8+str9+str10+str11 ,Toast.LENGTH_SHORT).show();
 
         finish();
     }
