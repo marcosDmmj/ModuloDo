@@ -2,25 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/home/metal/Android e Java/adt-bundle-linux-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="/home/metal/AndroidStudioProjects/KSG/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-04df584c545f115aac6b0ff4c4163a9f86115fce.jar" />
-    </item>
-    <item
-        jar="/home/metal/AndroidStudioProjects/KSG/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jar="E:\Projetos Android\KSG\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="/home/metal/AndroidStudioProjects/KSG/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-6f2cc9abb664f5357ecda0ad551942ceb7c2bf2f.jar" />
+        <dex dex="E:\Projetos Android\KSG\KSG\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-fcff3269f3a45f22d57680778b79a3a1f16012c7.jar" />
     </item>
     <item
-        jar="/home/metal/AndroidStudioProjects/KSG/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jar="E:\Projetos Android\KSG\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="/home/metal/AndroidStudioProjects/KSG/app/build/intermediates/pre-dexed/debug/classes-51bd85d211fb2edf7b19371de8292c1af082ea54.jar" />
+        <dex dex="E:\Projetos Android\KSG\KSG\app\build\intermediates\pre-dexed\debug\classes-ecff95fb9fcbf3b8554ef8d41c151842fee90438.jar" />
+    </item>
+    <item
+        jar="C:\Users\Marcos Denis\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="E:\Projetos Android\KSG\KSG\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-2d286cbbc2c2e3ef7c3ddd95cd4c624338daa7f3.jar" />
     </item>
 
 </items>

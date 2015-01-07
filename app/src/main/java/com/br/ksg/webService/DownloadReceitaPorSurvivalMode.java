@@ -69,7 +69,6 @@ public class DownloadReceitaPorSurvivalMode extends AsyncTask<String, Void, Bund
 		super.onPostExecute(result);
 		try {
             dialog.dismiss();
-            // Toast.makeText(c,"",Toast.LENGTH_SHORT).show();
             Intent receitas = new Intent(c,ListSurvivalMode.class);
 
             receitas.putExtra("lista", result);
