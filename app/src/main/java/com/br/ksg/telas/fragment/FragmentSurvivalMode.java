@@ -67,7 +67,7 @@ public class FragmentSurvivalMode extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-                if ((listaElementos.size() < 5)) {
+                if ((listaElementos.size() < 3)) {
 			        if ((!(autoComplete.getText().toString().equals("")))&&(listaAutoComplete.contains(autoComplete.getText().toString().toLowerCase()))) {
                         if (listaElementos.contains(autoComplete.getText().toString().toLowerCase())){
                             usarToast("Já foi add meu fio!");
@@ -114,7 +114,7 @@ public class FragmentSurvivalMode extends Fragment {
 			        }
                     }
                 } else {
-                    usarToast("Limite máximo de 5 ingredientes!");
+                    usarToast("Limite máximo de 3 ingredientes!");
                 }
 			}
 		});												
@@ -138,7 +138,23 @@ public class FragmentSurvivalMode extends Fragment {
                                 break;
                             case 2:
                                 try {
-                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id=10");
+                                    IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
+                                    Ingrediente ing1 = ingredienteDAO.getIngrediente(listaElementos.get(0));
+                                    Ingrediente ing2 = ingredienteDAO.getIngrediente(listaElementos.get(1));
+
+                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng2.php?id1="+ing1.getId_ingrediente()+"&id2="+ing2.getId_ingrediente());
+                                } catch (Exception e) {
+                                    usarToast("Erro: "+e.getMessage());
+                                }
+                                break;
+                            case 3:
+                                try {
+                                    IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
+                                    Ingrediente ing1 = ingredienteDAO.getIngrediente(listaElementos.get(0));
+                                    Ingrediente ing2 = ingredienteDAO.getIngrediente(listaElementos.get(1));
+                                    Ingrediente ing3 = ingredienteDAO.getIngrediente(listaElementos.get(2));
+
+                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng2.php?id1="+ing1.getId_ingrediente()+"&id2="+ing2.getId_ingrediente()+"&id3="+ing3.getId_ingrediente());
                                 } catch (Exception e) {
                                     usarToast("Erro: "+e.getMessage());
                                 }
