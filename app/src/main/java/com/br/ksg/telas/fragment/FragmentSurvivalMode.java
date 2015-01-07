@@ -154,7 +154,7 @@ public class FragmentSurvivalMode extends Fragment {
                                     Ingrediente ing2 = ingredienteDAO.getIngrediente(listaElementos.get(1));
                                     Ingrediente ing3 = ingredienteDAO.getIngrediente(listaElementos.get(2));
 
-                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng2.php?id1="+ing1.getId_ingrediente()+"&id2="+ing2.getId_ingrediente()+"&id3="+ing3.getId_ingrediente());
+                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng3.php?id1="+ing1.getId_ingrediente()+"&id2="+ing2.getId_ingrediente()+"&id3="+ing3.getId_ingrediente());
                                 } catch (Exception e) {
                                     usarToast("Erro: "+e.getMessage());
                                 }
