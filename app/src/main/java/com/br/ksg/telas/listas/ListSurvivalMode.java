@@ -92,6 +92,7 @@ public class ListSurvivalMode extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (itemList != null)
         for (int j = 0; j < itemList.size(); j++) {
             try {
                 imagens.get(j).cancel(true);
