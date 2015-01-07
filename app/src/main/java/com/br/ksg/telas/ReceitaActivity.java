@@ -517,6 +517,8 @@ public class ReceitaActivity extends Activity {
                     if (alergias[6] == 1) { msgAlergias = msgAlergias + "- Peixes \n"; }
                     if (alergias[7] == 1) { msgAlergias = msgAlergias + "- Trigo "; }
 
+                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
+
                     AlertDialog.Builder bld = new AlertDialog.Builder(this);
 
                     if ((restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) && (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1)) {
@@ -528,16 +530,17 @@ public class ReceitaActivity extends Activity {
                     }
 
 
-                    bld.setTitle("Aviso");
 
-                    bld.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                        }
-                    });
+                        bld.setTitle("Aviso");
 
-                    bld.show();
+                        bld.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
 
+                        bld.show();
+                    }
             }
 
                 compartilhar.setOnClickListener(new View.OnClickListener() {
