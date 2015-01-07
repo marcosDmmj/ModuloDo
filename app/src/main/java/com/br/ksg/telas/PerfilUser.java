@@ -212,6 +212,39 @@ public class PerfilUser extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        TextView restricao = (TextView)findViewById(R.id.textViewModeracao);
+        TextView alergia = (TextView)findViewById(R.id.textViewAlergias);
+        TextView nivel = (TextView)findViewById(R.id.textViewNivel);
+        TextView pontuacaoAtual = (TextView)findViewById(R.id.textViewPontuacaoAtual);
+        TextView horasTotal = (TextView)findViewById(R.id.textViewHoras);
+        TextView pontuacaoLimite = (TextView)findViewById(R.id.textViewMaiorPontuacao);
+        ImageView progresso = (ImageView)findViewById(R.id.imageViewProgress);
+        TextView pratosTotal = (TextView)findViewById(R.id.textViewTotalPratos);
+        TextView pratosFaceis = (TextView)findViewById(R.id.textViewPratoFacil);
+        TextView pratosMedianos = (TextView)findViewById(R.id.textViewPratoMedio);
+        TextView pratosDificeis = (TextView)findViewById(R.id.textViewPratoDificil);
+
+        UsuarioDAO u = new UsuarioDAO(this);
+        ArrayList<String> info;
+        float aux;
+
+        info = u.getInfoUsuario();
+
+        restricao.setText(info.get(0));
+        alergia.setText(info.get(1));
+        horasTotal.setText(info.get(2));
+        pratosTotal.setText(info.get(3));
+        pratosFaceis.setText(info.get(4));
+        pratosMedianos.setText(info.get(5));
+        pratosDificeis.setText(info.get(6));
+        pontuacaoAtual.setText(info.get(7));
+        nivel.setText(info.get(8));
+
+    }
+
     public void clicarEditar(){
         usarToast("entrou no clicarEditar()");
         Intent i = new Intent(this,PerfilEdit.class);

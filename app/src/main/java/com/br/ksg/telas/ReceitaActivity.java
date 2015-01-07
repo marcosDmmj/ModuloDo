@@ -594,6 +594,7 @@ public class ReceitaActivity extends Activity {
         ReceitasDAO receitaPesquisa = new ReceitasDAO(this.getBaseContext());
         verificaBD = receitaPesquisa.buscaReceita(receita.getString("nome")) ;
 
+
         if(verificaBD){
             item.setIcon(R.drawable.favorito_selected);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
