@@ -68,16 +68,19 @@ public class FragmentSurvivalMode extends Fragment {
 			@Override
 			public void onClick(View v) {
                 if ((listaElementos.size() < 5)) {
-			    if ((!(autoComplete.getText().toString().equals("")))&&(!listaElementos.contains(autoComplete.getText().toString().toLowerCase()))) {
-                IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
-                Ingrediente ingrediente = ingredienteDAO.getIngrediente(autoComplete.getText().toString().toLowerCase());
+			        if ((!(autoComplete.getText().toString().equals("")))&&(listaAutoComplete.contains(autoComplete.getText().toString().toLowerCase()))) {
+                        if (listaElementos.contains(autoComplete.getText().toString().toLowerCase())){
+                            usarToast("Já foi add meu fio!");
+                        } else {
+                        IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
+                        Ingrediente ingrediente = ingredienteDAO.getIngrediente(autoComplete.getText().toString().toLowerCase());
 
-                if (ingrediente != null) {
-                    listaElementos.add(autoComplete.getText().toString());
-                    adapterListView = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listaElementos);
-                    listView = (ListView) getActivity().findViewById(R.id.listView1);
-                    listView.setAdapter(adapterListView);
-                    listView.setOnItemClickListener(new OnItemClickListener() {
+                        if (ingrediente != null) {
+                            listaElementos.add(autoComplete.getText().toString().toLowerCase());
+                            adapterListView = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listaElementos);
+                            listView = (ListView) getActivity().findViewById(R.id.listView1);
+                            listView.setAdapter(adapterListView);
+                            listView.setOnItemClickListener(new OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             pos = position;
@@ -102,13 +105,14 @@ public class FragmentSurvivalMode extends Fragment {
                                 }
                             });
                             bld.show();
-                        }
-                    });
-                    autoComplete.setText("");
-                } else {
-                    usarToast("Ingrediente não cadastrado!");
-                }
-			    }
+                            }
+                        });
+                        autoComplete.setText("");
+                    } else {
+                        usarToast("Ingrediente não cadastrado!");
+                    }
+			        }
+                    }
                 } else {
                     usarToast("Limite máximo de 5 ingredientes!");
                 }
@@ -121,11 +125,24 @@ public class FragmentSurvivalMode extends Fragment {
 			public void onClick(View v) {
 				if(!listaElementos.isEmpty()){
                     if (verificaConexao()) {
-                        try {
+                        switch (listaElementos.size()) {
+                            case 1:
+                                try {
+                                    IngredienteDAO ingredienteDAO = new IngredienteDAO(getActivity());
+                                    Ingrediente ing = ingredienteDAO.getIngrediente(listaElementos.get(0));
 
-                            new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id=10");
-                        } catch (Exception e) {
-                            usarToast("Erro: "+e.getMessage());
+                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id="+ing.getId_ingrediente());
+                                } catch (Exception e) {
+                                    usarToast("Erro: "+e.getMessage());
+                                }
+                                break;
+                            case 2:
+                                try {
+                                    new DownloadReceitaPorSurvivalMode(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRecByIng.php?id=10");
+                                } catch (Exception e) {
+                                    usarToast("Erro: "+e.getMessage());
+                                }
+                                break;
                         }
                     } else {
                         usarToast(getString(R.string.verifica_conexao));
@@ -150,19 +167,8 @@ public class FragmentSurvivalMode extends Fragment {
         if (connectivity != null) {
             NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
 
-            if (netInfo == null) {
-                return false;
-            }
+            return (netInfo != null) && netInfo.isConnected();
 
-            int netType = netInfo.getType();
-
-            if (netType == ConnectivityManager.TYPE_WIFI
-                    || netType == ConnectivityManager.TYPE_MOBILE) {
-                return netInfo.isConnected();
-
-            } else {
-                return false;
-            }
         } else {
             return false;
         }

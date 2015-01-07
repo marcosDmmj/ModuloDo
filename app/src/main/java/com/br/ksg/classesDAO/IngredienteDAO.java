@@ -74,6 +74,24 @@ public class IngredienteDAO {
 
     }
 
+    public Ingrediente getIngrediente(int id){
+        Ingrediente ingrediente = new Ingrediente();
+        try{
+            String cmd = "SELECT * FROM Ingredientes WHERE id ='"+id+"'";
+            Cursor cursor = bancoDeDados.rawQuery(cmd,null);
+            if (cursor.moveToNext()){
+                ingrediente.setId_ingrediente(cursor.getInt(0));
+                ingrediente.setNome(cursor.getString(1));
+            }
+            cursor.close();
+            return ingrediente;
+        }
+        catch(SQLException e){
+            Log.i("APPBD", e.getMessage());
+            return null;
+        }
+    }
+
     public static int sizeBD(){
         try{
             String cmd = "SELECT INGREDIENTE FROM Ingredientes";
