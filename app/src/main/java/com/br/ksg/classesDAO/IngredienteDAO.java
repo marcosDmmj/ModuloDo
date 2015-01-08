@@ -97,16 +97,16 @@ public class IngredienteDAO {
             String cmd = "SELECT INGREDIENTE FROM Ingredientes";
             Cursor cursor = bancoDeDados.rawQuery(cmd,null);
             int result;
-            if (cursor != null)
+            if (cursor.moveToNext())
                  result = cursor.getCount();
             else
-                return 0;
+                result = 0;
             cursor.close();
             return result;
         }
         catch(SQLException e){
             Log.i("APPBD bla bla bla", e.getMessage());
-            return -1;
         }
+        return -1;
     }
 }

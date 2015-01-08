@@ -1,6 +1,8 @@
 package com.br.ksg.telas;
 
 import com.br.ksg.adapters.OrganizedAdapter;
+import com.br.ksg.webService.DownloadImagemReceita;
+import com.br.ksg.webService.DownloadImagemReceitaSug;
 import com.example.exempleswipetab.R;
 
 import android.app.ActionBar;
@@ -15,6 +17,9 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.Date;
 
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 
@@ -55,7 +60,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		actionBar.addTab(tab2);
 		actionBar.addTab(tab3);
 		actionBar.addTab(tab4);
-	}
+    }
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {

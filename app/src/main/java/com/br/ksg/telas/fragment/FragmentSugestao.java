@@ -1,9 +1,11 @@
 package com.br.ksg.telas.fragment;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.webService.DownloadAtualizaIng;
+import com.br.ksg.webService.DownloadImagemReceitaSug;
 import com.example.exempleswipetab.R;
 
 import android.os.Bundle;
@@ -44,13 +46,20 @@ public class FragmentSugestao extends Fragment {
 			txtSaudacao.setText("Boa Tarde!");
 		else
 			txtSaudacao.setText("Boa Noite!");
+
+        try {
+            Date data = new Date();
+            new DownloadImagemReceitaSug(getActivity(), getActivity()).execute("http://ksmapi.besaba.com/sql/sugestaoRec.php?id="+data.getHours());
+        } catch (Exception ex) {
+            Toast.makeText(getActivity(),"Deu treta! "+ex.getMessage(),Toast.LENGTH_LONG).show();
+        }
 		
 		txtDica.setText("Que tal experimentar a seguinte receita...");
 
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                usarToast("Size = "+IngredienteDAO.sizeBD());
+                // usarToast("Size = "+IngredienteDAO.sizeBD());
                 try {
                     new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
                 } catch (Exception e){

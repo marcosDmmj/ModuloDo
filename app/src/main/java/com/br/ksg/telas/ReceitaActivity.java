@@ -92,7 +92,6 @@ public class ReceitaActivity extends Activity {
                 txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
                 try {
-                    // if (receita.get("img") == null)
                     new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
                 } catch (Exception e) {
                     usarToast("Deu erro! " + e.getMessage());
