@@ -1,12 +1,13 @@
 package com.br.ksg.telas;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
-import com.br.ksg.telas.fragment.FragmentSugestao;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
@@ -14,7 +15,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -69,7 +75,8 @@ public class ReceitaActivity extends Activity {
                 // Verificar se a receita já tem pontuacao
                 final UsuarioDAO usuarioDAO = new UsuarioDAO(this);
 
-                if (usuarioDAO.receita_existe(id_receita)) {
+                if (!usuarioDAO.receita_existe(id_receita)) {
+                    Log.i("KSG","Vai vim aqui?");
                     List<String> id_ingredientes = new ArrayList<String>();
                     for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++) {
                         id_ingredientes.add(j, receita.getString("id_ing" + j));
@@ -77,6 +84,16 @@ public class ReceitaActivity extends Activity {
 
                     usuarioDAO.addReceita(id_receita, id_ingredientes);
                 }
+
+                // List<String> id_ingredientes = new ArrayList<String>();
+                ReceitasDAO receitasDAO = new ReceitasDAO(this);
+
+                List<String> tes = receitasDAO.contagem_pontos(id_receita);
+                Log.i("KSG","id = "+id_receita+ " size = " +tes.size());
+                for (int j = 0; j < tes.size(); j++) {
+                    Log.i("KSG", tes.get(j));
+                }
+
 
                 txt_ingredientes = (TextView) findViewById(R.id.txt_ingredientes_receita);
                 String ingredientes = "";
@@ -565,11 +582,12 @@ public class ReceitaActivity extends Activity {
                             id_ingredientes.add(j, receita.getString("id_ing"+j));
                         }
 
+                        Log.e("KSG","ControleEstrela = "+controleEstrela);
                         u.update_experiencia(receita.getString("tempo"));
                         u.update_pontos(id_ingredientes, controleEstrela);
 
                         //TODO: SEM QUERER DELETAMOS OS COMANDOS PRA TIRAR FOTO D:
-                        usarToast("Clicou em foto :)");
+                        usarToast("Clicou em foto :) E supostamente up os pontos!");
 
                     }
                 });
@@ -577,7 +595,6 @@ public class ReceitaActivity extends Activity {
                 usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
                 finish();
             }
-
         }
     }
 
@@ -702,8 +719,10 @@ public class ReceitaActivity extends Activity {
                 compartilhar.setImageURI(data.getData());
             } else if (resultCode == RESULT_CANCELED) {
                 // User cancelled the image capture
+                usarToast("bla Cancelou");
             } else {
                 // Image capture failed, advise user
+                usarToast("bla falhou");
             }
         }
     }
