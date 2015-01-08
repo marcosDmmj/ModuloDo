@@ -24,6 +24,7 @@ import java.io.InputStream;
 public class DownloadImagemReceitaSug extends AsyncTask<String, Void, Drawable> {
     Context c;
     Activity activity;
+    public static int id;
 
     public DownloadImagemReceitaSug(Context c, Activity activity) {
         this.c = c;
@@ -51,7 +52,9 @@ public class DownloadImagemReceitaSug extends AsyncTask<String, Void, Drawable> 
 
                 String url2 = toString(instream);
 
-                httpget = new HttpGet(url2);
+                id = Integer.parseInt(url2);
+
+                httpget = new HttpGet("http://ksmapi.besaba.com/imagens/"+url2+".jpg");
                 response = httpclient.execute(httpget);
                 entity = response.getEntity();
 

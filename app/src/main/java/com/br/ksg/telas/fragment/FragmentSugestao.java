@@ -6,10 +6,15 @@ import java.util.Date;
 import com.br.ksg.classesDAO.IngredienteDAO;
 import com.br.ksg.webService.DownloadAtualizaIng;
 import com.br.ksg.webService.DownloadImagemReceitaSug;
+import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,12 +64,20 @@ public class FragmentSugestao extends Fragment {
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // usarToast("Size = "+IngredienteDAO.sizeBD());
                 try {
                     new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
                 } catch (Exception e){
-                    usarToast("Deu um erro considerado! " + e.getMessage());
+                    Log.i("KSG","Deu um erro considerado! AtualizaIng" + e.getMessage());
                 }
+
+                if (verificaConexao())
+                    try {
+                        new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+DownloadImagemReceitaSug.id);
+                    } catch (Exception ex){
+                        Log.i("KSG","Deu um erro considerado! DImagemRecSug" + ex.getMessage());
+                    }
+                else
+                    usarToast(getString(R.string.verifica_conexao));
             }
         });
 	}
@@ -73,5 +86,15 @@ public class FragmentSugestao extends Fragment {
         Toast.makeText(getActivity(), texto, Toast.LENGTH_LONG).show();
     }
 
+    public boolean verificaConexao() {
+        ConnectivityManager connectivity = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo netInfo = connectivity.getActiveNetworkInfo();
+
+            return (netInfo != null) && (netInfo.isConnected());
+        } else {
+            return false;
+        }
+    }
 
 }

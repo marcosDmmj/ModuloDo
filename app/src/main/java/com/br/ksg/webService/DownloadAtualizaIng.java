@@ -68,7 +68,6 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
         super.onPostExecute(result);
         try {
             dialog.dismiss();
-            Toast.makeText(c,"Foi :D com "+IngredienteDAO.sizeBD(),Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             Log.i("KSG","Preocupante! "+e.getMessage());
         }
@@ -87,7 +86,6 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
 
     private void getReceitasBasicas(String json) {
         try {
-            Log.i("KSG","Veio man ><");
             JSONArray IngL = new JSONArray(json);
             JSONObject ing;
             for (int i = 0; i < IngL.length(); i++) {
