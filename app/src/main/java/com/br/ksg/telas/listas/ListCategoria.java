@@ -68,6 +68,7 @@ public class ListCategoria extends Activity {
     protected void onResume() {
         int j;
         super.onResume();
+        if (itemList != null)
         for (j = 0; j < itemList.size(); j++) {
             try {
                 if (create) {
@@ -91,6 +92,7 @@ public class ListCategoria extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (itemList != null)
         for (int j = 0; j < itemList.size(); j++) {
             try {
                 imagens.get(j).cancel(true);

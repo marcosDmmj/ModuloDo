@@ -49,6 +49,10 @@ public class ReceitaActivity extends Activity {
         receita = i.getBundleExtra("receita");
         verificaBD = false;
 
+        if (receita == null){
+            usarToast(getString(R.string.verifica_conexao)+"2");
+            finish();
+        }
         if (receita.getInt("tamanho") == 0){
             usarToast(getString(R.string.verifica_conexao));
             finish();
@@ -565,12 +569,12 @@ public class ReceitaActivity extends Activity {
                         u.update_pontos(id_ingredientes, controleEstrela);
 
                         //TODO: SEM QUERER DELETAMOS OS COMANDOS PRA TIRAR FOTO D:
+                        usarToast("Clicou em foto :)");
 
                     }
                 });
             } catch (Exception e) {
                 usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
-                e.printStackTrace();
                 finish();
             }
 
