@@ -6,6 +6,7 @@ import java.util.List;
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
+import com.br.ksg.telas.fragment.FragmentSugestao;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
 
@@ -36,6 +37,8 @@ public class ReceitaActivity extends Activity {
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     ArrayList<String> ing = new ArrayList<String>();
     int controleEstrela = 0;
+    int favorito = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -594,9 +597,9 @@ public class ReceitaActivity extends Activity {
         ReceitasDAO receitaPesquisa = new ReceitasDAO(this.getBaseContext());
         verificaBD = receitaPesquisa.buscaReceita(receita.getString("nome")) ;
 
-
         if(verificaBD){
-            item.setIcon(R.drawable.favorito_selected);
+
+            item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja remover dos Favoritos");
             bld.setTitle("Aviso");
@@ -608,7 +611,6 @@ public class ReceitaActivity extends Activity {
                     status = true ;
                     ReceitasDAO receitaDAO = new ReceitasDAO(getBaseContext());
                     usarToast(receitaDAO.removeReceitas(receita.getString("nome")));
-
                 }
             });
 
@@ -616,15 +618,17 @@ public class ReceitaActivity extends Activity {
 
             bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {}
+                public void onClick(DialogInterface dialog, int which) {
+                    favorito = 1;
+                }
             });
 
             bld.show();
 
         }
 
-
         if(!verificaBD){
+
             item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja adicionar  aos Favoritos?");
@@ -637,7 +641,6 @@ public class ReceitaActivity extends Activity {
                     //Adiciona
                     status = true ;
                     add();
-
 
                     Receita receitaFav = new Receita(
                             ""+id_receita,
@@ -672,7 +675,10 @@ public class ReceitaActivity extends Activity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {}
             });
+
             bld.show();
+
+
 
         }
 

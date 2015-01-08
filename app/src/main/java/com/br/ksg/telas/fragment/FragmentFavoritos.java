@@ -78,6 +78,7 @@ public class FragmentFavoritos extends Fragment {
 
             intent.putExtra("receita", b);
 
+
             startActivity(intent);
         }catch (Exception e) {
             Log.i("KSG", "Chore aqui ToT "+e.getMessage());
