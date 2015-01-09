@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
+import com.br.ksg.classesBasicas.DoisInt;
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.webService.DownloadImagemListaReceita2;
@@ -22,6 +23,7 @@ import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListSurvivalMode extends Activity {
@@ -49,7 +51,7 @@ public class ListSurvivalMode extends Activity {
             // TODO: Viny faça as pesquisas que quiser aqui nesse função filtros!
             itemList = filtros(itemList);
 
-            setTitle("Resultados para: Teste estáticos");
+            setTitle("Resultados");
 
             ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
             ListView lv = (ListView) findViewById(R.id.listdel);
@@ -105,15 +107,34 @@ public class ListSurvivalMode extends Activity {
     }
 
     public List<ReceitaBasica> filtros(List<ReceitaBasica> list){
-        // TODO: Os filtros do Survival Mode serão feitos aqui!
-        // TODO: Qqr coisa pode me chamar ;)
-
         ReceitasDAO receitasDAO = new ReceitasDAO(this);
+
+        List<DoisInt> minhaLista = new ArrayList<DoisInt>();
+
         for(int i = 0;i < list.size(); i++){
-            Log.e("KSG","Total de pontos da receita "+list.get(i).getNome()+" é: "+receitasDAO.contagem_pontos_Ing(Integer.parseInt(list.get(i).getId_receita())));
+            minhaLista.add(new DoisInt(i,receitasDAO.contagem_pontos_Ing(Integer.parseInt(list.get(i).getId_receita()))));
         }
 
-        return list;
+        Collections.sort(minhaLista);
+
+        List<ReceitaBasica> result = new ArrayList<ReceitaBasica>();
+
+        int tamanho = 30;
+        if (list.size() < 30)
+            tamanho = list.size();
+        for(int i = 0;i < tamanho; i++){
+            boolean ta = false;
+            for (int j = 0; j < result.size(); j++) {
+                if (list.get(minhaLista.get(i).getI()).getId_receita().equals(result.get(j).getId_receita())) {
+                    ta = true;
+                    break;
+                }
+            }
+            if(!ta)
+                result.add(list.get(minhaLista.get(i).getI()));
+        }
+
+        return result;
     }
 
     public void acessa_a_receita(String id){
