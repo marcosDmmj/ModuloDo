@@ -43,11 +43,12 @@ public class ReceitaActivity extends Activity {
     Bundle receita ;
     boolean verificaBD;
     int id_receita;
-    boolean status ;
+    boolean status;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     ArrayList<String> ing = new ArrayList<String>();
     int controleEstrela = 0;
     int favorito = 0;
+
 
 
     @Override
@@ -58,6 +59,7 @@ public class ReceitaActivity extends Activity {
         Intent i = getIntent();
         receita = i.getBundleExtra("receita");
         verificaBD = false;
+
 
         if (receita == null){
             usarToast(getString(R.string.verifica_conexao)+"2");
@@ -131,6 +133,7 @@ public class ReceitaActivity extends Activity {
                     //Carrega oque houve a imagem do SDcard
                     try
                     {
+
                         String myPathInSd = "/sdcard/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inSampleSize = 2;
@@ -146,6 +149,7 @@ public class ReceitaActivity extends Activity {
                     catch (Exception e)
                     {
                         imagemSd.setImageResource(R.drawable.no_image2);
+                        usarToast("Erro!");
                     }
 
                 }
@@ -662,6 +666,15 @@ public class ReceitaActivity extends Activity {
                     ReceitasDAO receitaDAO = new ReceitasDAO(getBaseContext());
                     usarToast(receitaDAO.removeReceitas(receita.getString("nome")));
                     item.setIcon(R.drawable.favorito);
+
+                    try {
+                        File file = new File(android.os.Environment.getExternalStorageDirectory() + "/KSG/image_" + receita.getString("nome") + ".jpg");
+                        if (file.exists()) {
+                            file.delete();
+                        }
+                    }catch (Exception e){
+                        Log.e("KSG","error ao remover imagem do SD");
+                    }
                 }
             });
 
@@ -724,7 +737,9 @@ public class ReceitaActivity extends Activity {
 
             bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {}
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
             });
 
             bld.show();
