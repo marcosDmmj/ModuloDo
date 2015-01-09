@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
+import com.br.ksg.adapters.CustomAdapterFavoritos;
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.br.ksg.classesDAO.ReceitasDAO;
@@ -26,13 +27,14 @@ public class FragmentFavoritos extends Fragment {
 
     ListView myListView;
     String nome;
+    int j;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.activity_main_categoria, container, false);
         final List<ReceitaBasica> item_l_f = listaCheia();
-        ArrayAdapter<ReceitaBasica> ad = new CustomAdapterCategoria(getActivity(), R.layout.item, item_l_f);
+        ArrayAdapter<ReceitaBasica> ad = new CustomAdapterFavoritos(getActivity(), R.layout.item, item_l_f);
         myListView = (ListView) rootView.findViewById(R.id.myListView);
         myListView.setAdapter(ad);
 

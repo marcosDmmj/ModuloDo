@@ -1,5 +1,7 @@
 package com.br.ksg.classesBasicas;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 
 public class ReceitaBasica {
@@ -67,4 +69,5 @@ public class ReceitaBasica {
     public void setImg(Drawable img) {
         this.img = img;
     }
+
 }

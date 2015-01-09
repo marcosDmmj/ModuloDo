@@ -33,7 +33,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/noimage"
+        android:src="@drawable/no_image"
 	    />
 	
 	<TextView

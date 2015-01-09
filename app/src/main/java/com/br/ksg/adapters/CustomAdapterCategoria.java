@@ -51,7 +51,7 @@ public class CustomAdapterCategoria extends ArrayAdapter<ReceitaBasica> {
         if (item.getImg() != null)
             image.setImageDrawable(item.getImg());
         else
-            image.setImageResource(R.drawable.noimage);
+            image.setImageResource(R.drawable.no_image);
        
         return convertView;
     }
