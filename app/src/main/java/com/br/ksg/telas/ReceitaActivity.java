@@ -68,6 +68,7 @@ public class ReceitaActivity extends Activity {
 
                 id_receita = Integer.parseInt(receita.getString("id"));
 
+                // bla bla
                 //setTitle("Receita: " + receita.getString("nome"));
 
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
