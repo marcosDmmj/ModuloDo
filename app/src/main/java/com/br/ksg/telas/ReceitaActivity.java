@@ -135,7 +135,13 @@ public class ReceitaActivity extends Activity {
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inSampleSize = 2;
                         Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
-                        imagemSd.setImageBitmap(bitmap);
+                        if(bitmap!=null){
+                            imagemSd.setImageBitmap(bitmap);
+                        }
+                        else{
+                            imagemSd.setImageResource(R.drawable.no_image2);
+                        }
+
                     }
                     catch (Exception e)
                     {

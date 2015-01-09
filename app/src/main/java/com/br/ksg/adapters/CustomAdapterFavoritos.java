@@ -52,7 +52,6 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         porcoes.setText(item.getPorcoes());
 
 
-        //Aquiiiiiii
         //Carrega a imagem do SDcard
         try
         {
@@ -60,7 +59,12 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 2;
             Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
-            image.setImageBitmap(bitmap);
+            if(bitmap!=null){
+                image.setImageBitmap(bitmap);
+            }
+            else{
+                image.setImageResource(R.drawable.no_image2);
+            }
         }
         catch (Exception e)
         {
