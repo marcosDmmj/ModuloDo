@@ -51,17 +51,28 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         tempo.setText(item.getTempo());
         porcoes.setText(item.getPorcoes());
 
-        if (item.getImg() != null) {
-            String myJpgPath = "/sdcard/Download/"+item.getId_receita()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+
+        //Carrega a imagem do SDcard
+        try
+        {
+            String myPathInSd = "/sdcard/KSG/image_"+item.getNome()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 2;
-            Bitmap bm = BitmapFactory.decodeFile(myJpgPath, options);
-            image.setImageBitmap(bm);
-        }else
-            image.setImageResource(R.drawable.no_image);
+            Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
+            if(bitmap!=null){
+                image.setImageBitmap(bitmap);
+            }
+            else{
+                image.setImageResource(R.drawable.no_image2);
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            //Toast.makeText( t, "Image could not be saved : Please ensure you have SD card installed " +
+            //                                                                      "properly", Toast.LENGTH_LONG).show();
+        }
 
-
-       
         return convertView;
     }
 }

@@ -203,13 +203,14 @@ public final class R {
         public static final int activity_list_t=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int activity_main_categoria=0x7f030004;
-        public static final int activity_perfil_edit=0x7f030005;
-        public static final int activity_perfil_user=0x7f030006;
-        public static final int fragment_fragment_categorias=0x7f030007;
-        public static final int fragment_fragment_favoritos=0x7f030008;
-        public static final int fragment_fragment_sugestao=0x7f030009;
-        public static final int fragment_fragment_survivalmode=0x7f03000a;
-        public static final int item=0x7f03000b;
+        public static final int activity_main_favoritos=0x7f030005;
+        public static final int activity_perfil_edit=0x7f030006;
+        public static final int activity_perfil_user=0x7f030007;
+        public static final int fragment_fragment_categorias=0x7f030008;
+        public static final int fragment_fragment_favoritos=0x7f030009;
+        public static final int fragment_fragment_sugestao=0x7f03000a;
+        public static final int fragment_fragment_survivalmode=0x7f03000b;
+        public static final int item=0x7f03000c;
     }
     public static final class menu {
         public static final int main=0x7f070000;
