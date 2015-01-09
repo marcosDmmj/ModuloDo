@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,9 +69,7 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         }
         catch (Exception e)
         {
-            e.printStackTrace();
-            //Toast.makeText( t, "Image could not be saved : Please ensure you have SD card installed " +
-            //                                                                      "properly", Toast.LENGTH_LONG).show();
+            Log.e("KSG", "Olha Josias aqui!: " + e.getMessage());
         }
 
         return convertView;

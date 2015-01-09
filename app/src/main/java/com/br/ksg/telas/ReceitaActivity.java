@@ -73,9 +73,6 @@ public class ReceitaActivity extends Activity {
 
                 id_receita = Integer.parseInt(receita.getString("id"));
 
-                // bla bla
-                //setTitle("Receita: " + receita.getString("nome"));
-
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
 
@@ -92,7 +89,6 @@ public class ReceitaActivity extends Activity {
                     usuarioDAO.addReceita(id_receita, id_ingredientes);
                 }
 
-                // List<String> id_ingredientes = new ArrayList<String>();
                 ReceitasDAO receitasDAO = new ReceitasDAO(this);
 
                 List<String> tes = receitasDAO.contagem_pontos(id_receita);
@@ -126,8 +122,6 @@ public class ReceitaActivity extends Activity {
                         usarToast("Deu erro! " + e.getMessage());
                     }
                 } else{
-                    // TODO: Aqui que tem que fazer as coisas meu bem XD
-                    // TODO: Vai setar nesse imageView
                     //Carrega oque houve a imagem do SDcard
                     try
                     {
@@ -146,6 +140,7 @@ public class ReceitaActivity extends Activity {
                     catch (Exception e)
                     {
                         imagemSd.setImageResource(R.drawable.no_image2);
+                        Log.e("KSG","Olha Josias aqui!: "+e.getMessage());
                     }
 
                 }
@@ -733,8 +728,6 @@ public class ReceitaActivity extends Activity {
 
         }
 
-
-
         return true;
     }
 
@@ -785,14 +778,13 @@ public class ReceitaActivity extends Activity {
             bmp.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
             outStream.flush();
             outStream.close();
+
             //Refreshing SD card
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+ Environment.getExternalStorageDirectory())));
         }
         catch (Exception e)
         {
-            e.printStackTrace();
-            //Toast.makeText( t, "Image could not be saved : Please ensure you have SD card installed " +
-            //                                                                      "properly", Toast.LENGTH_LONG).show();
+            Log.e("KSG","Erro ao tentar salvar a imagem: "+e.getMessage());
         }
 
 
