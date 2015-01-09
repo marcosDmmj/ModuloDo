@@ -774,7 +774,7 @@ public class ReceitaActivity extends Activity {
             FileOutputStream outStream;
 
             outStream = new FileOutputStream(image);
-                        /* 100 to keep full quality of the image */
+                        /* 100 to keep full quality of   the image */
             bmp.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
             outStream.flush();
             outStream.close();
