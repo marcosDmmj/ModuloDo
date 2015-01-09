@@ -2,25 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Taiga\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jar="C:\Users\lajos_000\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
-        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-66b9616e8201738f0cab16e67ead5d4db5a3f60d.jar" />
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-f5450c7e4403e34ff90b8de68b5804f46b7625f2.jar" />
     </item>
     <item
-        jar="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
-        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-97db0b33d575e82baaa5dbb06423b124aa5cd119.jar" />
-    </item>
-    <item
-        jar="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jar="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="8694693636ab36910c8100ce527c258ff3ebece0">
-        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\classes-ac3a83fea3acbff176a39ec750796ca2447e60da.jar" />
+        <dex dex="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\pre-dexed\debug\classes-f1d647dfc07bd7215c0c84c60624f6340984848c.jar" />
+    </item>
+    <item
+        jar="C:\Users\lajos_000\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-c80f4a3dc021c8076954d7fa9316f6d88e6caeee.jar" />
+    </item>
+    <item
+        jar="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.21.1\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="0285ad8da812e92dda76ed5d0dcba05724c7911d">
+        <dex dex="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\pre-dexed\debug\classes-fb5a2816e15b3f07cb0ef4b9770b73d8dad741cb.jar" />
+    </item>
+    <item
+        jar="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="C:\Users\lajos_000\Desktop\Projeto KSG\KSG\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-34488ab931d0d7ddf78469164b1155ce6a70ef55.jar" />
     </item>
 
 </items>

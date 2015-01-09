@@ -2,6 +2,7 @@ package com.br.ksg.telas;
 
 import com.br.ksg.classesDAO.UsuarioDAO;
 import com.example.exempleswipetab.R;
+import com.facebook.widget.ProfilePictureView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,6 +19,13 @@ import java.util.ArrayList;
 
 public class PerfilUser extends Activity {
     ImageView btn_editar;
+
+    private ProfilePictureView profilePictureView;
+    private TextView userNameView;
+
+
+
+
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -3,23 +3,31 @@ package com.br.ksg.telas;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import com.facebook.Session;
 
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
 import com.br.ksg.webService.DownloadImagemReceita;
 import com.example.exempleswipetab.R;
+import com.facebook.UiLifecycleHelper;
+import com.facebook.android.Facebook;
+import com.facebook.widget.FacebookDialog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -45,10 +53,22 @@ public class ReceitaActivity extends Activity {
     int controleEstrela = 0;
     int favorito = 0;
 
+    //Facebook share and Camera variables
+    private UiLifecycleHelper uiHelper;
+    static final int REQUEST_IMAGE_CAPTURE = 5;
+    public int foto;
+    Bitmap imagePost;
+    //------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Facebook share dialog result handler
+        uiHelper = new UiLifecycleHelper(this, null);
+        uiHelper.onCreate(savedInstanceState);
+        //------------------------------------
+
         setContentView(R.layout.activity_final);
 
         Intent i = getIntent();
@@ -568,30 +588,7 @@ public class ReceitaActivity extends Activity {
                     }
             }
 
-                compartilhar.setOnClickListener(new View.OnClickListener() {
-                    // private Uri fileUri;
 
-
-
-
-                    @Override
-                    public void onClick(View v) {
-
-                        UsuarioDAO u = new UsuarioDAO(getBaseContext());
-
-                        ArrayList<String> id_ingredientes = new ArrayList<String>();
-                        for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
-                            id_ingredientes.add(j, receita.getString("id_ing"+j));
-                        }
-
-                        u.update_experiencia(receita.getString("tempo"));
-                        u.update_pontos(id_ingredientes, controleEstrela);
-
-                        //TODO: SEM QUERER DELETAMOS OS COMANDOS PRA TIRAR FOTO D:
-                        usarToast("Clicou em foto :) E supostamente up os pontos!");
-
-                    }
-                });
             } catch (Exception e) {
                 usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
                 finish();
@@ -708,28 +705,152 @@ public class ReceitaActivity extends Activity {
         return true;
     }
 
+
+
+
+
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                // Image captured and saved to fileUri specified in the Intent
-                Toast.makeText(this, "Image saved to:\n" +
-                        data.getData(), Toast.LENGTH_LONG).show();
-                // compartilhar.setImageDrawable();
-                compartilhar.setImageURI(data.getData());
-            } else if (resultCode == RESULT_CANCELED) {
-                // User cancelled the image capture
-                usarToast("bla Cancelou");
-            } else {
-                // Image capture failed, advise user
-                usarToast("bla falhou");
-            }
+
+        switch (requestCode) {
+
+            case 5:
+
+                if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+                    Bundle extras = data.getExtras();
+                    imagePost = (Bitmap) extras.get("data");
+                    post();
+
+                }
+                break;
+
+            default:
+
+                super.onActivityResult(requestCode, resultCode, data);
+
+                uiHelper.onActivityResult(requestCode, resultCode, data,
+                        new FacebookDialog.Callback() {
+
+                            @Override
+                            public void onError(
+                                    FacebookDialog.PendingCall pendingCall,
+                                    Exception error, Bundle data) {
+                                Log.e("Activity", String.format("Error: %s",
+                                        error.toString()));
+                            }
+
+                            @Override
+                            public void onComplete(
+                                    FacebookDialog.PendingCall pendingCall,
+                                    Bundle data) {
+                                Log.i("Activity", "Success!");
+                            }
+                        });
+
         }
+
     }
+
+
+
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        uiHelper.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        uiHelper.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        uiHelper.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        uiHelper.onDestroy();
+    }
+
 
     public void add(){
         Toast toast = Toast.makeText(this, "Receita adicionada aos Favoritos!", Toast.LENGTH_LONG);
         toast.show();
+    }
+
+
+    public boolean isLoggedIn() {
+        Session session = Session.getActiveSession();
+        return (session != null && session.isOpened());
+    }
+
+
+
+    public void botaoShare(View view) {
+
+
+        UsuarioDAO u = new UsuarioDAO(getBaseContext());
+
+        ArrayList<String> id_ingredientes = new ArrayList<String>();
+        for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
+            id_ingredientes.add(j, receita.getString("id_ing"+j));
+        }
+
+        u.update_experiencia(receita.getString("tempo"));
+        u.update_pontos(id_ingredientes, controleEstrela);
+
+
+
+
+
+
+
+
+        if(isLoggedIn()) {
+            try {
+                ApplicationInfo info = getPackageManager().
+                        getApplicationInfo("com.facebook.katana", 0);
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
+            } catch (PackageManager.NameNotFoundException e) {
+                usarToast("Instale o aplicativo do Facebook para compartilhar conteúdo!");
+            }
+        }
+
+    else
+            usarToast("Você precisa estar conectado no Facebook para continuar");
+
+
+
+    }
+
+    public void post() {
+
+        Collection<Bitmap> screenShots = new ArrayList<Bitmap>();
+
+        screenShots.add(imagePost);
+
+        if (FacebookDialog.canPresentShareDialog(getApplicationContext(),
+                FacebookDialog.ShareDialogFeature.PHOTOS)) {
+            // Publish the post using the Photo Share Dialog
+            FacebookDialog shareDialog = new FacebookDialog.PhotoShareDialogBuilder(
+                    this).addPhotos(screenShots).build();
+            uiHelper.trackPendingDialogCall(shareDialog.present());
+        } else {
+            usarToast("Instale o aplicativo do Facebook para compartilhar conteúdo!");
+        }
+
     }
 }

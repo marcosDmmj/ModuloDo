@@ -5,11 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.view.*;
 
 import com.br.ksg.telas.PerfilUser;
+import com.facebook.widget.ProfilePictureView;
 
 
 public class activiity_perfil extends Activity {
+
+    //private ProfilePictureView profilePictureView;
+    //private TextView userNameView;
+    //profilePictureView = (ProfilePictureView)View view.findViewById(R.id.);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

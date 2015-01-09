@@ -10,6 +10,7 @@ import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import lajos.code.ksg.Splash;
 
 public class FragmentSugestao extends Fragment {
 	int mHour;
@@ -64,12 +67,6 @@ public class FragmentSugestao extends Fragment {
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
-                } catch (Exception e){
-                    Log.i("KSG","Deu um erro ! AtualizaIng" + e.getMessage());
-                }
-
                 if (verificaConexao())
                     try {
                         new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+DownloadImagemReceitaSug.id);
