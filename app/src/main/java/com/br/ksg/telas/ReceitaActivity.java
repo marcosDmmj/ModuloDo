@@ -20,6 +20,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -38,7 +39,7 @@ public class ReceitaActivity extends Activity {
     TextView txt_tempo;
     TextView txt_porcoes;
     TextView txt_ingredientes;
-    ImageView star01, star02, star03, star04, star05,compartilhar,image;
+    ImageView star01, star02, star03, star04, star05,compartilhar,imagemSd;
     Bundle receita ;
     boolean verificaBD;
     int id_receita;
@@ -68,6 +69,7 @@ public class ReceitaActivity extends Activity {
         }
         else {
             try {
+                imagemSd = (ImageView) findViewById(R.id.img_receita);
 
                 id_receita = Integer.parseInt(receita.getString("id"));
 
@@ -126,7 +128,19 @@ public class ReceitaActivity extends Activity {
                 } else{
                     // TODO: Aqui que tem que fazer as coisas meu bem XD
                     // TODO: Vai setar nesse imageView
-
+                    //Carrega oque houve a imagem do SDcard
+                    try
+                    {
+                        String myPathInSd = "/sdcard/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inSampleSize = 2;
+                        Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
+                        imagemSd.setImageBitmap(bitmap);
+                    }
+                    catch (Exception e)
+                    {
+                        imagemSd.setImageResource(R.drawable.no_image2);
+                    }
 
                 }
 
@@ -741,5 +755,40 @@ public class ReceitaActivity extends Activity {
     public void add(){
         Toast toast = Toast.makeText(this, "Receita adicionada aos Favoritos!", Toast.LENGTH_LONG);
         toast.show();
+
+        imagemSd = (ImageView) findViewById(R.id.img_receita);
+        imagemSd.getDrawable();
+
+
+        BitmapDrawable btmpDr = (BitmapDrawable) imagemSd.getDrawable();
+        Bitmap bmp = btmpDr.getBitmap();
+
+        //Salva imagem no SDcard
+        try
+        {
+            File sdCardDirectory = new File(Environment.getExternalStorageDirectory() + File.separator + "KSG");
+            sdCardDirectory.mkdirs();
+
+            String imageNameForSDCard = "image_"  + receita.getString("nome") + ".jpg";
+
+            File image = new File(sdCardDirectory, imageNameForSDCard);
+            FileOutputStream outStream;
+
+            outStream = new FileOutputStream(image);
+                        /* 100 to keep full quality of the image */
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+            outStream.flush();
+            outStream.close();
+            //Refreshing SD card
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+ Environment.getExternalStorageDirectory())));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            //Toast.makeText( t, "Image could not be saved : Please ensure you have SD card installed " +
+            //                                                                      "properly", Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }

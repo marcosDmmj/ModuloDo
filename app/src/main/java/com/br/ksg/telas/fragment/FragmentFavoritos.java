@@ -32,7 +32,7 @@ public class FragmentFavoritos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.activity_main_categoria, container, false);
+        View rootView = inflater.inflate(R.layout.activity_main_favoritos, container, false);
         final List<ReceitaBasica> item_l_f = listaCheia();
         ArrayAdapter<ReceitaBasica> ad = new CustomAdapterFavoritos(getActivity(), R.layout.item, item_l_f);
         myListView = (ListView) rootView.findViewById(R.id.myListView);
