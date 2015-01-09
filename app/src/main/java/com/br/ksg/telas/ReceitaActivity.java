@@ -18,9 +18,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -612,7 +610,6 @@ public class ReceitaActivity extends Activity {
                         u.update_experiencia(receita.getString("tempo"));
                         u.update_pontos(id_ingredientes, controleEstrela);
 
-                        //TODO: SEM QUERER DELETAMOS OS COMANDOS PRA TIRAR FOTO D:
                         usarToast("Clicou em foto :) E supostamente up os pontos!");
 
                     }
@@ -673,7 +670,7 @@ public class ReceitaActivity extends Activity {
 
         }
 
-        if(verificaBD == false){
+        if(!verificaBD){
 
             item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
