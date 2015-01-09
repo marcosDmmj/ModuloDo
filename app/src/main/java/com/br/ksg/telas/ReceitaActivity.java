@@ -55,9 +55,10 @@ public class ReceitaActivity extends Activity {
         }
         else {
             try {
+
                 id_receita = Integer.parseInt(receita.getString("id"));
 
-                setTitle("Receita: " + receita.getString("nome"));
+                //setTitle("Receita: " + receita.getString("nome"));
 
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
@@ -561,6 +562,7 @@ public class ReceitaActivity extends Activity {
                             id_ingredientes.add(j, receita.getString("id_ing"+j));
                         }
 
+                        //TODO: realizar o update no metodo onActivityResult ...ou nao esperar a uniao com o lajos
                         u.update_experiencia(receita.getString("tempo"));
                         u.update_pontos(id_ingredientes, controleEstrela);
 
@@ -590,7 +592,7 @@ public class ReceitaActivity extends Activity {
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(final MenuItem item) {
         //switch (item.getItemId()) {
 
         ReceitasDAO receitaPesquisa = new ReceitasDAO(this.getBaseContext());
@@ -598,7 +600,6 @@ public class ReceitaActivity extends Activity {
 
         if(verificaBD){
 
-            item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja remover dos Favoritos");
             bld.setTitle("Aviso");
@@ -610,6 +611,7 @@ public class ReceitaActivity extends Activity {
                     status = true ;
                     ReceitasDAO receitaDAO = new ReceitasDAO(getBaseContext());
                     usarToast(receitaDAO.removeReceitas(receita.getString("nome")));
+                    item.setIcon(R.drawable.favorito);
                 }
             });
 
@@ -618,7 +620,7 @@ public class ReceitaActivity extends Activity {
             bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    favorito = 1;
+                    favorito  = 1;
                 }
             });
 
@@ -626,9 +628,8 @@ public class ReceitaActivity extends Activity {
 
         }
 
-        if(!verificaBD){
+        if(verificaBD == false){
 
-            item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja adicionar  aos Favoritos?");
             bld.setTitle("Aviso");
@@ -664,7 +665,7 @@ public class ReceitaActivity extends Activity {
 
                     receitaDAO.addReceitas(receitaFav,ingredientes,id_ingredientes);
 
-
+                item.setIcon(R.drawable.favorito_selected);
 
                 }
             });

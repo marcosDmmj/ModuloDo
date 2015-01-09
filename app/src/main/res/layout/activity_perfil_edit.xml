@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="#FBEDA5"
     tools:context="${relativePackage}.${activityClass}"
     >
@@ -138,14 +138,14 @@
         android:checked="false" />
     </TableRow>
 </TableLayout>
-    <ImageButton
-        android:layout_width="@android:dimen/notification_large_icon_width"
-        android:layout_height="@android:dimen/notification_large_icon_height"
+    <ImageView
         android:id="@+id/imageButton"
-        android:background="@android:drawable/ic_menu_save"
-        android:layout_alignParentTop="true"
-        android:clickable="true"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
+        android:src="@drawable/icon_save"
+        android:clickable="true"
         android:onClick="clicarSalvar"/>
 
 </LinearLayout>
