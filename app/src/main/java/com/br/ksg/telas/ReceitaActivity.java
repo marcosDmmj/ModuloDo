@@ -18,9 +18,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -60,7 +58,6 @@ public class ReceitaActivity extends Activity {
         receita = i.getBundleExtra("receita");
         verificaBD = false;
 
-
         if (receita == null){
             usarToast(getString(R.string.verifica_conexao)+"2");
             finish();
@@ -74,9 +71,6 @@ public class ReceitaActivity extends Activity {
                 imagemSd = (ImageView) findViewById(R.id.img_receita);
 
                 id_receita = Integer.parseInt(receita.getString("id"));
-
-                // bla bla
-                //setTitle("Receita: " + receita.getString("nome"));
 
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
@@ -94,7 +88,6 @@ public class ReceitaActivity extends Activity {
                     usuarioDAO.addReceita(id_receita, id_ingredientes);
                 }
 
-                // List<String> id_ingredientes = new ArrayList<String>();
                 ReceitasDAO receitasDAO = new ReceitasDAO(this);
 
                 List<String> tes = receitasDAO.contagem_pontos(id_receita);
@@ -128,12 +121,9 @@ public class ReceitaActivity extends Activity {
                         usarToast("Deu erro! " + e.getMessage());
                     }
                 } else{
-                    // TODO: Aqui que tem que fazer as coisas meu bem XD
-                    // TODO: Vai setar nesse imageView
                     //Carrega oque houve a imagem do SDcard
                     try
                     {
-
                         String myPathInSd = "/sdcard/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inSampleSize = 2;
@@ -149,6 +139,7 @@ public class ReceitaActivity extends Activity {
                     catch (Exception e)
                     {
                         imagemSd.setImageResource(R.drawable.no_image2);
+                        Log.e("KSG","Olha Josias aqui!: "+e.getMessage());
                         usarToast("Erro!");
                     }
 
@@ -545,6 +536,43 @@ public class ReceitaActivity extends Activity {
                             restricoes[0] = 1;
                             controleRestricoes = 1;
                             break;
+                        case 214:
+                            restricoes[0] = 1;
+                            alergias[6] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 215:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 216:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 221:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 222:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 225:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 228:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 230:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 236:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
                         default:
                             break;
                     }
@@ -576,16 +604,61 @@ public class ReceitaActivity extends Activity {
                     if (alergias[6] == 1) { msgAlergias = msgAlergias + "- Peixes \n"; }
                     if (alergias[7] == 1) { msgAlergias = msgAlergias + "- Trigo "; }
 
-                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     AlertDialog.Builder bld = new AlertDialog.Builder(this);
+                    String msgNivel = "";
+
+                    if(u.getNivelUsuario().equals("Iniciante")){
+
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 30  && Integer.parseInt(receita.getString("tempo")) <= 90){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Novato \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Novato")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Mediano")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Experiente")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                    }
+
+                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     if ((restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) && (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1)) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     } else if (restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
                     } else if (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     }
 
 
@@ -621,7 +694,6 @@ public class ReceitaActivity extends Activity {
                         u.update_experiencia(receita.getString("tempo"));
                         u.update_pontos(id_ingredientes, controleEstrela);
 
-                        //TODO: SEM QUERER DELETAMOS OS COMANDOS PRA TIRAR FOTO D:
                         usarToast("Clicou em foto :) E supostamente up os pontos!");
 
                     }
@@ -691,7 +763,7 @@ public class ReceitaActivity extends Activity {
 
         }
 
-        if(verificaBD == false){
+        if(!verificaBD){
 
             item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
@@ -737,9 +809,7 @@ public class ReceitaActivity extends Activity {
 
             bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
                 @Override
-                public void onClick(DialogInterface dialog, int which) {
-
-                }
+                public void onClick(DialogInterface dialog, int which) {}
             });
 
             bld.show();
@@ -747,8 +817,6 @@ public class ReceitaActivity extends Activity {
 
 
         }
-
-
 
         return true;
     }
@@ -796,18 +864,17 @@ public class ReceitaActivity extends Activity {
             FileOutputStream outStream;
 
             outStream = new FileOutputStream(image);
-                        /* 100 to keep full quality of the image */
+                        /* 100 to keep full quality of   the image */
             bmp.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
             outStream.flush();
             outStream.close();
+
             //Refreshing SD card
             sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+ Environment.getExternalStorageDirectory())));
         }
         catch (Exception e)
         {
-            e.printStackTrace();
-            //Toast.makeText( t, "Image could not be saved : Please ensure you have SD card installed " +
-            //                                                                      "properly", Toast.LENGTH_LONG).show();
+            Log.e("KSG","Erro ao tentar salvar a imagem: "+e.getMessage());
         }
 
 

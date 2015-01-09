@@ -92,6 +92,22 @@ public class UsuarioDAO {
 
     }
 
+    public String getNivelUsuario(){
+
+        String info = "";
+
+        String sqlQuery = "SELECT nivel FROM UsuarioInfo WHERE id='1'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        if(cursor.moveToNext()){
+            info = cursor.getString(0);
+        }
+
+        cursor.close();
+        return info;
+
+    }
+
     public boolean receita_existe(int id){
         String sqlQuery = "SELECT * FROM Pontuacao WHERE id_pratos = '"+id+"'";
         Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
