@@ -64,19 +64,18 @@ public class FragmentSugestao extends Fragment {
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
-                } catch (Exception e){
-                    Log.i("KSG","Deu um erro ! AtualizaIng" + e.getMessage());
-                }
-
-                if (verificaConexao())
+                if (verificaConexao()) {
                     try {
-                        new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+DownloadImagemReceitaSug.id);
-                    } catch (Exception ex){
-                        Log.i("KSG","Deu um erro considerado! DImagemRecSug" + ex.getMessage());
+                        new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
+                    } catch (Exception e) {
+                        Log.i("KSG", "Deu um erro ! AtualizaIng" + e.getMessage());
                     }
-                else
+                    try {
+                        new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id=" + DownloadImagemReceitaSug.id);
+                    } catch (Exception ex) {
+                        Log.i("KSG", "Deu um erro considerado! DImagemRecSug" + ex.getMessage());
+                    }
+                } else
                     usarToast(getString(R.string.verifica_conexao));
             }
         });
