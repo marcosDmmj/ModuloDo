@@ -696,28 +696,6 @@ public class ReceitaActivity extends Activity {
                         bld.show();
                     }
             }
-
-
-
-
-
-                    @Override
-                    public void onClick(View v) {
-
-                        UsuarioDAO u = new UsuarioDAO(getBaseContext());
-
-                        ArrayList<String> id_ingredientes = new ArrayList<String>();
-                        for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
-                            id_ingredientes.add(j, receita.getString("id_ing"+j));
-                        }
-
-                        u.update_experiencia(receita.getString("tempo"));
-                        u.update_pontos(id_ingredientes, controleEstrela);
-
-                        usarToast("Clicou em foto :) E supostamente up os pontos!");
-
-                    }
-                });
             } catch (Exception e) {
                 usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
                 finish();
