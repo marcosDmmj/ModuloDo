@@ -56,7 +56,7 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         //Carrega a imagem do SDcard
         try
         {
-            String myPathInSd = "/sdcard/KSG/image_"+item.getNome()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+            String myPathInSd = android.os.Environment.getExternalStorageDirectory() + "/KSG/image_"+item.getNome()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inSampleSize = 2;
             Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);

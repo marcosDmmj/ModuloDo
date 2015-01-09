@@ -38,8 +38,9 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-						
-				
+
+        setTitle("Kitchen Survival Guide");
+
 		ActionBar.Tab tab1 = actionBar.newTab();
 		tab1.setText("SUGESTÕES");
 		tab1.setTabListener(this);

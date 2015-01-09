@@ -68,6 +68,7 @@ public class ReceitaActivity extends Activity {
         }
         else {
             try {
+
                 imagemSd = (ImageView) findViewById(R.id.img_receita);
 
                 id_receita = Integer.parseInt(receita.getString("id"));
@@ -124,7 +125,7 @@ public class ReceitaActivity extends Activity {
                     //Carrega oque houve a imagem do SDcard
                     try
                     {
-                        String myPathInSd = "/sdcard/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+                        String myPathInSd = android.os.Environment.getExternalStorageDirectory() + "/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
                         BitmapFactory.Options options = new BitmapFactory.Options();
                         options.inSampleSize = 2;
                         Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
