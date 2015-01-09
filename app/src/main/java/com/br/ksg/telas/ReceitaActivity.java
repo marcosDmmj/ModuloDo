@@ -534,6 +534,43 @@ public class ReceitaActivity extends Activity {
                             restricoes[0] = 1;
                             controleRestricoes = 1;
                             break;
+                        case 214:
+                            restricoes[0] = 1;
+                            alergias[6] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 215:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 216:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 221:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 222:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 225:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 228:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 230:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 236:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
                         default:
                             break;
                     }
@@ -565,16 +602,61 @@ public class ReceitaActivity extends Activity {
                     if (alergias[6] == 1) { msgAlergias = msgAlergias + "- Peixes \n"; }
                     if (alergias[7] == 1) { msgAlergias = msgAlergias + "- Trigo "; }
 
-                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     AlertDialog.Builder bld = new AlertDialog.Builder(this);
+                    String msgNivel = "";
+
+                    if(u.getNivelUsuario().equals("Iniciante")){
+
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 30  && Integer.parseInt(receita.getString("tempo")) <= 90){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Novato \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Novato")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Mediano")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Experiente")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                    }
+
+                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     if ((restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) && (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1)) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     } else if (restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
                     } else if (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     }
 
 
