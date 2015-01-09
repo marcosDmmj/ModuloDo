@@ -193,4 +193,17 @@ public class ReceitasDAO {
             return null;
         }
     }
+
+    public List<String> contagem_pontos(int id_receita){
+        String sqlQuery = "SELECT id_ingredientes,pontos FROM Pontuacao WHERE id_pratos= '"+id_receita+"'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        List<String> result = new ArrayList<String>();
+        while(cursor.moveToNext()){
+            result.add("ing = "+cursor.getString(0)+" pontos = "+cursor.getString(1));
+        }
+        cursor.close();
+
+        return result;
+    }
 }

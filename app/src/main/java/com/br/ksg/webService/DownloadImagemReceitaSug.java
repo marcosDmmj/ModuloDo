@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.exempleswipetab.R;
@@ -74,9 +75,13 @@ public class DownloadImagemReceitaSug extends AsyncTask<String, Void, Drawable> 
     protected void onPostExecute(Drawable result) {
         super.onPostExecute(result);
 
-        ImageView imageView = (ImageView) activity.findViewById(R.id.img_opcao);
-        if (result != null)
-            imageView.setImageDrawable(result);
+        try {
+            ImageView imageView = (ImageView) activity.findViewById(R.id.img_opcao);
+            if (result != null)
+                imageView.setImageDrawable(result);
+        } catch (Exception e){
+            Log.i("KSG","Tenso. DImagemRecSug "+e.getMessage());
+        }
     }
 
     private String toString(InputStream is) throws IOException {

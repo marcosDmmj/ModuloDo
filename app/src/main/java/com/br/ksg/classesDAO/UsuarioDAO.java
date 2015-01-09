@@ -108,17 +108,23 @@ public class UsuarioDAO {
 
     public void addReceita(int id_receita,List<String> id_ingredientes){
 
+        Log.i("KSG","Tamanho do vetor de ingredientes = "+id_ingredientes.size());
         for(int i=0; i < id_ingredientes.size(); i++) {
             String sqlQuery2 = "SELECT pontos FROM Pontuacao WHERE id_ingredientes ='"+id_ingredientes.get(i)+"'";
             Cursor cursor2 = bancoDeDados.rawQuery(sqlQuery2, null);
 
             if (cursor2.moveToNext()) {
-                String sqlQuery1 = "INSERT INTO Pontuacao VALUE('" + id_receita + "', '"+id_ingredientes.get(i)+"', '"+Integer.parseInt(cursor2.getString(0))+"')";
+                String sqlQuery1 = "INSERT INTO Pontuacao VALUES('" + id_receita + "', '"+id_ingredientes.get(i)+"', '"+Integer.parseInt(cursor2.getString(0))+"')";
+                Log.e("KSG","Pontos já cadastrados");
                 Cursor cursor = bancoDeDados.rawQuery(sqlQuery1, null);
+                cursor.moveToNext();
                 cursor.close();
             } else {
-                String sqlQuery3 = "INSERT INTO Pontuacao VALUE('" + id_receita + "', '"+id_ingredientes.get(i)+"', '0')";
+                String sqlQuery3 = "INSERT INTO Pontuacao VALUES('" + id_receita + "', '"+id_ingredientes.get(i)+"', '0')";
+                Log.e("KSG","Pontos = 0");
                 Cursor cursor = bancoDeDados.rawQuery(sqlQuery3, null);
+                cursor.moveToNext();
+                Log.e("KSG","Afetados = "+cursor.getCount());
                 cursor.close();
             }
             cursor2.close();
@@ -189,20 +195,15 @@ public class UsuarioDAO {
             if(cursor.moveToNext()){
                 aux = Integer.parseInt(cursor.getString(0)) + ponto;
                 String comando2 = "UPDATE Pontuacao SET pontos='"+ aux +"' WHERE id_ingredientes='"+lista.get(i)+"'";
+
+                Cursor cursor1 = bancoDeDados.rawQuery(comando2, null);
+                cursor1.moveToNext();
+
+                cursor1.close();
             }
+
+            cursor.close();
         }
-    }
-
-    public int contagem_pontos(int id_receita){
-        String sqlQuery = "SELECT pontos FROM Pontuacao id_pratos = '"+id_receita+"'";
-        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
-
-        int result = 0;
-        while(cursor.moveToNext()){
-            result+= Integer.parseInt(cursor.getString(0));
-        }
-
-        return result;
     }
 
     public String[] getRestricoes (){
@@ -227,5 +228,17 @@ public class UsuarioDAO {
 
         return info;
    }
+
+    public int contagem_pontos_Ing(int id_receita){
+        String sqlQuery = "SELECT pontos FROM Pontuacao id_pratos = '"+id_receita+"'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        int result = 0;
+        while(cursor.moveToNext()){
+            result+= Integer.parseInt(cursor.getString(0));
+        }
+
+        return result;
+    }
 
 }
