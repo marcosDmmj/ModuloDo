@@ -128,7 +128,7 @@ public class ReceitaActivity extends Activity {
                 } else{
                     // TODO: Aqui que tem que fazer as coisas meu bem XD
                     // TODO: Vai setar nesse imageView
-                    //Carrega a imagem do SDcard
+                    //Carrega oque houve a imagem do SDcard
                     try
                     {
                         String myPathInSd = "/sdcard/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
