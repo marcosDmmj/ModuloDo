@@ -17,14 +17,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class PerfilUser extends Activity {
-    ImageButton btn_editar;
+    ImageView btn_editar;
 
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_user);
 
-        btn_editar = (ImageButton) findViewById(R.id.imageButton2);
+        btn_editar = (ImageView) findViewById(R.id.imageButton2);
         btn_editar.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -246,7 +246,6 @@ public class PerfilUser extends Activity {
     }
 
     public void clicarEditar(){
-        usarToast("entrou no clicarEditar()");
         Intent i = new Intent(this,PerfilEdit.class);
         startActivity(i);
     }

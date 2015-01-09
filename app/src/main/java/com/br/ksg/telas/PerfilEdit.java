@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class PerfilEdit extends Activity {
         if(aux[8].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxNozes)).setChecked(true);
         if(aux[9].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxPeixes)).setChecked(true);
         if(aux[10].equals("sim")) ((CheckBox)findViewById(R.id.checkBoxTrigo)).setChecked(true);
+
 
     }
 
@@ -74,17 +76,17 @@ public class PerfilEdit extends Activity {
         String str11;
         String str12 = "";
         String str13 = "" ;
-        if(status1==1){ str1 = "sim"; str12 += "Vegetariano  "; }else { str1 = "nao"; str12 += ""; }
-        if(status2==1){ str2 = "sim"; str12 += "Diabético  "; }else { str2 = "nao"; str12 += ""; }
-        if(status3==1){ str3 = "sim"; str12 += "Hipertenso  "; }else { str3 = "nao"; str12 += ""; }
-        if(status4==1){ str4 = "sim"; str13 += "Frutos do Mar  "; }else { str4 = "nao"; str13 += ""; }
-        if(status5==1){ str5 = "sim"; str13 += "Amendoim  "; }else { str5 = "nao"; str13 += ""; }
-        if(status6==1){ str6 = "sim"; str13 += "Leite  "; }else { str6 = "nao"; str13 += ""; }
-        if(status7==1){ str7 = "sim"; str13 += "Nozes  "; }else { str7 = "nao"; str13 += ""; }
-        if(status8==1){ str8 = "sim"; str13 += "Ovos  "; }else { str8 = "nao"; str13 += ""; }
-        if(status9==1){ str9 = "sim"; str13 += "Peixes  "; }else { str9 = "nao"; str13 += ""; }
-        if(status10==1){ str10 = "sim"; str13 += "Soja  "; }else { str10 = "nao"; str13 += ""; }
-        if(status11==1){ str11 = "sim"; str13 += "Trigo  "; }else { str11 = "nao"; str13 += ""; }
+        if(status1==1){ str1 = "sim"; str12 += "Vegetariano;\n"; }else { str1 = "nao"; str12 += ""; }
+        if(status2==1){ str2 = "sim"; str12 += "Diabético;\n"; }else { str2 = "nao"; str12 += ""; }
+        if(status3==1){ str3 = "sim"; str12 += "Hipertenso;"; }else { str3 = "nao"; str12 += ""; }
+        if(status4==1){ str4 = "sim"; str13 += "Frutos do Mar. "; }else { str4 = "nao"; str13 += ""; }
+        if(status5==1){ str5 = "sim"; str13 += "Amendoim. "; }else { str5 = "nao"; str13 += ""; }
+        if(status6==1){ str6 = "sim"; str13 += "Leite. "; }else { str6 = "nao"; str13 += ""; }
+        if(status7==1){ str7 = "sim"; str13 += "Nozes. "; }else { str7 = "nao"; str13 += ""; }
+        if(status8==1){ str8 = "sim"; str13 += "Ovos. "; }else { str8 = "nao"; str13 += ""; }
+        if(status9==1){ str9 = "sim"; str13 += "Peixes. "; }else { str9 = "nao"; str13 += ""; }
+        if(status10==1){ str10 = "sim"; str13 += "Soja. "; }else { str10 = "nao"; str13 += ""; }
+        if(status11==1){ str11 = "sim"; str13 += "Trigo. "; }else { str11 = "nao"; str13 += ""; }
         if(str12.equals("")) str12 = "Nenhuma";
         if(str13.equals("")) str13 = "Nenhuma";
 

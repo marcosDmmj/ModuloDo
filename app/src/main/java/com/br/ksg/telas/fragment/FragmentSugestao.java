@@ -67,7 +67,7 @@ public class FragmentSugestao extends Fragment {
                 try {
                     new DownloadAtualizaIng(getActivity()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
                 } catch (Exception e){
-                    Log.i("KSG","Deu um erro considerado! AtualizaIng" + e.getMessage());
+                    Log.i("KSG","Deu um erro ! AtualizaIng" + e.getMessage());
                 }
 
                 if (verificaConexao())
