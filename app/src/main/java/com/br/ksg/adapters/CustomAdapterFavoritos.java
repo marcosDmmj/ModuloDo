@@ -3,6 +3,8 @@ import java.util.List;
 
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.example.exempleswipetab.R;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -48,7 +50,17 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         titulo.setText(item.getNome());
         tempo.setText(item.getTempo());
         porcoes.setText(item.getPorcoes());
-        image.setImageResource(R.drawable.noimage);
+
+        if (item.getImg() != null) {
+            String myJpgPath = "/sdcard/Download/"+item.getId_receita()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;
+            Bitmap bm = BitmapFactory.decodeFile(myJpgPath, options);
+            image.setImageBitmap(bm);
+        }else
+            image.setImageResource(R.drawable.no_image);
+
+
        
         return convertView;
     }

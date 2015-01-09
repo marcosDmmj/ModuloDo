@@ -5,6 +5,9 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
@@ -35,7 +38,7 @@ public class ReceitaActivity extends Activity {
     TextView txt_tempo;
     TextView txt_porcoes;
     TextView txt_ingredientes;
-    ImageView star01, star02, star03, star04, star05,compartilhar;
+    ImageView star01, star02, star03, star04, star05,compartilhar,image;
     Bundle receita ;
     boolean verificaBD;
     int id_receita;
@@ -114,7 +117,7 @@ public class ReceitaActivity extends Activity {
                 txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
                 txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
-                if (receita.getInt("tamanho") == 2) {
+                if (receita.getInt("tamanho") != 2) {
                     try {
                         new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
                     } catch (Exception e) {
@@ -123,7 +126,7 @@ public class ReceitaActivity extends Activity {
                 } else{
                     // TODO: Aqui que tem que fazer as coisas meu bem XD
                     // TODO: Vai setar nesse imageView
-                    ImageView imageView = (ImageView) findViewById(R.id.img_receita);
+
 
                 }
 
