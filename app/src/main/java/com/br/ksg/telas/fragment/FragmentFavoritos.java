@@ -74,7 +74,7 @@ public class FragmentFavoritos extends Fragment {
                 b.putString("id_ing"+j, id_ing.get(j));
             }
 
-            b.putInt("tamanho", 1);
+            b.putInt("tamanho", 2);
 
             intent.putExtra("receita", b);
 

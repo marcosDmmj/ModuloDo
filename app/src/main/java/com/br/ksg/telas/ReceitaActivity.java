@@ -112,10 +112,17 @@ public class ReceitaActivity extends Activity {
                 txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
                 txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
-                try {
-                    new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
-                } catch (Exception e) {
-                    usarToast("Deu erro! " + e.getMessage());
+                if (receita.getInt("tamanho") == 2) {
+                    try {
+                        new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
+                    } catch (Exception e) {
+                        usarToast("Deu erro! " + e.getMessage());
+                    }
+                } else{
+                    // TODO: Aqui que tem que fazer as coisas meu bem XD
+                    // TODO: Vai setar nesse imageView
+                    ImageView imageView = (ImageView) findViewById(R.id.img_receita);
+
                 }
 
                 star01 = (ImageView) findViewById(R.id.star01);

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
+import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.webService.DownloadImagemListaReceita2;
 import com.br.ksg.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
@@ -106,7 +108,10 @@ public class ListSurvivalMode extends Activity {
         // TODO: Os filtros do Survival Mode serão feitos aqui!
         // TODO: Qqr coisa pode me chamar ;)
 
-
+        ReceitasDAO receitasDAO = new ReceitasDAO(this);
+        for(int i = 0;i < list.size(); i++){
+            Log.e("KSG","Total de pontos da receita "+list.get(i).getNome()+" é: "+receitasDAO.contagem_pontos_Ing(Integer.parseInt(list.get(i).getId_receita())));
+        }
 
         return list;
     }
