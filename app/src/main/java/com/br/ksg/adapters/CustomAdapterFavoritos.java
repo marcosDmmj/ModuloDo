@@ -3,8 +3,11 @@ import java.util.List;
 
 import com.br.ksg.classesBasicas.ReceitaBasica;
 import com.example.exempleswipetab.R;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,8 +51,27 @@ public class CustomAdapterFavoritos extends ArrayAdapter<ReceitaBasica> {
         titulo.setText(item.getNome());
         tempo.setText(item.getTempo());
         porcoes.setText(item.getPorcoes());
-        image.setImageResource(R.drawable.noimage);
-       
+
+
+        //Carrega a imagem do SDcard
+        try
+        {
+            String myPathInSd = android.os.Environment.getExternalStorageDirectory() + "/KSG/image_"+item.getNome()+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inSampleSize = 2;
+            Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
+            if(bitmap!=null){
+                image.setImageBitmap(bitmap);
+            }
+            else{
+                image.setImageResource(R.drawable.no_image2);
+            }
+        }
+        catch (Exception e)
+        {
+            Log.e("KSG", "Olha Josias aqui!: " + e.getMessage());
+        }
+
         return convertView;
     }
 }

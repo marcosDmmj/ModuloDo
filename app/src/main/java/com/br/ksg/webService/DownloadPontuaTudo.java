@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.br.ksg.classesDAO.IngredienteDAO;
+import com.br.ksg.classesDAO.UsuarioDAO;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -18,22 +19,24 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
-/*
- * Created by Marcos on 19/12/2014.
+/**
+ * Created by Marcos Denis on 08/01/2015.
  */
-public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
+public class DownloadPontuaTudo extends AsyncTask<String, Void, Void> {
     ProgressDialog dialog;
     Context c;
 
-    public DownloadAtualizaIng(Context c) {
+    public DownloadPontuaTudo(Context c) {
         this.c = c;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
+        dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados... Por favor aguarde!");
     }
 
 
@@ -57,7 +60,7 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
                 getReceitasBasicas(json);
             }
         } catch (Exception e) {
-            Log.i("KSG","erro doIn"+e.getMessage());
+            Log.i("KSG", "Erro no DownPontuaTudo" + e.getMessage());
         }
         return null;
     }
@@ -68,7 +71,7 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
         try {
             dialog.dismiss();
         } catch (Exception e) {
-            Log.i("KSG","Preocupante! "+e.getMessage());
+            Log.i("KSG","Preocupante! DPT"+e.getMessage());
         }
 
     }
@@ -85,14 +88,22 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
 
     private void getReceitasBasicas(String json) {
         try {
-            JSONArray IngL = new JSONArray(json);
-            JSONObject ing;
-            for (int i = 0; i < IngL.length(); i++) {
-                ing = new JSONObject(IngL.getString(i));
+            JSONArray RecL = new JSONArray(json);
+            JSONObject Rec;
+            for (int i = 0; i < RecL.length(); i++) {
+                Rec = new JSONObject(RecL.getString(i));
 
-                IngredienteDAO ingredienteDAO = new IngredienteDAO(c);
-                ingredienteDAO.addIngredientes(ing.getInt("id"),ing.getString("nome"));
+                List<String> id_ings = new ArrayList<String>();
+                // JSONArray Ling = new JSONArray(Rec.getJSONArray("ingredientes"));
+                // JSONObject ing;
 
+                // for (int j = 0; j < Ling.length(); j++) {
+                    // TODO: Aqui Man >.<
+                    // ing = new JSONObject(Ling.getString("id_ing"+(i+1)));
+                // }
+
+                // UsuarioDAO usuarioDAO = new UsuarioDAO(c);
+                // usuarioDAO.addReceita(Rec.getInt("id_rec"),);
             }
         } catch (Exception e) {
             Log.i("KSG","erro get "+e.getMessage());

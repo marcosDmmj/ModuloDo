@@ -7,6 +7,9 @@ import java.util.Collection;
 import java.util.List;
 import com.facebook.Session;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import com.br.ksg.classesBasicas.Receita;
 import com.br.ksg.classesDAO.ReceitasDAO;
 import com.br.ksg.classesDAO.UsuarioDAO;
@@ -43,11 +46,11 @@ public class ReceitaActivity extends Activity {
     TextView txt_tempo;
     TextView txt_porcoes;
     TextView txt_ingredientes;
-    ImageView star01, star02, star03, star04, star05,compartilhar;
+    ImageView star01, star02, star03, star04, star05,compartilhar,imagemSd;
     Bundle receita ;
     boolean verificaBD;
     int id_receita;
-    boolean status ;
+    boolean status;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     ArrayList<String> ing = new ArrayList<String>();
     int controleEstrela = 0;
@@ -59,6 +62,7 @@ public class ReceitaActivity extends Activity {
     public int foto;
     Bitmap imagePost;
     //------------------------
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,10 +90,9 @@ public class ReceitaActivity extends Activity {
         else {
             try {
 
-                id_receita = Integer.parseInt(receita.getString("id"));
+                imagemSd = (ImageView) findViewById(R.id.img_receita);
 
-                // bla bla
-                //setTitle("Receita: " + receita.getString("nome"));
+                id_receita = Integer.parseInt(receita.getString("id"));
 
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
@@ -107,7 +110,6 @@ public class ReceitaActivity extends Activity {
                     usuarioDAO.addReceita(id_receita, id_ingredientes);
                 }
 
-                // List<String> id_ingredientes = new ArrayList<String>();
                 ReceitasDAO receitasDAO = new ReceitasDAO(this);
 
                 List<String> tes = receitasDAO.contagem_pontos(id_receita);
@@ -134,10 +136,35 @@ public class ReceitaActivity extends Activity {
                 txt_porcoes = (TextView) findViewById(R.id.txt_qtd_de_porcoes);
                 txt_porcoes.setText(getString(R.string.porcoes) + ": " + receita.getString("porcoes"));
 
-                try {
-                    new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
-                } catch (Exception e) {
-                    usarToast("Deu erro! " + e.getMessage());
+                if (receita.getInt("tamanho") != 2) {
+                    try {
+                        new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
+                    } catch (Exception e) {
+                        usarToast("Deu erro! " + e.getMessage());
+                    }
+                } else{
+                    //Carrega oque houve a imagem do SDcard
+                    try
+                    {
+                        String myPathInSd = android.os.Environment.getExternalStorageDirectory() + "/KSG/image_"+receita.getString("nome")+".jpg"; //UPDATE WITH YOUR OWN JPG FILE
+                        BitmapFactory.Options options = new BitmapFactory.Options();
+                        options.inSampleSize = 2;
+                        Bitmap bitmap = BitmapFactory.decodeFile(myPathInSd, options);
+                        if(bitmap!=null){
+                            imagemSd.setImageBitmap(bitmap);
+                        }
+                        else{
+                            imagemSd.setImageResource(R.drawable.no_image2);
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        imagemSd.setImageResource(R.drawable.no_image2);
+                        Log.e("KSG","Olha Josias aqui!: "+e.getMessage());
+                        usarToast("Erro!");
+                    }
+
                 }
 
                 star01 = (ImageView) findViewById(R.id.star01);
@@ -531,6 +558,43 @@ public class ReceitaActivity extends Activity {
                             restricoes[0] = 1;
                             controleRestricoes = 1;
                             break;
+                        case 214:
+                            restricoes[0] = 1;
+                            alergias[6] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 215:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 216:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 221:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 222:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 225:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 228:
+                            restricoes[0] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 230:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
+                        case 236:
+                            alergias[1] = 1;
+                            controleRestricoes = 1;
+                            break;
                         default:
                             break;
                     }
@@ -562,16 +626,61 @@ public class ReceitaActivity extends Activity {
                     if (alergias[6] == 1) { msgAlergias = msgAlergias + "- Peixes \n"; }
                     if (alergias[7] == 1) { msgAlergias = msgAlergias + "- Trigo "; }
 
-                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     AlertDialog.Builder bld = new AlertDialog.Builder(this);
+                    String msgNivel = "";
+
+                    if(u.getNivelUsuario().equals("Iniciante")){
+
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 30  && Integer.parseInt(receita.getString("tempo")) <= 90){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Novato \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Novato")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 90 && Integer.parseInt(receita.getString("tempo")) <= 120){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mediano \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Mediano")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                        if(Integer.parseInt(receita.getString("tempo")) > 120 && Integer.parseInt(receita.getString("tempo")) <= 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Experiente \n\n";
+                        }
+                    }
+
+                    if(u.getNivelUsuario().equals("Experiente")){
+                        if(Integer.parseInt(receita.getString("tempo")) > 180){
+                            msgNivel = "É aconselhado que tente essa receita no nível: Mestre Cucca \n\n";
+                        }
+                    }
+
+                    if(!(msgAlergias.equals("") && msgRestricao.equals(""))) {
 
                     if ((restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) && (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1)) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao + "\n\nTambém possui ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     } else if (restricoes[0] == 1 || restricoes[1] == 1 || restricoes[2] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que vão contra suas seguintes restrições: \n\n" + msgRestricao);
                     } else if (alergias[0] == 1 || alergias[1] == 1 || alergias[2] == 1 || alergias[3] == 1 || alergias[4] == 1 || alergias[5] == 1 || alergias[6] == 1 || alergias[7] == 1) {
-                        bld.setMessage("Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
+                        bld.setMessage(msgNivel + "Essa receita contém ingredientes que podem afetar suas seguintes alergias: \n\n" + msgAlergias);
                     }
 
 
@@ -589,6 +698,26 @@ public class ReceitaActivity extends Activity {
             }
 
 
+
+
+
+                    @Override
+                    public void onClick(View v) {
+
+                        UsuarioDAO u = new UsuarioDAO(getBaseContext());
+
+                        ArrayList<String> id_ingredientes = new ArrayList<String>();
+                        for (int j = 0; j < Integer.parseInt(receita.getString("quant")); j++){
+                            id_ingredientes.add(j, receita.getString("id_ing"+j));
+                        }
+
+                        u.update_experiencia(receita.getString("tempo"));
+                        u.update_pontos(id_ingredientes, controleEstrela);
+
+                        usarToast("Clicou em foto :) E supostamente up os pontos!");
+
+                    }
+                });
             } catch (Exception e) {
                 usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
                 finish();
@@ -629,6 +758,15 @@ public class ReceitaActivity extends Activity {
                     ReceitasDAO receitaDAO = new ReceitasDAO(getBaseContext());
                     usarToast(receitaDAO.removeReceitas(receita.getString("nome")));
                     item.setIcon(R.drawable.favorito);
+
+                    try {
+                        File file = new File(android.os.Environment.getExternalStorageDirectory() + "/KSG/image_" + receita.getString("nome") + ".jpg");
+                        if (file.exists()) {
+                            file.delete();
+                        }
+                    }catch (Exception e){
+                        Log.e("KSG","error ao remover imagem do SD");
+                    }
                 }
             });
 
@@ -645,7 +783,7 @@ public class ReceitaActivity extends Activity {
 
         }
 
-        if(verificaBD == false){
+        if(!verificaBD){
 
             item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
@@ -699,8 +837,6 @@ public class ReceitaActivity extends Activity {
 
 
         }
-
-
 
         return true;
     }
@@ -786,6 +922,40 @@ public class ReceitaActivity extends Activity {
     public void add(){
         Toast toast = Toast.makeText(this, "Receita adicionada aos Favoritos!", Toast.LENGTH_LONG);
         toast.show();
+
+        imagemSd = (ImageView) findViewById(R.id.img_receita);
+        imagemSd.getDrawable();
+
+
+        BitmapDrawable btmpDr = (BitmapDrawable) imagemSd.getDrawable();
+        Bitmap bmp = btmpDr.getBitmap();
+
+        //Salva imagem no SDcard
+        try
+        {
+            File sdCardDirectory = new File(Environment.getExternalStorageDirectory() + File.separator + "KSG");
+            sdCardDirectory.mkdirs();
+
+            String imageNameForSDCard = "image_"  + receita.getString("nome") + ".jpg";
+
+            File image = new File(sdCardDirectory, imageNameForSDCard);
+            FileOutputStream outStream;
+
+            outStream = new FileOutputStream(image);
+                        /* 100 to keep full quality of   the image */
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+            outStream.flush();
+            outStream.close();
+
+            //Refreshing SD card
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"+ Environment.getExternalStorageDirectory())));
+        }
+        catch (Exception e)
+        {
+            Log.e("KSG","Erro ao tentar salvar a imagem: "+e.getMessage());
+        }
+
+
     }
 
 

@@ -68,12 +68,18 @@ public class FragmentSugestao extends Fragment {
             @Override
             public void onClick(View v) {
                 if (verificaConexao())
+                if (verificaConexao()) {
                     try {
                         new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+DownloadImagemReceitaSug.id);
                     } catch (Exception ex){
                         Log.i("KSG","Deu um erro considerado! DImagemRecSug" + ex.getMessage());
                     }
-                else
+                    try {
+                        new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id=" + DownloadImagemReceitaSug.id);
+                    } catch (Exception ex) {
+                        Log.i("KSG", "Deu um erro considerado! DImagemRecSug" + ex.getMessage());
+                    }
+                } else
                     usarToast(getString(R.string.verifica_conexao));
             }
         });

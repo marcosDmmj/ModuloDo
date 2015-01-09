@@ -195,12 +195,25 @@ public class ReceitasDAO {
     }
 
     public List<String> contagem_pontos(int id_receita){
-        String sqlQuery = "SELECT id_ingredientes,pontos FROM Pontuacao WHERE id_pratos= '"+id_receita+"'";
+        String sqlQuery = "SELECT id_ingredientes,pontos FROM Pontuacao WHERE id_pratos = '"+id_receita+"'";
         Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
 
         List<String> result = new ArrayList<String>();
         while(cursor.moveToNext()){
             result.add("ing = "+cursor.getString(0)+" pontos = "+cursor.getString(1));
+        }
+        cursor.close();
+
+        return result;
+    }
+
+    public int contagem_pontos_Ing(int id_receita){
+        String sqlQuery = "SELECT pontos FROM Pontuacao WHERE id_pratos = '"+id_receita+"'";
+        Cursor cursor = bancoDeDados.rawQuery(sqlQuery, null);
+
+        int result = 0;
+        while(cursor.moveToNext()){
+            result+= Integer.parseInt(cursor.getString(0));
         }
         cursor.close();
 

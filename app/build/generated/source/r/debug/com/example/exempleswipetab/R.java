@@ -529,6 +529,14 @@ containing a value of this type.
         public static final int activity_list_t=0x7f030002;
         public static final int activity_main=0x7f030003;
         public static final int activity_main_categoria=0x7f030004;
+        public static final int activity_main_favoritos=0x7f030005;
+        public static final int activity_perfil_edit=0x7f030006;
+        public static final int activity_perfil_user=0x7f030007;
+        public static final int fragment_fragment_categorias=0x7f030008;
+        public static final int fragment_fragment_favoritos=0x7f030009;
+        public static final int fragment_fragment_sugestao=0x7f03000a;
+        public static final int fragment_fragment_survivalmode=0x7f03000b;
+        public static final int item=0x7f03000c;
         public static final int activity_perfil_edit=0x7f030005;
         public static final int activity_perfil_user=0x7f030006;
         public static final int activity_splash=0x7f030007;
@@ -563,6 +571,29 @@ containing a value of this type.
         public static final int menu_splash=0x7f090005;
     }
     public static final class string {
+        public static final int action_settings=0x7f050000;
+        public static final int app_name=0x7f050001;
+        public static final int cafe=0x7f050002;
+        public static final int hello_blank_fragment=0x7f050003;
+        public static final int ingredientes=0x7f050004;
+        public static final int modo_de_preparo=0x7f050005;
+        public static final int n_rec=0x7f050006;
+        public static final int nao=0x7f050007;
+        public static final int ok=0x7f050008;
+        public static final int perfil=0x7f050009;
+        public static final int pesquisar=0x7f05000a;
+        public static final int porcoes=0x7f05000b;
+        public static final int refeicoes=0x7f05000c;
+        public static final int tempo_de_preparo=0x7f05000d;
+        public static final int title_activity_activiity_perfil=0x7f05000e;
+        public static final int title_activity_final=0x7f05000f;
+        public static final int title_activity_list_t=0x7f050010;
+        public static final int title_activity_perfil_edicao=0x7f050011;
+        public static final int title_activity_perfil_edit=0x7f050012;
+        public static final int title_activity_perfil_user=0x7f050013;
+        public static final int title_activity_pos_survival=0x7f050014;
+        public static final int ver_receita=0x7f050015;
+        public static final int verifica_conexao=0x7f050016;
         public static final int action_settings=0x7f070000;
         public static final int app_name=0x7f070001;
         public static final int cafe=0x7f070002;
