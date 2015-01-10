@@ -67,20 +67,16 @@ public class FragmentSugestao extends Fragment {
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (verificaConexao())
                 if (verificaConexao()) {
                     try {
                         new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+DownloadImagemReceitaSug.id);
                     } catch (Exception ex){
-                        Log.i("KSG","Deu um erro considerado! DImagemRecSug" + ex.getMessage());
+                        Log.e("KSG","Deu um erro considerado! DImagemRecSug" + ex.getMessage());
                     }
-                    try {
-                        new DownloadReceitaPorId(getActivity()).execute("http://ksmapi.besaba.com/sql/selectRec.php?id=" + DownloadImagemReceitaSug.id);
-                    } catch (Exception ex) {
-                        Log.i("KSG", "Deu um erro considerado! DImagemRecSug" + ex.getMessage());
-                    }
-                } else
+                } else {
                     usarToast(getString(R.string.verifica_conexao));
+                    Log.e("KSG", "Tá sem net");
+                }
             }
         });
 	}

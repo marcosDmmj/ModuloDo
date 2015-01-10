@@ -30,11 +30,6 @@ public class Splash extends Activity {
             public void run() {
                 try {
                     if (verificaConexao()) {
-                        try {
-                            new DownloadAtualizaIng(getApplication()).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
-                        } catch (Exception e) {
-                            Log.i("KSG", "Deu um erro ! AtualizaIng" + e.getMessage());
-                        }
                         sleep(1000);
                         startActivity(new Intent(getApplicationContext(),
                                 MainFacebook.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
@@ -44,13 +39,22 @@ public class Splash extends Activity {
                                 MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     }
                 } catch (Exception e) {
-                    // e.printStackTrace();
+                    Log.e("KSG", "Nas chamadas!" + e.getMessage());
                     startActivity(new Intent(getApplicationContext(),
                             MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 }
             }
 
         };
+        if (verificaConexao())
+        try {
+            IngredienteDAO ingredienteDAO = new IngredienteDAO(this);
+            new DownloadAtualizaIng(this).execute("http://ksmapi.besaba.com/sql/selectIngW.php?id=" + IngredienteDAO.sizeBD());
+            Log.e("KSG", "Vai baixar as coisas" + IngredienteDAO.sizeBD());
+        } catch (Exception e) {
+            Log.e("KSG", "Error >.< ! AtualizaIng " + e.getMessage());
+        }
+
         thread.start();
 
     }

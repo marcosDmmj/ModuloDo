@@ -102,11 +102,13 @@ public class IngredienteDAO {
             else
                 result = 0;
             cursor.close();
+            Log.e("KSG", "Tamanho sizeBD "+result);
             return result;
         }
         catch(SQLException e){
-            Log.i("APPBD bla bla bla", e.getMessage());
+            Log.e("KSG", "Erro no sizeBD "+e.getMessage());
         }
-        return -1;
+        Log.e("KSG", "SizeBD veio para o 0");
+        return 0;
     }
 }
