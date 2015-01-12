@@ -30,6 +30,8 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 	protected void onCreate(Bundle e) {
 		super.onCreate(e);
 		setContentView(R.layout.activity_main);
+
+        setTitle("Kitchen Survival Guide");
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 

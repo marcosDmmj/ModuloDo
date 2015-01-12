@@ -16,29 +16,33 @@
 
     	<TextView
         	android:id="@+id/txt_parte_do_dia"
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:layout_marginLeft="30dp"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Experimente!"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#7B0803"
+            android:textStyle="bold"
         	android:textAppearance="?android:attr/textAppearanceLarge"
         	/>
-    	<TextView
-        	android:id="@+id/txt_comentario"
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:layout_marginLeft="30dp"
-        	/>
+
     	<ImageView
     	    android:id="@+id/img_opcao"
         	android:layout_width="250dp"
         	android:layout_height="250dp"
+            android:layout_marginTop="10dp"
         	android:layout_gravity="center_horizontal"
-        	android:src="@drawable/no_image2" />
+        	android:src="@drawable/no_image_dosveradeverdade" />
     	<Button
         	android:id="@+id/btn_ver_receita"
         	android:layout_width="250dp"
         	android:layout_height="wrap_content"
         	android:layout_gravity="center_horizontal"
-        	android:text="@string/ver_receita"
+            android:layout_marginTop="5dp"
+            android:background="#7B0803"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="@string/ver_receita"
         	/>
 	</LinearLayout>
 	</ScrollView>

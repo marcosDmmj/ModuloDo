@@ -28,7 +28,7 @@ import lajos.code.ksg.Splash;
 
 public class FragmentSugestao extends Fragment {
 	int mHour;
-	TextView txtSaudacao, txtDica;
+	TextView txtSaudacao;
     ImageView imageView;
     Button btnVerReceita;
 
@@ -41,7 +41,6 @@ public class FragmentSugestao extends Fragment {
 		super.onActivityCreated(bundle);
 		
 		txtSaudacao = (TextView) getActivity().findViewById(R.id.txt_parte_do_dia);
-		txtDica = (TextView) getActivity().findViewById(R.id.txt_comentario);
         imageView = (ImageView) getActivity().findViewById(R.id.img_opcao);
         btnVerReceita = (Button) getActivity().findViewById(R.id.btn_ver_receita);
 		
@@ -61,8 +60,6 @@ public class FragmentSugestao extends Fragment {
         } catch (Exception ex) {
             Toast.makeText(getActivity(),"Deu treta! "+ex.getMessage(),Toast.LENGTH_LONG).show();
         }
-		
-		txtDica.setText("Que tal experimentar a seguinte receita...");
 
         btnVerReceita.setOnClickListener(new View.OnClickListener() {
             @Override

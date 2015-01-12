@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Marcos Denis\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
+        jar="C:\Users\Taiga\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
-        <dex dex="E:\Projetos Android\KSG\KSG\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-16e9e589238cfaf0f6749f89b980d3b6d498ba79.jar" />
+        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-ef238705b9f29cbda5511317a8af7ef07043b37b.jar" />
     </item>
     <item
-        jar="E:\Projetos Android\KSG\KSG\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.21.1\classes.jar"
+        jar="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.21.1\classes.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="0285ad8da812e92dda76ed5d0dcba05724c7911d">
-        <dex dex="E:\Projetos Android\KSG\KSG\app\build\intermediates\pre-dexed\debug\classes-0554547a2594306128932a3cb7b7a650d73dd55c.jar" />
+        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\classes-e740da40d3313bdb85810e468d7cd3b441cf0d05.jar" />
     </item>
 
 </items>
