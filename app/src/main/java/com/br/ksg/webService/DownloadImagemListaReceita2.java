@@ -67,7 +67,7 @@ public class DownloadImagemListaReceita2 extends AsyncTask<String, Void, Drawabl
         super.onPostExecute(result);
 
         try {
-            if ((ListSurvivalMode.verificaStatus)&&(result != null)) {
+            if (result != null) {
                 ListView lv = (ListView) activity.findViewById(R.id.listdel);
 
                 ListSurvivalMode.ad.getItem(position).setImg(result);

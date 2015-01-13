@@ -2,6 +2,7 @@ package com.br.ksg.telas.listas;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.br.ksg.adapters.CustomAdapterCategoria;
 import com.br.ksg.classesBasicas.ReceitaBasica;
@@ -46,7 +47,7 @@ public class ListCategoria extends Activity {
         else {
             itemList = BundleToList(list);
 
-            setTitle("Resultados para: " + que_categoria);
+            setTitle(que_categoria.substring(0,1).toUpperCase() + que_categoria.substring(1).toLowerCase());
 
             ad = new CustomAdapterCategoria(this, R.layout.item, itemList);
             ListView lv = (ListView) findViewById(R.id.listdel);

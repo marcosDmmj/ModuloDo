@@ -23,7 +23,7 @@ import java.io.InputStream;
  * Created by Marcos on 19/12/2014.
  */
 public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
-    ProgressDialog dialog;
+//     ProgressDialog dialog;
     Context c;
 
     public DownloadAtualizaIng(Context c) {
@@ -33,7 +33,7 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
+   //     dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
     }
 
 
@@ -66,7 +66,7 @@ public class DownloadAtualizaIng extends AsyncTask<String, Void, Void> {
     protected void onPostExecute(Void result) {
         super.onPostExecute(result);
         try {
-            dialog.dismiss();
+     //       dialog.dismiss();
         } catch (Exception e) {
             Log.i("KSG","Preocupante! "+e.getMessage());
         }

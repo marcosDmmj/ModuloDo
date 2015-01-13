@@ -37,8 +37,8 @@ public class MainFacebook extends FragmentActivity {
 
 
     public void agoraNao(View view){
-
         startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        finish();
     }
 
 

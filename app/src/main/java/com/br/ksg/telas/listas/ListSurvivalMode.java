@@ -27,10 +27,8 @@ import java.util.List;
 
 public class ListSurvivalMode extends Activity {
     private List<ReceitaBasica> itemList;
-    public static boolean verificaStatus;
     public static ArrayAdapter<ReceitaBasica> ad;
     private List<DownloadImagemListaReceita2> imagens = new ArrayList<DownloadImagemListaReceita2> ();
-    boolean create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +37,6 @@ public class ListSurvivalMode extends Activity {
 
         Intent i = getIntent();
 
-        verificaStatus = true;
         Bundle list = i.getBundleExtra("lista");
         if (list.getInt("tamanho") == 0){
             usarToast(getString(R.string.verifica_conexao));
@@ -62,8 +59,6 @@ public class ListSurvivalMode extends Activity {
                     acessa_a_receita(itemList.get(position).getId_receita());
                 }
             });
-
-            create = true;
         }
     }
 
@@ -73,22 +68,12 @@ public class ListSurvivalMode extends Activity {
         super.onResume();
         for (j = 0; j < itemList.size(); j++) {
             try {
-                if (create) {
-                    imagens.add(j, new DownloadImagemListaReceita2(getApplication(), this, j));
-                    imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                }
-                else {
-                    if (itemList.get(j).getImg() == null) {
-                        imagens.remove(j);
-                        imagens.add(j, new DownloadImagemListaReceita2(getApplication(), this, j));
-                        imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                    }
-                }
+                imagens.add(j, new DownloadImagemListaReceita2(getApplication(), this, j));
+                imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
             } catch (Exception e){
                 usarToast("Deu erro! "+j+" OnResume: "+e.getMessage());
             }
         }
-        create = false;
     }
 
     @Override
@@ -145,7 +130,6 @@ public class ListSurvivalMode extends Activity {
                         usarToast("Deu erro! "+e.getMessage());
                     }
                 }
-                verificaStatus = false;
                 new DownloadReceitaPorId(this).execute("http://ksmapi.besaba.com/sql/selectRec.php?id="+id);
             } catch (Exception e) {
                 usarToast(getString(R.string.nao)+" funfou :'("+e.getMessage());
