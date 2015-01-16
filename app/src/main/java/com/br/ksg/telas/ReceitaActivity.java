@@ -90,9 +90,21 @@ public class ReceitaActivity extends Activity {
         else {
             try {
 
-                imagemSd = (ImageView) findViewById(R.id.img_receita);
+                ReceitasDAO receitaPesquisa1 = new ReceitasDAO(this);
+                verificaBD = receitaPesquisa1.buscaReceita(receita.getString("nome")) ;
+                MenuItem menuItem = (MenuItem) findViewById(R.id.action_favorito);
+
+                if (menuItem == null)
+                    Log.e("KSG","Tem algo...");
+                    //usarToast("Tem algo estranho...");
+                else
+                if(verificaBD) {
+                    menuItem.setIcon(R.drawable.favorito_selected);
+                }
 
                 id_receita = Integer.parseInt(receita.getString("id"));
+
+                imagemSd = (ImageView) findViewById(R.id.img_receita);
 
                 txt_titulo = (TextView) findViewById(R.id.txt_nome_receita);
                 txt_titulo.setText(receita.getString("nome"));
@@ -140,7 +152,7 @@ public class ReceitaActivity extends Activity {
                     try {
                         new DownloadImagemReceita(getApplication(), this).execute("http://ksmapi.besaba.com/imagens/" + receita.getString("id") + ".jpg");
                     } catch (Exception e) {
-                        usarToast("Deu erro! " + e.getMessage());
+                        usarToast("Favorito!!! " + e.getMessage());
                     }
                 } else{
                     //Carrega oque houve a imagem do SDcard
@@ -154,13 +166,13 @@ public class ReceitaActivity extends Activity {
                             imagemSd.setImageBitmap(bitmap);
                         }
                         else{
-                            imagemSd.setImageResource(R.drawable.no_image2);
+                            imagemSd.setImageResource(R.drawable.no_image_dosveradeverdade);
                         }
 
                     }
                     catch (Exception e)
                     {
-                        imagemSd.setImageResource(R.drawable.no_image2);
+                        imagemSd.setImageResource(R.drawable.no_image_dosveradeverdade);
                         Log.e("KSG","Olha Josias aqui!: "+e.getMessage());
                         usarToast("Erro!");
                     }
@@ -697,7 +709,8 @@ public class ReceitaActivity extends Activity {
                     }
             }
             } catch (Exception e) {
-                usarToast("ERRORRRRRR!!! "+e.getLocalizedMessage());
+                usarToast("ERRORRRRRR!!! "+e.getMessage());
+                e.printStackTrace();
                 finish();
             }
         }
@@ -723,7 +736,6 @@ public class ReceitaActivity extends Activity {
         verificaBD = receitaPesquisa.buscaReceita(receita.getString("nome")) ;
 
         if(verificaBD){
-
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja remover dos Favoritos");
             bld.setTitle("Aviso");
@@ -748,8 +760,6 @@ public class ReceitaActivity extends Activity {
                 }
             });
 
-
-
             bld.setNegativeButton(getString(R.string.nao),new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -762,7 +772,6 @@ public class ReceitaActivity extends Activity {
         }
 
         if(!verificaBD){
-
             item.setIcon(R.drawable.favorito);
             AlertDialog.Builder bld = new AlertDialog.Builder(this);
             bld.setMessage("Deseja adicionar  aos Favoritos?");
