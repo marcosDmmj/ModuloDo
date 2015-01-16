@@ -67,16 +67,17 @@ public class DownloadImagemListaReceita extends AsyncTask<String, Void, Drawable
         super.onPostExecute(result);
 
         try {
-            if ((ListCategoria.verificaStatus)&&(result != null)) {
+            if ((result != null)) {
                 ListView lv = (ListView) activity.findViewById(R.id.listdel);
 
                 ListCategoria.ad.getItem(position).setImg(result);
                 ListCategoria.ad.notifyDataSetChanged();
 
                 ((ReceitaBasica) lv.getItemAtPosition(position)).setImg(result);
+                Log.e("KSG","Setando imagem!");
             }
         } catch (Exception e){
-            Log.i("KSG","Erro ainda >.< "+e.getMessage());
+            Log.e("KSG","Erro ao fazer ao setarImagem! >.< "+e.getMessage());
         }
 
     }

@@ -49,7 +49,11 @@ public class CustomAdapterCategoria extends ArrayAdapter<ReceitaBasica> {
         tempo.setText(item.getTempo());
         porcoes.setText(item.getPorcoes());
 
-        image.setImageResource(R.drawable.no_image);
+        // image.setImageResource(R.drawable.no_image);
+        if (item.getImg() != null)
+            image.setImageDrawable(item.getImg());
+        else
+            image.setImageResource(R.drawable.no_image);
        
         return convertView;
     }
