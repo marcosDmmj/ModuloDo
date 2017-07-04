@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-ldpi/background.png",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable-ldpi/background.png"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-ldpi/iconeksg.png",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable-ldpi/iconeksg.png"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_launcher.png",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable-ldpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-ldpi/unknown.png",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable-ldpi/unknown.png"
+    }
+]
