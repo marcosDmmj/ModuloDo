@@ -2,18 +2,283 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Taiga\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
-        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-ef238705b9f29cbda5511317a8af7ef07043b37b.jar" />
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/7a50d88f64c3d16ca340ef776b7970b857d448e4/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_50a8b3fc935e6d7274646f9507bf5c271c425bf5/classes.dex" />
     </item>
     <item
-        jar="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\3.21.1\classes.jar"
-        jumboMode="false"
-        revision="20.0.0"
-        sha1="0285ad8da812e92dda76ed5d0dcba05724c7911d">
-        <dex dex="C:\Users\Taiga\Documents\Android_Studio\KSG\app\build\intermediates\pre-dexed\debug\classes-e740da40d3313bdb85810e468d7cd3b441cf0d05.jar" />
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/8cc04378e02ddd6ab20219d894e4f9c47523ef9e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1b7b3d331fca9a3eac299079ee217ed4e1e25ae2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a31f344608b028e5077fb9ff992e61103e348e19/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/d39ebfb69846d4bacd1fac5fffe89f73088962df/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f76e06c87b140f0654b65f1dd8a210c1dc6cd9a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_5a57e41c308622017b228fcbc16761d6be3e28ac/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.readystatesoftware.sqliteasset/sqliteassethelper/2.0.1/d5f02e4a4d65ec0fbb339f2e4228723d1540bb9f/sqliteassethelper-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5f02e4a4d65ec0fbb339f2e4228723d1540bb9f">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/sqliteassethelper-2.0.1_2f594956219a1ffab019ea0df0d72b50a0a5d3f9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/5705d1ef66aed3d97aba1f8f79ec0b165172ceb6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fea01abd91186a7148aaaf8c517b823eedaac79a">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_dc017e4ff411bcee457d077cb7ebb571ef4c942f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/7201419971623788d41467988861742498d88162/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_84b4ef065e88a2d25b4a702766994fcce330d178/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/7a50d88f64c3d16ca340ef776b7970b857d448e4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9536c9f364e1cadf2c6a47a1d4b510dc94678977/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/c3eb5ef243d6b153fba050537a5b5c591fc2bc0e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1567007e42b1f90513c472c9804590c06b609bc1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/d778f5cdae320cb484a849df211ed97a002ad591/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_70ac670510f068e8f393d9721d90b9b44e3c2051/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/3744b6300d6157c6c69b4fc634393ddb128136b2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2e7b6e73d34b2218615719b4c4e5b142e865389b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/ebffb65528e16e20bf50f0814e2c8cbdd33f55a7/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a1ebf3b5d617d59bfde5e3b69bdd11d146399d8c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/970118ea9836d94e9f47db678a611ad355384bf3/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c6b7d3b148c2f6bb5fcbf7af127c3d6be20b4d8f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/ebffb65528e16e20bf50f0814e2c8cbdd33f55a7/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_5b55dc276a2a5f7afa274e7bd7ae53d037436dc4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/3eac00a042ad85a7cf8c4c472489cf6b62385471/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_458e05e798e20102d2fbe09e5d26ff93a931392c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/eea90bdc18220a5d217a4148f539acb2d49a926f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e94938fdff88cd50f879f5e451b47a3a4185ffe9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.darwinsys/hirondelle-date4j/1.5.1/7b52de513f87ae4d9ff5d17518def0a1e9bc3df0/hirondelle-date4j-1.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7b52de513f87ae4d9ff5d17518def0a1e9bc3df0">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/hirondelle-date4j-1.5.1_2734a69bee2638aab6582742b9d1772263114344/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.9.4/1c295b462f16702ebe720bbb08f62e1ba80da41b/joda-time-2.9.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1c295b462f16702ebe720bbb08f62e1ba80da41b">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/joda-time-2.9.4_1ec7ba958109ee9cb1a082eb966d7c91d2afeff7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="14b7bd24d3c2faf3d56ba45d5fe8687d88a3728d">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_666d728fcc7275ef3d457a5206414a239e7bbf23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_42adeb77b8f9741ef61a29bb414b6f47acb9815a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/0929168c10450b2badd1ac16652680666f39bedd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="65d086ee9daaf87b5af62ad24471edafa433354c">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_beaf10fe786c341d5d5572d566d6ba3a8483b503/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_a5b9490094afb42eb4d98f2ee99f64265e5a23b8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/970118ea9836d94e9f47db678a611ad355384bf3/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_4ee180f248e10fb583dc2a081d4e0ed4bbeef23e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/d9b4f3fe68952a53de2db1da176fcb6e1c6da0bf/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9338250e37ea6b6f673255caf6391627f771e9cb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/1faac591e188b4649b4611205863e3c4bf476084/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c86f8526926604b33a86052cddddd9881465f2dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/a0f1bac0ad81d0781ab3970d646d14a174e3fcdc/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c62423966e97071131e9c16d89ffaa003fe6a5d1">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1ce592271067024032d3d94c29a2aedd99ce8773/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/b47c717b800780f03c20379af347607ebc533c79/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2250386c0c9436f147e4b220532a360afd4416fc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_14866aa0c04525527a2486d3e47e662788b175e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/b47c717b800780f03c20379af347607ebc533c79/output/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_994bf5b429967269876701bff6aab599cf279e89/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/3eac00a042ad85a7cf8c4c472489cf6b62385471/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_afca5093cce9e146f8de9ea55852a845d3724c0f/classes.dex" />
     </item>
 
 </items>
