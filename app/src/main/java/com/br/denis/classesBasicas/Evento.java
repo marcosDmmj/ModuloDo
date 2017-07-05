@@ -1,6 +1,9 @@
 package com.br.denis.classesBasicas;
 
-public class Evento {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Evento implements Parcelable{
 	private String titulo;
 	private String nome;
 	private String data_inicio;
@@ -17,6 +20,26 @@ public class Evento {
 		this.email = email;
 	}
 
+
+	protected Evento(Parcel in) {
+		titulo = in.readString();
+		nome = in.readString();
+		data_inicio = in.readString();
+		data_fim = in.readString();
+		email = in.readString();
+	}
+
+	public static final Creator<Evento> CREATOR = new Creator<Evento>() {
+		@Override
+		public Evento createFromParcel(Parcel in) {
+			return new Evento(in);
+		}
+
+		@Override
+		public Evento[] newArray(int size) {
+			return new Evento[size];
+		}
+	};
 
 	public String getNome() {
 		return nome;
@@ -56,5 +79,19 @@ public class Evento {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public int describeContents() {
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(titulo);
+		parcel.writeString(nome);
+		parcel.writeString(data_fim);
+		parcel.writeString(data_inicio);
+		parcel.writeString(email);
 	}
 }

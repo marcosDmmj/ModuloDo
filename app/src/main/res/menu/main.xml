@@ -8,7 +8,7 @@
         android:title="@string/perfil"/>
 
    <group android:id="@+id/group1" android:checkableBehavior="single">
-            <item android:id="@+id/submenu1" android:title="@string/dispov_vel" />
-            <item android:id="@+id/submenu2" android:title="@string/n_dispon_vel" />
+            <item android:id="@+id/menu1" android:title="@string/dispov_vel" />
+            <item android:id="@+id/menu2" android:title="@string/n_dispon_vel" />
    </group>
 </menu>

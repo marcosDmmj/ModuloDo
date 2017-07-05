@@ -1,4 +1,4 @@
-#Tue Jul 04 20:09:30 AMT 2017
+#Wed Jul 05 09:39:54 AMT 2017
 base.0=/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8
 renamed.0=classes.dex
 file.0=/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex

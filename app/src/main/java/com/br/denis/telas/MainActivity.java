@@ -1,5 +1,6 @@
 package com.br.denis.telas;
 
+import com.br.denis.classesBasicas.Evento;
 import com.br.denis.telas.adapters.OrganizedAdapter;
 import com.example.exempleswipetab.R;
 
@@ -7,25 +8,40 @@ import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.ActionBar.TabListener;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 
 	ViewPager viewPager;
 	ActionBar actionBar;
+	private ProgressDialog dialog;
+	public static Integer status;
+	public static ArrayList<Evento> eventos,eventosTemp;
+	private static final String PREF_ACCOUNT_NAME = "accountName";
 	
 	@Override
 	protected void onCreate(Bundle e) {
 		super.onCreate(e);
 		setContentView(R.layout.activity_main);
-		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 
 		viewPager.setAdapter(new OrganizedAdapter(getSupportFragmentManager()));
@@ -34,12 +50,6 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        //setTitle("Secretária Professor");
-
-		//ActionBar.Tab tab1 = actionBar.newTab();
-		//tab1.setText("Status");
-		//tab1.setTabListener(this);
-		
 		ActionBar.Tab tab2 = actionBar.newTab();
 		tab2.setText("Calendário");
 		tab2.setTabListener(this);
@@ -56,6 +66,12 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		actionBar.addTab(tab2);
 		actionBar.addTab(tab3);
 		actionBar.addTab(tab4);
+
+		Intent intent = getIntent();
+		status = intent.getIntExtra("status",-1);
+		eventos = intent.getParcelableArrayListExtra("eventos");
+		eventosTemp = intent.getParcelableArrayListExtra("eventosTemp");
+		Toast.makeText(this,"Status atual = "+status,Toast.LENGTH_LONG).show();
     }
 
 	@Override
@@ -98,6 +114,20 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
         super.onCreateOptionsMenu(menu);
         MenuInflater mi = getMenuInflater();
         mi.inflate(R.menu.main, menu);
+		MenuItem item;
+		if (status == 0) {
+			item = menu.findItem(R.id.menu1);
+		} else {
+			item = menu.findItem (R.id.menu2);
+		}
+		item.setChecked(true);
+
+		// Se tiver logado no Google não precisa mostrar pra logar!
+		String accountName = getPreferences(Context.MODE_PRIVATE)
+				.getString(PREF_ACCOUNT_NAME, null);
+		item = menu.findItem(R.id.perfil);
+		item.setVisible(accountName != null);
+
         return true;
     }
     
@@ -105,19 +135,82 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()) {
 			case R.id.perfil:
+				Toast.makeText(this, "Conexão com o Google", Toast.LENGTH_SHORT).show();
 				return true;
-			case R.id.submenu1:
+			case R.id.menu1:
+				new setaStatusAsync(this).execute("http://ufam-automation.net/marcosmoura/setStatus.php?Status=0");
 				if (item.isChecked()) item.setChecked(false);
 				else item.setChecked(true);
-				Toast.makeText(this, "Clicked: Menu No. 2 - SubMenu No .1", Toast.LENGTH_SHORT).show();
 				return true;
-			case R.id.submenu2:
+			case R.id.menu2:
+				new setaStatusAsync(this).execute("http://ufam-automation.net/marcosmoura/setStatus.php?Status=1");
 				if (item.isChecked()) item.setChecked(false);
 				else item.setChecked(true);
-				Toast.makeText(this, "Clicked: Menu No. 2 - SubMenu No .2", Toast.LENGTH_SHORT).show();
 				return true;
 		}
         return super.onOptionsItemSelected(item);
     }
+
+	private class setaStatusAsync extends AsyncTask<String, Void, Void> {
+		Context c;
+		HttpURLConnection urlConnection;
+
+		public setaStatusAsync(Context c) {
+			this.c = c;
+		}
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			dialog = ProgressDialog.show(c, "Aguarde", "Atualizando status, Por favor aguarde!");
+		}
+
+		@Override
+		protected void onPostExecute(Void aVoid) {
+			super.onPostExecute(aVoid);
+			dialog.dismiss();
+			Toast.makeText(c, "Status alterado!", Toast.LENGTH_SHORT).show();
+		}
+
+		@Override
+		protected void onCancelled() {
+			super.onCancelled();
+			urlConnection.disconnect();
+			Log.d("setaStatusAsync","Cancelou o bagulho?");
+			dialog.cancel();
+		}
+
+		@Override
+		protected Void doInBackground(String... strings) {
+
+			try {
+				URL url;
+				url = new URL(strings[0]);
+
+				urlConnection = (HttpURLConnection) url.openConnection();
+
+
+				int responseCode = urlConnection.getResponseCode();
+
+				if (responseCode == HttpURLConnection.HTTP_OK) {
+					InputStream in = urlConnection.getInputStream();
+					BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+					StringBuilder result = new StringBuilder();
+					String line;
+					while((line = reader.readLine()) != null) {
+						result.append(line);
+					}
+					status = Integer.parseInt(result.toString());
+					Log.d("setaStatusAsync","Pegou o resultado de boas! "+status);
+				} else {
+					Log.d("setaStatusAsync","A conexão não tá OK! code = "+responseCode);
+				}
+			}catch (Exception e) {
+				Log.e("MainActivity","Erro Status.txt= "+e.getMessage());
+			}
+
+			return null;
+		}
+	}
 }
 

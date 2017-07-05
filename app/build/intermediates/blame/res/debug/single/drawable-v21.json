@@ -1,26 +1,46 @@
 [
     {
-        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/drawable-v21/abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/drawable-v21/notification_action_background.xml"
     },
     {
-        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
-        "source": "C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     }
 ]

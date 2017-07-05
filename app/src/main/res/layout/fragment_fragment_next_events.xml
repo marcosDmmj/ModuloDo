@@ -3,7 +3,6 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context="com.br.denis.telas.fragment.FragmentNextEvents" >
 
@@ -12,5 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>
+
+    <TextView android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Sem eventos no futuro!"/>
 
 </LinearLayout>

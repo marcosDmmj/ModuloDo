@@ -8,9 +8,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
+import com.br.denis.telas.MainActivity;
 import com.br.denis.telas.adapters.CustomAdapterEventosPendentes;
 import com.example.exempleswipetab.R;
 
@@ -30,7 +32,7 @@ public class FragmentEventosPendentes extends Fragment {
 		super.onActivityCreated(bundle);
 
 		ListView listView = (ListView) getActivity().findViewById(R.id.myListEventosPendentes);
-        final CustomAdapterEventosPendentes eventosAdapter = new CustomAdapterEventosPendentes(getActivity(),R.layout.item_evento,gerarEventos());
+        final CustomAdapterEventosPendentes eventosAdapter = new CustomAdapterEventosPendentes(getActivity(),R.layout.item_evento, MainActivity.eventosTemp);
         listView.setAdapter(eventosAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -39,14 +41,7 @@ public class FragmentEventosPendentes extends Fragment {
                 Toast.makeText(getActivity(),"Pegou no item "+evento.getNome(),Toast.LENGTH_SHORT).show();
             }
         });
+        TextView emptyView = (TextView) getActivity().findViewById(android.R.id.empty);
+        listView.setEmptyView(emptyView);
 	}
-
-    private List<Evento> gerarEventos() {
-        List<Evento> Eventos = new ArrayList<Evento>();
-        Eventos.add(new Evento("Shane", "33", "R.drawable.Evento_um","R.drawable.Evento_um","R.drawable.Evento_um"));
-        Eventos.add(new Evento("Hershel", "233", "R.drawable.Evento_dois","R.drawable.Evento_dois","R.drawable.Evento_dois"));
-        Eventos.add(new Evento("Glen", "2339", "R.drawable.Evento_tres","R.drawable.Evento_tres","R.drawable.Evento_tres"));
-
-        return Eventos;
-    }
 }
