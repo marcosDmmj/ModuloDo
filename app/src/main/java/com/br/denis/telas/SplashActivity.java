@@ -1,10 +1,9 @@
 package com.br.denis.telas;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.br.denis.classesBasicas.Evento;
@@ -43,6 +42,7 @@ public class SplashActivity extends AppCompatActivity {
                 URL url;
                 HttpURLConnection urlConnection;
                 url = new URL("http://ufam-automation.net/marcosmoura/getEventsTemp.php");// + date);
+
                 urlConnection = (HttpURLConnection) url.openConnection();
 
                 int responseCode = urlConnection.getResponseCode();
