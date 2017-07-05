@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 
@@ -35,9 +36,9 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 
         //setTitle("Secretária Professor");
 
-		ActionBar.Tab tab1 = actionBar.newTab();
-		tab1.setText("Status");
-		tab1.setTabListener(this);
+		//ActionBar.Tab tab1 = actionBar.newTab();
+		//tab1.setText("Status");
+		//tab1.setTabListener(this);
 		
 		ActionBar.Tab tab2 = actionBar.newTab();
 		tab2.setText("Calendário");
@@ -51,7 +52,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		tab4.setText("Solicitações pendentes");
 		tab4.setTabListener(this);
 		
-		actionBar.addTab(tab1);
+		//actionBar.addTab(tab1);
 		actionBar.addTab(tab2);
 		actionBar.addTab(tab3);
 		actionBar.addTab(tab4);
@@ -102,13 +103,20 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
     
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        switch(item.getItemId()){
-        case R.id.perfil:
-        		//Intent i = new Intent(this,PerfilUser.class);
-    			//startActivity(i);
-
-                return true;
-        }
+        switch(item.getItemId()) {
+			case R.id.perfil:
+				return true;
+			case R.id.submenu1:
+				if (item.isChecked()) item.setChecked(false);
+				else item.setChecked(true);
+				Toast.makeText(this, "Clicked: Menu No. 2 - SubMenu No .1", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.submenu2:
+				if (item.isChecked()) item.setChecked(false);
+				else item.setChecked(true);
+				Toast.makeText(this, "Clicked: Menu No. 2 - SubMenu No .2", Toast.LENGTH_SHORT).show();
+				return true;
+		}
         return super.onOptionsItemSelected(item);
     }
 }

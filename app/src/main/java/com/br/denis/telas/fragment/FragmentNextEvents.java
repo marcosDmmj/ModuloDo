@@ -7,18 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ListView;
 
+import com.br.denis.classesBasicas.Evento;
+import com.br.denis.telas.adapters.CustomAdapterNextEvent;
 import com.example.exempleswipetab.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FragmentNextEvents extends Fragment {
 
-	ArrayList<String> listaAutoComplete ;
-	ArrayList<String> listaElementos ;
-	ArrayAdapter<String> adapter,adapterListView;
-
-	
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
@@ -33,10 +32,18 @@ public class FragmentNextEvents extends Fragment {
 	
 	public void onActivityCreated(Bundle bundle){
 		super.onActivityCreated(bundle);
-		listaAutoComplete = new ArrayList<>();
-		listaElementos = new ArrayList<>();
 
-		
-		adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_dropdown_item_1line,listaAutoComplete);
+		ListView listView = (ListView) getActivity().findViewById(R.id.myListNextEvents);
+		final CustomAdapterNextEvent eventosAdapter = new CustomAdapterNextEvent(getActivity(),R.layout.item_evento,gerarEventos());
+		listView.setAdapter(eventosAdapter);
+	}
+
+	private List<Evento> gerarEventos() {
+		List<Evento> Eventos = new ArrayList<Evento>();
+		Eventos.add(new Evento("Shane", "23", "R.drawable.Evento_um","R.drawable.Evento_um","R.drawable.Evento_um"));
+		Eventos.add(new Evento("Hershel", "23", "R.drawable.Evento_dois","R.drawable.Evento_dois","R.drawable.Evento_dois"));
+		Eventos.add(new Evento("Glen", "23", "R.drawable.Evento_tres","R.drawable.Evento_tres","R.drawable.Evento_tres"));
+
+		return Eventos;
 	}
 }

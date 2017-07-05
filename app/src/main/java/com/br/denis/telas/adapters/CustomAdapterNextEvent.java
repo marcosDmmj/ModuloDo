@@ -11,18 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CustomAdapterFavoritos extends ArrayAdapter<Evento> {
+public class CustomAdapterNextEvent extends ArrayAdapter<Evento> {
 	/*
      * Used to instantiate layout XML file into its corresponding View objects
      */
     private final LayoutInflater inflater;
  
     /*
-     * each list item layout ID
+     * each list item_evento layout ID
      */
     private final int resourceId;
  
-    public CustomAdapterFavoritos(Context context, int resource, List<Evento> objects) {
+    public CustomAdapterNextEvent(Context context, int resource, List<Evento> objects) {
         super(context, resource, objects);
         this.inflater = LayoutInflater.from(context);
         this.resourceId = resource;

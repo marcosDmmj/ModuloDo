@@ -1,7 +1,6 @@
 package com.br.denis.telas.adapters;
 
 import com.br.denis.telas.fragment.FragmentEventosPendentes;
-import com.br.denis.telas.fragment.FragmentStatus;
 import com.br.denis.telas.fragment.FragmentCalendario;
 import com.br.denis.telas.fragment.FragmentNextEvents;
 
@@ -18,15 +17,12 @@ public class OrganizedAdapter extends FragmentPagerAdapter{
 	@Override
 	public Fragment getItem(int arg0) {
 		if(arg0==0){
-			return new FragmentStatus();
-		}
-		if(arg0==1){
 			return new FragmentCalendario();
 		}
-		if(arg0==2){
+		if(arg0==1){
 			return new FragmentNextEvents();
 		}
-		if(arg0==3){
+		if(arg0==2){
 			return new FragmentEventosPendentes();
 		}
 		return null;
@@ -34,6 +30,6 @@ public class OrganizedAdapter extends FragmentPagerAdapter{
 
 	@Override
 	public int getCount() {
-		return 4;
+		return 3;
 	}	
 }

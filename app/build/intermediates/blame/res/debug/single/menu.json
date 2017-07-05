@@ -1,14 +1,22 @@
 [
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/menu/menu_perfil_edicao.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/menu/menu_perfil_edicao.xml"
+        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/menu/main.xml"
+        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main.xml",
+        "source": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\src\\main\\res\\menu\\main.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/menu/menu_receita_final.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/menu/menu_receita_final.xml"
+        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_receita_final.xml",
+        "source": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\src\\main\\res\\menu\\menu_receita_final.xml"
+    },
+    {
+        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_receita_final.xml",
+        "source": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\src\\main\\res\\menu\\menu_receita_final.xml"
+    },
+    {
+        "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_perfil_edicao.xml",
+        "source": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\src\\main\\res\\menu\\menu_perfil_edicao.xml"
     }
 ]
