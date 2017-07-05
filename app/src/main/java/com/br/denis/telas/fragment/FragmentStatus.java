@@ -10,8 +10,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.br.denis.adapters.CustomAdapterFavoritos;
-import com.br.denis.classesBasicas.ReceitaBasica;
+import com.br.denis.telas.adapters.CustomAdapterFavoritos;
+import com.br.denis.classesBasicas.Evento;
 import com.example.exempleswipetab.R;
 
 import java.util.ArrayList;
@@ -27,8 +27,8 @@ public class FragmentStatus extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.activity_status, container, false);
-        final List<ReceitaBasica> item_l_f = new ArrayList<>();
-        ArrayAdapter<ReceitaBasica> ad = new CustomAdapterFavoritos(getActivity(), R.layout.item, item_l_f);
+        final List<Evento> item_l_f = new ArrayList<>();
+        ArrayAdapter<Evento> ad = new CustomAdapterFavoritos(getActivity(), R.layout.item, item_l_f);
         myListView = (ListView) rootView.findViewById(R.id.myListView);
         myListView.setAdapter(ad);
 

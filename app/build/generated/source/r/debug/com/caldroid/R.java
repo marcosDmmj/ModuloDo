@@ -39,17 +39,17 @@ public final class R {
         public static final int cell_text_color_dark = 0x7f0a006b;
     }
     public static final class drawable {
-        public static final int calendar_next_arrow = 0x7f020069;
-        public static final int calendar_prev_arrow = 0x7f02006a;
-        public static final int cell_bg = 0x7f02006d;
-        public static final int cell_bg_dark = 0x7f02006e;
-        public static final int disable_cell = 0x7f020089;
-        public static final int disabled_cell_dark = 0x7f02008a;
-        public static final int left_arrow = 0x7f020096;
-        public static final int red_border = 0x7f0200bd;
-        public static final int red_border_dark = 0x7f0200be;
-        public static final int red_border_gray_bg = 0x7f0200bf;
-        public static final int right_arrow = 0x7f0200c2;
+        public static final int calendar_next_arrow = 0x7f020054;
+        public static final int calendar_prev_arrow = 0x7f020055;
+        public static final int cell_bg = 0x7f020056;
+        public static final int cell_bg_dark = 0x7f020057;
+        public static final int disable_cell = 0x7f02006f;
+        public static final int disabled_cell_dark = 0x7f020070;
+        public static final int left_arrow = 0x7f020076;
+        public static final int red_border = 0x7f020077;
+        public static final int red_border_dark = 0x7f020078;
+        public static final int red_border_gray_bg = 0x7f020079;
+        public static final int right_arrow = 0x7f02007a;
     }
     public static final class id {
         public static final int calendar_gridview = 0x7f0b0082;
@@ -73,24 +73,24 @@ public final class R {
     }
     public static final class style {
         public static final int AppBaseTheme = 0x7f07000c;
-        public static final int CaldroidDefault = 0x7f0700c6;
-        public static final int CaldroidDefaultArrowButton = 0x7f0700c7;
-        public static final int CaldroidDefaultCalendarViewLayout = 0x7f0700c8;
-        public static final int CaldroidDefaultCell = 0x7f0700c9;
-        public static final int CaldroidDefaultDark = 0x7f0700ca;
-        public static final int CaldroidDefaultDarkCalendarViewLayout = 0x7f0700cb;
-        public static final int CaldroidDefaultDarkCell = 0x7f0700cc;
-        public static final int CaldroidDefaultDarkGridView = 0x7f0700cd;
-        public static final int CaldroidDefaultDarkMonthName = 0x7f0700ce;
-        public static final int CaldroidDefaultDarkNormalCell = 0x7f0700cf;
-        public static final int CaldroidDefaultDarkSquareCell = 0x7f0700d0;
-        public static final int CaldroidDefaultGridView = 0x7f0700d1;
-        public static final int CaldroidDefaultLeftButton = 0x7f0700d2;
-        public static final int CaldroidDefaultMonthName = 0x7f0700d3;
-        public static final int CaldroidDefaultNormalCell = 0x7f0700d4;
-        public static final int CaldroidDefaultRightButton = 0x7f0700d5;
-        public static final int CaldroidDefaultSquareCell = 0x7f0700d6;
-        public static final int CaldroidDefaultWeekday = 0x7f0700d7;
+        public static final int CaldroidDefault = 0x7f0700c2;
+        public static final int CaldroidDefaultArrowButton = 0x7f0700c3;
+        public static final int CaldroidDefaultCalendarViewLayout = 0x7f0700c4;
+        public static final int CaldroidDefaultCell = 0x7f0700c5;
+        public static final int CaldroidDefaultDark = 0x7f0700c6;
+        public static final int CaldroidDefaultDarkCalendarViewLayout = 0x7f0700c7;
+        public static final int CaldroidDefaultDarkCell = 0x7f0700c8;
+        public static final int CaldroidDefaultDarkGridView = 0x7f0700c9;
+        public static final int CaldroidDefaultDarkMonthName = 0x7f0700ca;
+        public static final int CaldroidDefaultDarkNormalCell = 0x7f0700cb;
+        public static final int CaldroidDefaultDarkSquareCell = 0x7f0700cc;
+        public static final int CaldroidDefaultGridView = 0x7f0700cd;
+        public static final int CaldroidDefaultLeftButton = 0x7f0700ce;
+        public static final int CaldroidDefaultMonthName = 0x7f0700cf;
+        public static final int CaldroidDefaultNormalCell = 0x7f0700d0;
+        public static final int CaldroidDefaultRightButton = 0x7f0700d1;
+        public static final int CaldroidDefaultSquareCell = 0x7f0700d2;
+        public static final int CaldroidDefaultWeekday = 0x7f0700d3;
     }
     public static final class styleable {
         public static final int[] Cell = { 0x01010098, 0x010100d4 };

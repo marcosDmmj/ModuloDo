@@ -3,8 +3,8 @@ package com.br.denis.telas.listas;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.br.denis.adapters.CustomAdapterCategoria;
-import com.br.denis.classesBasicas.ReceitaBasica;
+import com.br.denis.telas.adapters.CustomAdapterCategoria;
+import com.br.denis.classesBasicas.Evento;
 import com.example.exempleswipetab.R;
 
 import android.app.Activity;
@@ -21,9 +21,9 @@ import android.widget.Toast;
 import android.view.View;
 
 public class ListCategoria extends Activity {
-	private List<ReceitaBasica> itemList;
+	private List<Evento> itemList;
     public static boolean verificaStatus;
-    public static ArrayAdapter<ReceitaBasica> ad;
+    public static ArrayAdapter<Evento> ad;
     //private List<DownloadImagemListaReceita> imagens = new ArrayList<DownloadImagemListaReceita> ();
     boolean create;
 
@@ -54,7 +54,7 @@ public class ListCategoria extends Activity {
                 @SuppressWarnings({"rawtypes"})
                 public void onItemClick(AdapterView parent, View view,
                                         int position, long id) {
-                    acessa_a_receita(itemList.get(position).getId_receita());
+                    //acessa_a_receita(itemList.get(position).getId_receita());
                 }
             });
 
@@ -64,41 +64,13 @@ public class ListCategoria extends Activity {
 
     @Override
     protected void onResume() {
-        int j;
         super.onResume();
-        if (itemList != null)
-        for (j = 0; j < itemList.size(); j++) {
-            try {
-                if (create) {
-                    //imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
-                    //imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                }
-                else {
-                    if (itemList.get(j).getImg() == null) {
-                        //imagens.remove(j);
-                        //imagens.add(j, new DownloadImagemListaReceita(getApplication(), this, j));
-                        //imagens.get(j).execute("http://ksmapi.besaba.com/imagens/" + itemList.get(j).getId_receita() + ".jpg");
-                    }
-                }
-            } catch (Exception e){
-                usarToast("Deu erro! "+j+" OnResume: "+e.getMessage());
-            }
-        }
-        create = false;
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (itemList != null)
-        for (int j = 0; j < itemList.size(); j++) {
-            try {
-                //imagens.get(j).cancel(true);
-            } catch (Exception e){
-                usarToast("Deu erro! "+e.getMessage());
-            }
-        }
-    }
+     }
 
     public void acessa_a_receita(String id){
 		if (verificaConexao()) {					
@@ -120,11 +92,11 @@ public class ListCategoria extends Activity {
 		}
 	}	
 	
-	private List<ReceitaBasica> BundleToList(Bundle l){
-		List<ReceitaBasica> lista = new ArrayList<ReceitaBasica>();				
+	private List<Evento> BundleToList(Bundle l){
+		List<Evento> lista = new ArrayList<Evento>();
 		
 		for (int i = 0; i < l.getInt("tamanho"); i++) {
-			lista.add(new ReceitaBasica(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" "+getString(R.string.porcoes)));
+			lista.add(new Evento(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" "+getString(R.string.porcoes), ""));
 		}	
 		
 		return lista;

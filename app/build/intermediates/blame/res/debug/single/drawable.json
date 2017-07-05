@@ -8,10 +8,6 @@
         "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/drawable/common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/ab_background_textured_.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable/ab_background_textured_.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_ic_search_api_material.xml",
         "source": "/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/res/drawable/abc_ic_search_api_material.xml"
     },
@@ -38,10 +34,6 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_grey_pressed.9.png",
         "source": "/home/denis/.android/build-cache/d12c076cd4408e2aa66f837a1816e1df01eb34c1/output/res/drawable/com_facebook_button_grey_pressed.9.png"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/spinner_background_ab_.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable/spinner_background_ab_.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/com_facebook_loginbutton_silver.xml",
@@ -124,20 +116,16 @@
         "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
-        "source": "/home/denis/.android/build-cache/330416d522d27cfff659e829f6c303abd6f7b71d/output/res/drawable/abc_dialog_material_background_light.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/res/drawable/abc_dialog_material_background.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
-        "source": "/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/res/drawable/abc_btn_borderless_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+        "source": "/home/denis/.android/build-cache/330416d522d27cfff659e829f6c303abd6f7b71d/output/res/drawable/abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/selectable_background_.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable/selectable_background_.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/res/drawable/abc_btn_borderless_material.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/com_facebook_picker_top_button.xml",
@@ -230,10 +218,6 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/com_facebook_button_like_background.png",
         "source": "/home/denis/.android/build-cache/d12c076cd4408e2aa66f837a1816e1df01eb34c1/output/res/drawable/com_facebook_button_like_background.png"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/progress_horizontal_.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable/progress_horizontal_.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
@@ -386,10 +370,6 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/red_border_dark.xml",
         "source": "/home/denis/.android/build-cache/5705d1ef66aed3d97aba1f8f79ec0b165172ceb6/output/res/drawable/red_border_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/btn_cab_done_.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable/btn_cab_done_.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable/cell_bg_dark.xml",

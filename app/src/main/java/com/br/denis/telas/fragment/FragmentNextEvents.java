@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class FragmentNextEvents extends Fragment {
 
-	private AutoCompleteTextView autoComplete ;
 	ArrayList<String> listaAutoComplete ;
 	ArrayList<String> listaElementos ;
 	ArrayAdapter<String> adapter,adapterListView;
@@ -34,11 +33,10 @@ public class FragmentNextEvents extends Fragment {
 	
 	public void onActivityCreated(Bundle bundle){
 		super.onActivityCreated(bundle);
-		listaAutoComplete = new ArrayList<String>();
-		listaElementos = new ArrayList<String>();
+		listaAutoComplete = new ArrayList<>();
+		listaElementos = new ArrayList<>();
 
 		
-		adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,listaAutoComplete);
-		autoComplete.setAdapter(adapter);
+		adapter = new ArrayAdapter<>(getActivity(),android.R.layout.simple_dropdown_item_1line,listaAutoComplete);
 	}
 }

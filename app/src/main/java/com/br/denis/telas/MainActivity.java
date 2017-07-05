@@ -1,6 +1,6 @@
 package com.br.denis.telas;
 
-import com.br.denis.adapters.OrganizedAdapter;
+import com.br.denis.telas.adapters.OrganizedAdapter;
 import com.example.exempleswipetab.R;
 
 import android.app.ActionBar;
@@ -24,8 +24,6 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 	protected void onCreate(Bundle e) {
 		super.onCreate(e);
 		setContentView(R.layout.activity_main);
-
-        //setTitle("Kitchen Survival Guide");
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 
@@ -35,7 +33,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        setTitle("Secretária Professor");
+        //setTitle("Secretária Professor");
 
 		ActionBar.Tab tab1 = actionBar.newTab();
 		tab1.setText("Status");

@@ -13,8 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.br.denis.adapters.CustomAdapterCategoria;
-import com.br.denis.classesBasicas.ReceitaBasica;
+import com.br.denis.telas.adapters.CustomAdapterCategoria;
+import com.br.denis.classesBasicas.Evento;
 //import com.br.denis.webService.DownloadReceitaPorId;
 import com.example.exempleswipetab.R;
 
@@ -22,8 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListSurvivalMode extends Activity {
-    private List<ReceitaBasica> itemList;
-    public static ArrayAdapter<ReceitaBasica> ad;
+    private List<Evento> itemList;
+    public static ArrayAdapter<Evento> ad;
   //  private List<DownloadImagemListaReceita2> imagens = new ArrayList<DownloadImagemListaReceita2> ();
 
     @Override
@@ -51,7 +51,7 @@ public class ListSurvivalMode extends Activity {
                 @SuppressWarnings({"rawtypes"})
                 public void onItemClick(AdapterView parent, View view,
                                         int position, long id) {
-                    acessa_a_receita(itemList.get(position).getId_receita());
+                    //acessa_a_receita(itemList.get(position).getId_receita());
                 }
             });
         }
@@ -104,11 +104,11 @@ public class ListSurvivalMode extends Activity {
         }
     }
 
-    private List<ReceitaBasica> BundleToList(Bundle l){
-        List<ReceitaBasica> lista = new ArrayList<ReceitaBasica>();
+    private List<Evento> BundleToList(Bundle l){
+        List<Evento> lista = new ArrayList<Evento>();
 
         for (int i = 0; i < l.getInt("tamanho"); i++) {
-            lista.add(new ReceitaBasica(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" "+getString(R.string.porcoes)));
+            lista.add(new Evento(l.getString("id"+i), l.getString("nome"+i), l.getString("tempo"+i)+" min", l.getString("porcoes"+i)+" "+getString(R.string.porcoes), ""));
         }
 
         return lista;

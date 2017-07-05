@@ -178,7 +178,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="14b7bd24d3c2faf3d56ba45d5fe8687d88a3728d">
+        sha1="ccb0fb19933fe17cf549f796d1fb916670cce64b">
         <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_666d728fcc7275ef3d457a5206414a239e7bbf23/classes.dex" />
     </item>
     <item

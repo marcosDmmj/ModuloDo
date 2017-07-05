@@ -10,9 +10,5 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/menu/menu_receita_final.xml",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/menu/menu_receita_final.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/menu/menu_splash.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/menu/menu_splash.xml"
     }
 ]
