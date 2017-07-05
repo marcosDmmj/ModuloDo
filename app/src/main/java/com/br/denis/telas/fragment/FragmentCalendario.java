@@ -30,21 +30,20 @@ public class FragmentCalendario extends Fragment {
         args.putInt( CaldroidFragment.START_DAY_OF_WEEK, CaldroidFragment.MONDAY );
 		args.putBoolean(CaldroidFragment.ENABLE_SWIPE, false);
 		args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, false);
+
         mCaldroidFragment.setArguments( args );
 
 		final CaldroidListener listener = new CaldroidListener() {
 
 			@Override
 			public void onSelectDate(Date date, View view) {
-				Toast.makeText(getActivity().getApplicationContext(), "Clicou numa data em especifico! "+date,
-						Toast.LENGTH_SHORT).show();
+				Toast.makeText(getActivity().getApplicationContext(), "Clicou numa data em especifico! "+date, Toast.LENGTH_SHORT).show();
 			}
 
 			@Override
 			public void onChangeMonth(int month, int year) {
-				String text = "month: " + month + " year: " + year;
-				Toast.makeText(getActivity().getApplicationContext(), text,
-						Toast.LENGTH_SHORT).show();
+				//String text = "month: " + month + " year: " + year;
+				//Toast.makeText(getActivity().getApplicationContext(), text, Toast.LENGTH_SHORT).show();
 			}
 
 			@Override

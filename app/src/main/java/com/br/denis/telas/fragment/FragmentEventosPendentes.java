@@ -6,18 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
 import com.br.denis.telas.MainActivity;
-import com.br.denis.telas.adapters.CustomAdapterEventosPendentes;
+import com.br.denis.telas.adapters.CustomAdapterListEvents;
 import com.example.exempleswipetab.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class FragmentEventosPendentes extends Fragment {
@@ -32,7 +28,7 @@ public class FragmentEventosPendentes extends Fragment {
 		super.onActivityCreated(bundle);
 
 		ListView listView = (ListView) getActivity().findViewById(R.id.myListEventosPendentes);
-        final CustomAdapterEventosPendentes eventosAdapter = new CustomAdapterEventosPendentes(getActivity(),R.layout.item_evento, MainActivity.eventosTemp);
+        final CustomAdapterListEvents eventosAdapter = new CustomAdapterListEvents(getActivity(),R.layout.item_evento, MainActivity.eventosTemp); //CustomAdapterEventosPendentes(getActivity(),R.layout.item_evento, MainActivity.eventosTemp);
         listView.setAdapter(eventosAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

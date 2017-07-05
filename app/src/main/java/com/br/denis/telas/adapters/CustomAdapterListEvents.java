@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CustomAdapterNextEvent extends ArrayAdapter<Evento> {
+public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
 	/*
      * Used to instantiate layout XML file into its corresponding View objects
      */
@@ -22,7 +22,7 @@ public class CustomAdapterNextEvent extends ArrayAdapter<Evento> {
      */
     private final int resourceId;
  
-    public CustomAdapterNextEvent(Context context, int resource, List<Evento> objects) {
+    public CustomAdapterListEvents(Context context, int resource, List<Evento> objects) {
         super(context, resource, objects);
         this.inflater = LayoutInflater.from(context);
         this.resourceId = resource;
@@ -38,14 +38,16 @@ public class CustomAdapterNextEvent extends ArrayAdapter<Evento> {
         convertView = inflater.inflate(resourceId, parent, false);
  
         //get all object from view
-        TextView titulo = (TextView) convertView.findViewById(R.id.tv1);
-        TextView tempo = (TextView) convertView.findViewById(R.id.tv2);
-        TextView porcoes = (TextView) convertView.findViewById(R.id.tv3);
-        
+        TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
+        TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
+        TextView tvData = (TextView) convertView.findViewById(R.id.tvData);
+        TextView tvEmail = (TextView) convertView.findViewById(R.id.tvEmail);
+
         //fill the view objects according values from person object
-        titulo.setText(item.getNome());
-        tempo.setText(item.getEmail());
-        porcoes.setText(item.getTitulo());
+        tvNome.setText(item.getNome());
+        tvTitulo.setText(item.getTitulo());
+        tvEmail.setText(item.getEmail());
+        tvData.setText(item.getdata_inicio()+" até "+item.getdata_fim());
 
         return convertView;
     }

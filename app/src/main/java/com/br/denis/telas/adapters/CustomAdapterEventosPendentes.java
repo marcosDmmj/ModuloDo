@@ -37,7 +37,7 @@ public class CustomAdapterEventosPendentes extends ArrayAdapter<Evento> {
         // get a new View no matter recycling or ViewHolder FIXME
         convertView = inflater.inflate(resourceId, parent, false);
  
-        //get all object from view
+/*        //get all object from view
         TextView titulo = (TextView) convertView.findViewById(R.id.tv1);
         TextView tempo = (TextView) convertView.findViewById(R.id.tv2);
         TextView porcoes = (TextView) convertView.findViewById(R.id.tv3);
@@ -45,7 +45,7 @@ public class CustomAdapterEventosPendentes extends ArrayAdapter<Evento> {
         //fill the view objects according values from person object
         titulo.setText(item.getNome());
         tempo.setText(item.getTitulo());
-        porcoes.setText(item.getEmail());
+        porcoes.setText(item.getEmail());*/
 
         return convertView;
     }
