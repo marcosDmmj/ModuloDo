@@ -25,7 +25,7 @@ public class CustomAdapterCategoria extends ArrayAdapter<Evento> {
     public CustomAdapterCategoria(Context context, int resource, List<Evento> objects) {
         super(context, resource, objects);
         this.inflater = LayoutInflater.from(context);
-        this.resourceId = resource;
+        this.resourceId = resource; //aaa
     }
  
     @Override
