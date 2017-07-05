@@ -10,8 +10,8 @@ public class Evento implements Parcelable{
 	private String data_fim;
 	private String email;
 
-	public Evento(String titulo, String email, String nome, String data_inicio,
-				  String data_fim) {
+	public Evento(String titulo, String email, String nome,
+				  String data_inicio, String data_fim) {
 		super();
 		this.titulo = titulo;
 		this.nome = nome;

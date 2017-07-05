@@ -16,17 +16,18 @@
         android:layout_weight="1"
         android:layout_marginLeft="5dp"
         android:orientation="vertical" >
- 
-        <TextView
-            android:id="@+id/tvNome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
- 		<TextView
+
+		<TextView
 			android:id="@+id/tvTitulo"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+		<TextView
+            android:id="@+id/tvNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
  
         <TextView
 			android:id="@+id/tvData"
@@ -34,6 +35,13 @@
             android:layout_height="wrap_content"
 			android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_marginLeft="20dp" />
+
+		<TextView
+			android:id="@+id/tvDataHora"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_marginLeft="20dp" />
 
 		<TextView
 			android:id="@+id/tvEmail"

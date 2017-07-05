@@ -41,13 +41,15 @@ public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
         TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
         TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
         TextView tvData = (TextView) convertView.findViewById(R.id.tvData);
+        TextView tvDataHora = (TextView) convertView.findViewById(R.id.tvDataHora);
         TextView tvEmail = (TextView) convertView.findViewById(R.id.tvEmail);
 
         //fill the view objects according values from person object
-        tvNome.setText(item.getNome());
-        tvTitulo.setText(item.getTitulo());
-        tvEmail.setText(item.getEmail());
-        tvData.setText(item.getdata_inicio()+" até "+item.getdata_fim());
+        tvNome.setText("Nome: "+item.getNome());
+        tvTitulo.setText("Titulo: "+item.getTitulo());
+        tvEmail.setText("Email: "+item.getEmail());
+        tvData.setText("Dia"+item.getdata_inicio());
+        tvDataHora.setText(" --> "+item.getdata_fim());
 
         return convertView;
     }
