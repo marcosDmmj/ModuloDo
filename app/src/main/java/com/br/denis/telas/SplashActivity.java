@@ -1,9 +1,11 @@
 package com.br.denis.telas;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
 import com.br.denis.classesBasicas.Evento;
@@ -19,20 +21,30 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends FragmentActivity {
 
     private ArrayList<Evento> eventos,eventosTemp;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        new CarregaDadosAsync().execute();
+        new CarregaDadosAsync(this).execute();
     }
 
     private class CarregaDadosAsync extends AsyncTask<Void, Void, Void> {
+        Context c;
+
+        public CarregaDadosAsync(Context c) {
+            this.c = c;
+        }
+
         @Override
-        protected void onPreExecute() {super.onPreExecute();}
+        protected void onPreExecute() {
+            super.onPreExecute();
+            dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
+        }
 
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -74,6 +86,7 @@ public class SplashActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
+            dialog.dismiss();
             Intent i = new Intent(SplashActivity.this, MainActivity.class);
             i.putExtra("eventos", eventos);
             i.putExtra("eventosTemp", eventosTemp);

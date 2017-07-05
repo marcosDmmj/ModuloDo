@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
-        "source": "C:\\Users\\v\\.android\\build-cache\\7f4d7a6dff3e97882a17f602488e9b2758eddc50\\output\\res\\color\\cell_text_color_dark.xml"
-    },
-    {
         "merged": "C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
         "source": "C:\\home\\denis\\.android\\build-cache\\5705d1ef66aed3d97aba1f8f79ec0b165172ceb6\\output\\res\\color\\cell_text_color_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
+        "source": "C:\\Users\\v\\.android\\build-cache\\7f4d7a6dff3e97882a17f602488e9b2758eddc50\\output\\res\\color\\cell_text_color_dark.xml"
     },
     {
         "merged": "C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
