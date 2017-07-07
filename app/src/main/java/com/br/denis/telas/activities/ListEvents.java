@@ -3,7 +3,7 @@ package com.br.denis.telas.activities;
 import android.os.Bundle;
 import android.app.Activity;
 
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 public class ListEvents extends Activity {
 

@@ -5,7 +5,7 @@ android {
     buildToolsVersion '25.0.0'
 
     defaultConfig {
-        applicationId "com.example.exempleswipetab"
+        applicationId "com.denis.mdulodoprofessor"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -27,11 +27,19 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:support-v4:25.0.1'
     compile 'com.android.support:design:25.0.1'
-    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
     compile 'joda-time:joda-time:2.9.4'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services-auth:10.0.1'
     compile 'pub.devrel:easypermissions:0.2.1'
     compile 'com.roomorama:caldroid:3.0.1'
     testCompile 'junit:junit:4.12'
+
+    compile('com.google.api-client:google-api-client-android:1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+    compile('com.google.apis:google-api-services-calendar:v3-rev249-1.22.0') {
+        exclude group: 'org.apache.httpcomponents'
+    }
+
 }

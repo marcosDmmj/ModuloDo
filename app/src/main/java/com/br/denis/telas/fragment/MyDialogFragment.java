@@ -15,7 +15,7 @@ import com.br.denis.classesBasicas.Evento;
 import com.br.denis.classesBasicas.OnTaskCompletedUpload;
 import com.br.denis.classesBasicas.Util;
 import com.br.denis.webservice.UploadRespostaProf;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 /**
  * Created by denis on 06/07/17.

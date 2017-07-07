@@ -16,7 +16,7 @@ import com.br.denis.classesBasicas.OnTaskCompleted;
 import com.br.denis.classesBasicas.Util;
 import com.br.denis.telas.activities.ListEvents;
 import com.br.denis.webservice.DownloadDiaAsync;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 

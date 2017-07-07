@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 import com.br.denis.webservice.CarregaDadosAsync;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 public class SplashActivity extends FragmentActivity {
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.exempleswipetab.test">
+    package="com.denis.mdulodoprofessor.test">
 
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="25" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.example.exempleswipetab"
+                     android:targetPackage="com.denis.mdulodoprofessor"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.example.exempleswipetab"/>
+                     android:label="Tests for com.denis.mdulodoprofessor"/>
 </manifest>

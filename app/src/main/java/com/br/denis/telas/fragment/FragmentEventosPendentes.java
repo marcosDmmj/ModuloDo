@@ -14,11 +14,9 @@ import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
 import com.br.denis.classesBasicas.OnTaskCompleted;
-import com.br.denis.telas.adapters.CustomAdapterListEvents;
 import com.br.denis.telas.adapters.CustomAdapterListEventsPendentes;
-import com.br.denis.webservice.DownloadDiaAsync;
 import com.br.denis.webservice.DownloadEventosPendentesAsync;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 import java.util.ArrayList;
 

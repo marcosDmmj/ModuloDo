@@ -1,167 +1,11 @@
 [
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\7f4d7a6dff3e97882a17f602488e9b2758eddc50\\output\\res\\color\\cell_text_color_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\2ef39862063619cf33b988f25dc4cd62aa8b6d6d\\output\\res\\color\\common_plus_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\7f4d7a6dff3e97882a17f602488e9b2758eddc50\\output\\res\\color\\cell_text_color.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\5705d1ef66aed3d97aba1f8f79ec0b165172ceb6\\output\\res\\color\\cell_text_color_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/color/common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/cell_text_color.xml",
-        "source": "/home/denis/.android/build-cache/5705d1ef66aed3d97aba1f8f79ec0b165172ceb6/output/res/color/cell_text_color.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
-        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/color/design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_secondary_text_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\6b0ada9daa72ba81c540a48b60d85c853387c78a\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_spinner.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_primary_text_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_default.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_hint_foreground_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\5705d1ef66aed3d97aba1f8f79ec0b165172ceb6\\output\\res\\color\\cell_text_color.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_hint_foreground_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_edittext.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_primary_text_material_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_secondary_text_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/design_error.xml",
-        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/color/design_error.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_btn_checkable.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_switch_track.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\switch_thumb_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
@@ -176,64 +20,44 @@
         "source": "/home/denis/.android/build-cache/5705d1ef66aed3d97aba1f8f79ec0b165172ceb6/output/res/color/cell_text_color_dark.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/color/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/cell_text_color.xml",
+        "source": "/home/denis/.android/build-cache/5705d1ef66aed3d97aba1f8f79ec0b165172ceb6/output/res/color/cell_text_color.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\6b0ada9daa72ba81c540a48b60d85c853387c78a\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/color/design_tint_password_toggle.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_edittext.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_switch_track.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/switch_thumb_material_light.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_thumb.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\c52b890b85cc2bcf825afdabbfa3d09f16e40e4c\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\c52b890b85cc2bcf825afdabbfa3d09f16e40e4c\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\2ef39862063619cf33b988f25dc4cd62aa8b6d6d\\output\\res\\color\\common_plus_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_search_url_text.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\switch_thumb_material_light.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/home/denis/.android/build-cache/6b0ada9daa72ba81c540a48b60d85c853387c78a/output/res/color/common_google_signin_btn_text_dark.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_switch_thumb.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_tint_seek_thumb.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_spinner.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
@@ -244,32 +68,32 @@
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_switch_track.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\color\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_tint_edittext.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_search_url_text.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/design_error.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/color/design_error.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",

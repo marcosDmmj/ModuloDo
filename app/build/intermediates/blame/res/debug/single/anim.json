@@ -1,103 +1,11 @@
 [
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_slide_out_top.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\5f1904aca7542601d37cbac5150ca6c431fea89a\\output\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_fade_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\d778f5cdae320cb484a849df211ed97a002ad591\\output\\res\\anim\\design_fab_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\d778f5cdae320cb484a849df211ed97a002ad591\\output\\res\\anim\\design_fab_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\5f1904aca7542601d37cbac5150ca6c431fea89a\\output\\res\\anim\\design_snackbar_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
-        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_bottom_sheet_slide_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_popup_enter.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_fade_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\5f1904aca7542601d37cbac5150ca6c431fea89a\\output\\res\\anim\\design_fab_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_slide_in_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_fab_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
-        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\d778f5cdae320cb484a849df211ed97a002ad591\\output\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_slide_out_top.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\5f1904aca7542601d37cbac5150ca6c431fea89a\\output\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_fade_in.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
@@ -112,10 +20,6 @@
         "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_snackbar_in.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_slide_in_top.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
         "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_fab_out.xml"
     },
@@ -124,52 +28,36 @@
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_slide_out_bottom.xml"
     },
     {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_popup_enter.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_popup_exit.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_popup_enter.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_fade_out.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_fab_in.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\d778f5cdae320cb484a849df211ed97a002ad591\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
+        "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/anim/design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\anim\\abc_slide_out_bottom.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_fade_in.xml"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",

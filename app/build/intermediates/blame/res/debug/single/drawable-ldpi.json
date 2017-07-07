@@ -1,21 +1,5 @@
 [
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\unknown.png",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\src\\main\\res\\drawable-ldpi\\unknown.png"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\unknown.png",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\src\\main\\res\\drawable-ldpi\\unknown.png"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\background.png",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\src\\main\\res\\drawable-ldpi\\background.png"
-    },
-    {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi\\background.png",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\src\\main\\res\\drawable-ldpi\\background.png"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/drawable-ldpi/unknown.png",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/drawable-ldpi/unknown.png"
     }

@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
 import com.br.denis.telas.adapters.CustomAdapterListEvents;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 import java.util.ArrayList;
 

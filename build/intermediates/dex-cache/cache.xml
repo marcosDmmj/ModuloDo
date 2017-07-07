@@ -12,30 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/denis/.android/build-cache/29c01b8f827590fa27098275fad913cea075192c/output/jars/classes.jar"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.oauth-client/google-oauth-client/1.22.0/1d63f369ac78e4838a3197147012026e791008cb/google-oauth-client-1.22.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_de39b0bb458764f629f0fe6cd448b7325dccfd8e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b4a6b451152fcc9e3ed32105c2822aa31444cea7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/denis/.android/build-cache/ad672dd0dd5167a7e595f5cf4908625a3cf0ce83/output/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f83b00041ecfba705603fec40363416c7de69719">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_86ff2a7c486e1be63b83bf96e5d9b2450390c0fe/classes.dex" />
+        sha1="1d63f369ac78e4838a3197147012026e791008cb">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-oauth-client-1.22.0_13a580c1c874887c1d85c99690303a4dc6f9fd2d/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,11 +48,119 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-jdk5/17.0/463f8378feba44df7ba7cd9272d01837dad62b36/guava-jdk5-17.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="463f8378feba44df7ba7cd9272d01837dad62b36">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/guava-jdk5-17.0_fc260d4d2932622e17d01e4a7685d264718ef2d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-1.3.9_a2bc7bedf1211772eed06589fafd06105035f099/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/29c01b8f827590fa27098275fad913cea075192c/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_c7bfcd209042a272e008bcad2a0433e8f76480d7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/33e2c728e93b5ab2b924a39fa048182dc0ad62ab/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_814dbfd5834661fab3bd3d83a9326da1c5975b8c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/d8f9d3427ded0810a3de240e8dec3d86f335da9e/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_01a5c0ba5d2cbb6bd1952217f243dbd2be590bd5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.22.0/d441fc58329c4a4c067acec04ac361627f66ecc8/google-http-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d441fc58329c4a4c067acec04ac361627f66ecc8">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-1.22.0_15ca509030b8fee45bb4cd680608cf3064e315b2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/9455a6549383a8f08565669ae49eef0a1511857e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8e563707e909b844b212a1b205404d235c71b8cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-jackson2/1.22.0/cc014d64ae11117e159d334c99d9c246d9b36f44/google-http-client-jackson2-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="cc014d64ae11117e159d334c99d9c246d9b36f44">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-jackson2-1.22.0_d2e31d9d308d680c62f694178a0f888e0dc09307/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.1.3/f6c3aed1cdfa21b5c1737c915186ea93a95a58bd/jackson-core-2.1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f6c3aed1cdfa21b5c1737c915186ea93a95a58bd">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.1.3_67a6b6fe461e957dd76293f5ee846d46422d3abb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/29c01b8f827590fa27098275fad913cea075192c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_de39b0bb458764f629f0fe6cd448b7325dccfd8e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b4a6b451152fcc9e3ed32105c2822aa31444cea7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.android/build-cache/ad672dd0dd5167a7e595f5cf4908625a3cf0ce83/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_86ff2a7c486e1be63b83bf96e5d9b2450390c0fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="ce22543da95f95fd84b459255dbf4790f5820262">
+        sha1="3a7bcbc1131aa6f14b7caa124e15f59dbfd22148">
         <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_666d728fcc7275ef3d457a5206414a239e7bbf23/classes.dex" />
     </item>
     <item
@@ -102,6 +192,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client/1.22.0/244350c0c845c583717ade13f5666a452fd0cfa/google-api-client-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0244350c0c845c583717ade13f5666a452fd0cfa">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-client-1.22.0_a03c7be059e8409cc5a9bd06c494f80a349efcb2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.api-client/google-api-client-android/1.22.0/7a0fe12b7d8189a821934d6f9d6586d00180e461/google-api-client-android-1.22.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7a0fe12b7d8189a821934d6f9d6586d00180e461">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-client-android-1.22.0_77c5d25c2540a5c54b75669ded62dad54b3f44ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/denis/.android/build-cache/a3fdc932beae82031961348bf1ac13aad4e015c3/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -120,15 +228,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/denis/.android/build-cache/29c01b8f827590fa27098275fad913cea075192c/output/jars/libs/internal_impl-25.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_c7bfcd209042a272e008bcad2a0433e8f76480d7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -138,12 +237,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/denis/.android/build-cache/33e2c728e93b5ab2b924a39fa048182dc0ad62ab/output/jars/classes.jar"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.apis/google-api-services-calendar/v3-rev249-1.22.0/76e9a4cb8c81a9ade05bbeacc369f358d58a1517/google-api-services-calendar-v3-rev249-1.22.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_814dbfd5834661fab3bd3d83a9326da1c5975b8c/classes.dex" />
+        sha1="76e9a4cb8c81a9ade05bbeacc369f358d58a1517">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-api-services-calendar-v3-rev249-1.22.0_7996efef4b0153b1b64a75219c55e3014be1d439/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -165,21 +264,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/denis/.android/build-cache/d8f9d3427ded0810a3de240e8dec3d86f335da9e/output/jars/libs/internal_impl-25.0.1.jar"
+        jar="/home/denis/.gradle/caches/modules-2/files-2.1/com.google.http-client/google-http-client-android/1.22.0/6d1e1a76a16a244ab2f41775791be1dd0ec2878a/google-http-client-android-1.22.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-25.0.1_01a5c0ba5d2cbb6bd1952217f243dbd2be590bd5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/denis/.android/build-cache/9455a6549383a8f08565669ae49eef0a1511857e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
-        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8e563707e909b844b212a1b205404d235c71b8cc/classes.dex" />
+        sha1="6d1e1a76a16a244ab2f41775791be1dd0ec2878a">
+        <dex dex="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/transforms/dex/debug/folders/1000/10/google-http-client-android-1.22.0_4e6c1f30072cf7e836b8ee8cccd31130289adef4/classes.dex" />
     </item>
 
 </items>

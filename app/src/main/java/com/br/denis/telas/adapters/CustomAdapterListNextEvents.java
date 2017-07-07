@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.br.denis.classesBasicas.Evento;
 import com.br.denis.classesBasicas.Util;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 import java.util.List;
 

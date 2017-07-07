@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.br.denis.classesBasicas.Util;
 import com.br.denis.classesBasicas.Evento;
-import com.example.exempleswipetab.R;
+import com.denis.mdulodoprofessor.R;
 
 import android.content.Context;
 import android.util.Log;
