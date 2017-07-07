@@ -1,14 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.exempleswipetab.MainActivity" >
+    tools:ignore="AppCompatResource"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.exempleswipetab.MainActivity">
 
    <item
-        android:id="@+id/perfil"
-        android:icon="@android:drawable/ic_menu_call"
-        android:title="@string/perfil"/>
+        android:id="@+id/menu_google"
+        android:title="@string/google" />
 
    <group android:id="@+id/group1" android:checkableBehavior="single">
             <item android:id="@+id/menu1" android:title="@string/dispov_vel" />
             <item android:id="@+id/menu2" android:title="@string/n_dispon_vel" />
    </group>
+    <item
+        android:id="@+id/menu_atualizar"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/ic_popup_sync"
+        app:showAsAction="always"
+        android:showAsAction="always"
+        android:title="@string/atualizar" />
 </menu>

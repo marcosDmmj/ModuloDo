@@ -34,8 +34,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 	ViewPager viewPager;
 	ActionBar actionBar;
 	private ProgressDialog dialog;
-	public static Integer status;
-	public static ArrayList<Evento> eventos,eventosTemp;
+	public Integer status;
 	private static final String PREF_ACCOUNT_NAME = "accountName";
 	
 	@Override
@@ -52,6 +51,7 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 
 		ActionBar.Tab tab2 = actionBar.newTab();
 		tab2.setText("Calendário");
+		tab2.setIcon(android.R.drawable.ic_menu_my_calendar);
 		tab2.setTabListener(this);
 		
 		ActionBar.Tab tab3 = actionBar.newTab();
@@ -69,9 +69,6 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 
 		Intent intent = getIntent();
 		status = intent.getIntExtra("status",-1);
-		eventos = intent.getParcelableArrayListExtra("eventos");
-		eventosTemp = intent.getParcelableArrayListExtra("eventosTemp");
-		Toast.makeText(this,"Status atual = "+status,Toast.LENGTH_LONG).show();
     }
 
 	@Override
@@ -125,8 +122,8 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 		// Se tiver logado no Google não precisa mostrar pra logar!
 		String accountName = getPreferences(Context.MODE_PRIVATE)
 				.getString(PREF_ACCOUNT_NAME, null);
-		item = menu.findItem(R.id.perfil);
-		item.setVisible(accountName != null);
+		item = menu.findItem(R.id.menu_google);
+		item.setVisible(accountName == null);
 
         return true;
     }
@@ -134,8 +131,9 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()) {
-			case R.id.perfil:
-				Toast.makeText(this, "Conexão com o Google", Toast.LENGTH_SHORT).show();
+			case R.id.menu_google:
+				Toast.makeText(this, "Falta implementar a conexão com o Google", Toast.LENGTH_SHORT).show();
+				// TODO implementar a conexãoc om o Google Agenda!
 				return true;
 			case R.id.menu1:
 				new setaStatusAsync(this).execute("http://ufam-automation.net/marcosmoura/setStatus.php?Status=0");
@@ -147,6 +145,12 @@ public class MainActivity extends FragmentActivity implements TabListener, OnPag
 				if (item.isChecked()) item.setChecked(false);
 				else item.setChecked(true);
 				return true;
+			case R.id.menu_atualizar:
+				Intent intent = new Intent(this, SplashActivity.class);
+				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+
 		}
         return super.onOptionsItemSelected(item);
     }

@@ -1,10 +1,12 @@
 package com.br.denis.telas.adapters;
 import java.util.List;
 
+import com.br.denis.classesBasicas.Util;
 import com.br.denis.classesBasicas.Evento;
 import com.example.exempleswipetab.R;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +42,10 @@ public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
         //get all object from view
         TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
         TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
-        TextView tvData = (TextView) convertView.findViewById(R.id.tvData);
+        if (resourceId != R.layout.item_evento_sem_data){
+            TextView tvData = (TextView) convertView.findViewById(R.id.tvData);
+            tvData.setText("Dia: "+ Util.dateToStringBR(Util.stringToDateComplete(item.getdata_inicio())));
+        }
         TextView tvDataHora = (TextView) convertView.findViewById(R.id.tvDataHora);
         TextView tvEmail = (TextView) convertView.findViewById(R.id.tvEmail);
 
@@ -48,8 +53,8 @@ public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
         tvNome.setText("Nome: "+item.getNome());
         tvTitulo.setText("Titulo: "+item.getTitulo());
         tvEmail.setText("Email: "+item.getEmail());
-        tvData.setText("Dia"+item.getdata_inicio());
-        tvDataHora.setText(" --> "+item.getdata_fim());
+        tvDataHora.setText("Hora: "+Util.stringToDiffDate(item.getdata_inicio(),item.getdata_fim()));
+        Log.d("CustomAdapterListEvents",item.toString());
 
         return convertView;
     }

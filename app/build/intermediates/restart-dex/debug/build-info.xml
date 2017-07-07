@@ -2,76 +2,43 @@
 <instant-run
     abi="armeabi-v7a,armeabi"
     api-level="23"
-    build-mode="FULL"
+    build-mode="COLD"
     density="hdpi"
     format="10"
     plugin-version="2.3.3"
-    timestamp="1499214458905"
+    timestamp="1499389075406"
     token="-6520587401847448656"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="FIELD_REMOVED" >
 
     <task
         name="javac"
-        duration="353" />
+        duration="345" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="35" />
+        duration="15" />
     <task
         name="verifier"
-        duration="10" />
+        duration="1" />
 
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/outputs/apk/app-debug.apk"
-        type="SPLIT_MAIN" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-        type="SPLIT" />
     <artifact
         location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
         type="SPLIT" />
     <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-        type="SPLIT" />
+        location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/outputs/apk/app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1499214458905"
+        timestamp="1499384341028"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/outputs/apk/app-debug.apk"
@@ -89,7 +56,7 @@
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -98,8 +65,38 @@
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1499384843300"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1499388943665"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1499389075406"
+        verifier="FIELD_REMOVED" >
+        <artifact
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/denis/StudioProjects/ModuloDoProfessor/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

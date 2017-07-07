@@ -40,12 +40,12 @@
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\5705d1ef66aed3d97aba1f8f79ec0b165172ceb6\\output\\res\\layout\\weekday_textview.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_evento.xml",
@@ -126,6 +126,10 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/home/denis/.android/build-cache/f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4/output/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/fragment_list_events.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/layout/fragment_list_events.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
@@ -214,6 +218,10 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/item_evento_sem_data.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/layout/item_evento_sem_data.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
@@ -448,6 +456,10 @@
         "source": "/home/denis/.android/build-cache/5bc17291d4490f46b38d45c8d4661f533651ebfc/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/activity_list_events.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/layout/activity_list_events.xml"
+    },
+    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\f4d90029f6e03bda9d6cc08ac7b97cb8675b85b4\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
@@ -458,6 +470,10 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/activity_event.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/layout/activity_event.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
@@ -478,6 +494,10 @@
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/dialog_email_layout.xml",
+        "source": "/home/denis/StudioProjects/ModuloDoProfessor/app/src/main/res/layout/dialog_email_layout.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\StudioProjects\\ModuloDoProfessor\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",

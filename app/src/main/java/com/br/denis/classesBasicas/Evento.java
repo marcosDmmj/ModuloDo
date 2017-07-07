@@ -3,7 +3,9 @@ package com.br.denis.classesBasicas;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Evento implements Parcelable{
+import java.io.Serializable;
+
+public class Evento implements Parcelable, Serializable{
 	private String titulo;
 	private String nome;
 	private String data_inicio;
@@ -82,16 +84,21 @@ public class Evento implements Parcelable{
 	}
 
 	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+	@Override
 	public int describeContents() {
-		return 0;
+		return 5;
 	}
 
 	@Override
 	public void writeToParcel(Parcel parcel, int i) {
 		parcel.writeString(titulo);
 		parcel.writeString(nome);
-		parcel.writeString(data_fim);
 		parcel.writeString(data_inicio);
+		parcel.writeString(data_fim);
 		parcel.writeString(email);
 	}
 }
