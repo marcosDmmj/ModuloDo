@@ -3,7 +3,6 @@ package com.br.denis.telas.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +11,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import com.br.denis.classesBasicas.Evento;
+import com.br.denis.classesBasicas.Util;
 import com.example.exempleswipetab.R;
 
 /**
@@ -36,38 +36,54 @@ public class MyDialogFragment extends DialogFragment {
         View rootView = inflater.inflate(R.layout.dialog_email_layout, container,
                 false);
         getDialog().setTitle("Enviar email");
-        Evento evento = getArguments().getParcelable("evento");
+        final Evento evento = getArguments().getParcelable("evento");
 
         EditText editEmail = (EditText) rootView.findViewById(R.id.editEmail);
-        EditText editAssunto = (EditText) rootView.findViewById(R.id.editAssunto);
-        EditText editSubject = (EditText) rootView.findViewById(R.id.editSubject);
+        final EditText editAssunto = (EditText) rootView.findViewById(R.id.editAssunto);
+        final EditText editMessage = (EditText) rootView.findViewById(R.id.editMessage);
         final RadioButton radioYes = (RadioButton) rootView.findViewById(R.id.radioYes);
+        final RadioButton radioNo = (RadioButton) rootView.findViewById(R.id.radioNo);
         Button buttonEnviarEmail = (Button) rootView.findViewById(R.id.buttonEnviarEmail);
 
-        if (getArguments() != null) {
-        //if (evento != null){
-            editEmail.setText(evento.getEmail());
-            editAssunto.setText(evento.getTitulo());
-            editSubject.setText("Solicitação aceita!\n" +
-                    "Data: "+evento.getdata_inicio());
-            buttonEnviarEmail.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (radioYes.isChecked()){
+        radioNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editMessage.setText("Solicitação aceita!\n" +
+                        "Dia: "+ Util.dateToStringBR(Util.stringToDateComplete(evento.getdata_inicio())) + "\n" +
+                        "Hora: "+Util.stringToDiffDate(evento.getdata_inicio(),evento.getdata_fim()));
+            }
+        });
+        radioYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editMessage.setText("Solicitação recusada!\n" +
+                        "Dia: "+ Util.dateToStringBR(Util.stringToDateComplete(evento.getdata_inicio())) + "\n" +
+                        "Hora: "+Util.stringToDiffDate(evento.getdata_inicio(),evento.getdata_fim()));
+            }
+        });
+        editEmail.setText(evento.getEmail());
+        editAssunto.setText(evento.getTitulo());
+        editMessage.setText("Solicitação aceita!\n" +
+                "Dia: "+ Util.dateToStringBR(Util.stringToDateComplete(evento.getdata_inicio())) + "\n" +
+                "Hora: "+Util.stringToDiffDate(evento.getdata_inicio(),evento.getdata_fim()));
+        buttonEnviarEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (radioYes.isChecked()){
 
-                    } else {
+                } else {
 
-                    }
-                    // Chamando app para envio de email!
-                    Intent email = new Intent(Intent.ACTION_SEND);
-                    email.putExtra(Intent.EXTRA_EMAIL, new String[]{"youremail@yahoo.com"});
-                    email.putExtra(Intent.EXTRA_SUBJECT, "subject");
-                    email.putExtra(Intent.EXTRA_TEXT, "message");
-                    email.setType("message/rfc822");
-                    startActivity(Intent.createChooser(email, "Choose an Email client :"));
                 }
-            });
-        }
+                // Chamando app para envio de email!
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{evento.getEmail()});
+                email.putExtra(Intent.EXTRA_SUBJECT, editAssunto.getText().toString());
+                email.putExtra(Intent.EXTRA_TEXT, editMessage.getText().toString());
+                email.setType("message/rfc822");
+                startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                dismiss();
+            }
+        });
 
         return rootView;
     }

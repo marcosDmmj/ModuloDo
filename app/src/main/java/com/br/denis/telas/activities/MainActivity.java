@@ -1,6 +1,5 @@
-package com.br.denis.telas;
+package com.br.denis.telas.activities;
 
-import com.br.denis.classesBasicas.Evento;
 import com.br.denis.telas.adapters.OrganizedAdapter;
 import com.example.exempleswipetab.R;
 
@@ -27,7 +26,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 
 public class MainActivity extends FragmentActivity implements TabListener, OnPageChangeListener {
 

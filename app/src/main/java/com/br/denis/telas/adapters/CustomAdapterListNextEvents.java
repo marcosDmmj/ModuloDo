@@ -1,9 +1,4 @@
 package com.br.denis.telas.adapters;
-import java.util.List;
-
-import com.br.denis.classesBasicas.Util;
-import com.br.denis.classesBasicas.Evento;
-import com.example.exempleswipetab.R;
 
 import android.content.Context;
 import android.util.Log;
@@ -13,18 +8,24 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
+import com.br.denis.classesBasicas.Evento;
+import com.br.denis.classesBasicas.Util;
+import com.example.exempleswipetab.R;
+
+import java.util.List;
+
+public class CustomAdapterListNextEvents extends ArrayAdapter<Evento> {
 	/*
      * Used to instantiate layout XML file into its corresponding View objects
      */
     private final LayoutInflater inflater;
- 
+
     /*
      * each list item_evento layout ID
      */
     private final int resourceId;
- 
-    public CustomAdapterListEvents(Context context, int resource, List<Evento> objects) {
+
+    public CustomAdapterListNextEvents(Context context, int resource, List<Evento> objects) {
         super(context, resource, objects);
         this.inflater = LayoutInflater.from(context);
         this.resourceId = resource;
@@ -42,6 +43,8 @@ public class CustomAdapterListEvents extends ArrayAdapter<Evento> {
         //get all object from view
         TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
         TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
+        TextView tvData = (TextView) convertView.findViewById(R.id.tvData);
+        tvData.setText("Dia: "+ Util.dateToStringBR(Util.stringToDateComplete(item.getdata_inicio())));
         TextView tvDataHora = (TextView) convertView.findViewById(R.id.tvDataHora);
         TextView tvEmail = (TextView) convertView.findViewById(R.id.tvEmail);
 

@@ -34,7 +34,7 @@ public class ListEventsFragment extends Fragment {
         super.onActivityCreated(bundle);
 
         getActivity().getActionBar().setTitle("Eventos do dia: "+getActivity().getIntent().getStringExtra("dia"));
-        ListView listView = (ListView) getActivity().findViewById(R.id.myListNextEvents);
+        ListView listView = (ListView) getActivity().findViewById(R.id.myListEvents);
         ArrayList<Evento> eventos = getActivity().getIntent().getParcelableArrayListExtra("eventosDoDia");
         final CustomAdapterListEvents eventosAdapter = new CustomAdapterListEvents(getActivity(),R.layout.item_evento_sem_data, eventos);
         listView.setAdapter(eventosAdapter);

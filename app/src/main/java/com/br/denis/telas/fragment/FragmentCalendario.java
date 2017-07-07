@@ -5,33 +5,30 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
+import com.br.denis.classesBasicas.OnTaskCompleted;
 import com.br.denis.classesBasicas.Util;
-import com.br.denis.telas.ListEvents;
-import com.br.denis.telas.MainActivity;
+import com.br.denis.telas.activities.ListEvents;
 import com.br.denis.webservice.DownloadDiaAsync;
 import com.example.exempleswipetab.R;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 
-public class FragmentCalendario extends Fragment {
+public class FragmentCalendario extends Fragment{
+	private Date currentDate;
 
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,7 +40,7 @@ public class FragmentCalendario extends Fragment {
 
         CaldroidFragment mCaldroidFragment = new CaldroidFragment();
         Bundle args = new Bundle();
-		args.putBoolean(CaldroidFragment.ENABLE_SWIPE, false);
+		//args.putBoolean(CaldroidFragment.ENABLE_SWIPE, false);
 		args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, false);
         mCaldroidFragment.setArguments( args );
 
@@ -64,25 +61,22 @@ public class FragmentCalendario extends Fragment {
 
 			@Override
 			public void onSelectDate(Date date, View view) {
-				Intent intent = new Intent(getActivity(), ListEvents.class);
-				try {
-					ArrayList<Evento> eventosDoDia = new DownloadDiaAsync(getActivity()).execute(Util.dateToString(date)).get();
-					intent.putParcelableArrayListExtra("eventosDoDia",eventosDoDia);
-					intent.putExtra("dia",Util.datetoDayAndMonth(date));
-					getActivity().startActivity(intent);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-					Log.e("FragmentCalendario","Erro = "+e.getMessage());
-				} catch (ExecutionException e) {
-					e.printStackTrace();
-					Log.e("FragmentCalendario","Erro = "+e.getMessage());
-				}
+				currentDate = date;
+				new DownloadDiaAsync(getActivity(), new OnTaskCompleted() {
+					@Override
+					public void onTaskCompleted(ArrayList<Evento> eventosDoDia) {
+						Intent intent = new Intent(getActivity(), ListEvents.class);
+						intent.putParcelableArrayListExtra("eventosDoDia",eventosDoDia);
+						intent.putExtra("dia",Util.datetoDayAndMonth(currentDate));
+						getActivity().startActivity(intent);
+					}
+				}).execute(Util.dateToString(date));
 			}
 
 			@Override
 			public void onChangeMonth(int month, int year) {
 				//String text = "month: " + month + " year: " + year;
-				//Toast.makeText(getActivity().getApplicationContext(), text, Toast.LENGTH_SHORT).show();
+				// TODO Baixar os eventos desse mês
 			}
 
 			@Override
@@ -97,5 +91,4 @@ public class FragmentCalendario extends Fragment {
         getActivity().getSupportFragmentManager().beginTransaction().replace( R.id.cal , mCaldroidFragment ).commit();
 
 	}
-
 }

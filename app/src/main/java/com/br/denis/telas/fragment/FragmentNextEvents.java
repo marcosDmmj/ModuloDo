@@ -9,8 +9,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.br.denis.classesBasicas.Evento;
-import com.br.denis.telas.MainActivity;
 import com.br.denis.telas.adapters.CustomAdapterListEvents;
+import com.br.denis.telas.adapters.CustomAdapterListNextEvents;
 import com.example.exempleswipetab.R;
 
 import java.util.ArrayList;
@@ -34,7 +34,7 @@ public class FragmentNextEvents extends Fragment {
 
 		ListView listView = (ListView) getActivity().findViewById(R.id.myListNextEvents);
 		ArrayList<Evento> eventos = getActivity().getIntent().getParcelableArrayListExtra("eventos");
-		final CustomAdapterListEvents eventosAdapter = new CustomAdapterListEvents(getActivity(),R.layout.item_evento, eventos);
+		final CustomAdapterListNextEvents eventosAdapter = new CustomAdapterListNextEvents(getActivity(),R.layout.item_evento, eventos);
 		listView.setAdapter(eventosAdapter);
 		TextView emptyView = (TextView) getActivity().findViewById(android.R.id.empty);
 		listView.setEmptyView(emptyView);

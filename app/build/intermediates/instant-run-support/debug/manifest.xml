@@ -18,18 +18,18 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.br.denis.telas.MainActivity"
+            android:name="com.br.denis.telas.activities.MainActivity"
             android:label="@string/app_name" />
-        <activity android:name="com.br.denis.telas.SplashActivity" >
+        <activity android:name="com.br.denis.telas.activities.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.br.denis.telas.ListEvents" />
+        <activity android:name="com.br.denis.telas.activities.ListEvents" />
         <activity
-            android:name="com.br.denis.telas.EventActivity"
+            android:name="com.br.denis.telas.activities.EventActivity"
             android:label="@string/title_activity_event" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"

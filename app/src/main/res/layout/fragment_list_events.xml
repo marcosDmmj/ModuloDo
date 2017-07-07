@@ -8,7 +8,7 @@
     tools:context="com.br.denis.telas.fragment.ListEventsFragment">
 
     <ListView
-        android:id="@+id/myListNextEvents"
+        android:id="@+id/myListEvents"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     </ListView>
