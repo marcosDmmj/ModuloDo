@@ -73,7 +73,7 @@ public class CarregaDadosAsync extends AsyncTask<Void, Void, Void> {
 
                 for (int i = 0; i < eventosL.length(); i++) {
                     evento = eventosL.getJSONObject(i);
-                    eventosTemp.add(new Evento(evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
+                    eventosTemp.add(new Evento(evento.getString("Evento_id"),evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
                     Log.d("SplashActivity","Evento = "+evento.toString());
                 }
             }
@@ -112,7 +112,7 @@ public class CarregaDadosAsync extends AsyncTask<Void, Void, Void> {
 
                     for (int i = 0; i < eventosL.length(); i++) {
                         evento = eventosL.getJSONObject(i);
-                        eventos.add(new Evento(evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
+                        eventos.add(new Evento(evento.getString("Evento_id"),evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
                         Log.d("SplashActivity","Evento = "+evento.toString());
                     }
                 }
@@ -168,7 +168,7 @@ public class CarregaDadosAsync extends AsyncTask<Void, Void, Void> {
 
                 for (int i = 0; i < eventosL.length(); i++) {
                     evento = eventosL.getJSONObject(i);
-                    eventosMonth.add(new Evento(evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
+                    eventosMonth.add(new Evento(evento.getString("Evento_id"),evento.getString("Titulo"), evento.getString("Email"), evento.getString("Nome"), evento.getString("Data_inicio"), evento.getString("Data_fim")));
                     Log.d("SplashActivity","Evento month = "+evento.toString());
                 }
             }

@@ -20,12 +20,12 @@
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\home\\denis\\.android\\build-cache\\2ef39862063619cf33b988f25dc4cd62aa8b6d6d\\output\\res\\color\\common_plus_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_material_light.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\.android\\build-cache\\70aee49a186bdd485ab28651aa272afbf6d17613\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/color/abc_primary_text_material_light.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/C:\\Users\\v\\AndroidStudioProjects\\ModuloDoProf\\app\\build\\intermediates\\res\\merged\\debug\\color\\cell_text_color.xml",

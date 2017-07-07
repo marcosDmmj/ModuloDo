@@ -7,5 +7,5 @@ import java.util.ArrayList;
  */
 
 public interface OnTaskCompleted {
-    public void onTaskCompleted(ArrayList<Evento> eventoArrayList);
+    void onTaskCompleted(ArrayList<Evento> eventoArrayList);
 }

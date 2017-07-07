@@ -1,12 +1,11 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    tools:context="com.br.denis.telas.fragment.FragmentNextEvents"
+    android:id="@+id/swipeRefreshNextEvents"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.br.denis.telas.fragment.FragmentNextEvents" >
+    android:layout_height="match_parent">
 
-    <ListView
+<ListView
         android:id="@+id/myListNextEvents"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -15,6 +14,6 @@
     <TextView android:id="@android:id/empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Sem eventos no futuro!"/>
+        android:text="Sem eventos nos próximos 3 dias!"/>
 
-</LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

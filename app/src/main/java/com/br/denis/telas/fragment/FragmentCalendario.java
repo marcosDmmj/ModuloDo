@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 
 public class FragmentCalendario extends Fragment{
@@ -40,7 +39,6 @@ public class FragmentCalendario extends Fragment{
 
         CaldroidFragment mCaldroidFragment = new CaldroidFragment();
         Bundle args = new Bundle();
-		//args.putBoolean(CaldroidFragment.ENABLE_SWIPE, false);
 		args.putBoolean(CaldroidFragment.SIX_WEEKS_IN_CALENDAR, false);
         mCaldroidFragment.setArguments( args );
 

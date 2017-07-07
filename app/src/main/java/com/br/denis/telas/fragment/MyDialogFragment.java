@@ -9,9 +9,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
+import com.br.denis.classesBasicas.OnTaskCompletedUpload;
 import com.br.denis.classesBasicas.Util;
+import com.br.denis.webservice.UploadRespostaProf;
 import com.example.exempleswipetab.R;
 
 /**
@@ -19,6 +22,8 @@ import com.example.exempleswipetab.R;
  */
 
 public class MyDialogFragment extends DialogFragment {
+
+    private ActionListener actionListener;
 
     public static MyDialogFragment newInstance(Evento evento) {
         MyDialogFragment f = new MyDialogFragment();
@@ -29,6 +34,14 @@ public class MyDialogFragment extends DialogFragment {
         f.setArguments(args);
 
         return f;
+    }
+
+    public void setActionListener(ActionListener actionListener) {
+        this.actionListener = actionListener;
+    }
+
+    public interface ActionListener{
+        void onUpdate();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,7 +58,7 @@ public class MyDialogFragment extends DialogFragment {
         final RadioButton radioNo = (RadioButton) rootView.findViewById(R.id.radioNo);
         Button buttonEnviarEmail = (Button) rootView.findViewById(R.id.buttonEnviarEmail);
 
-        radioNo.setOnClickListener(new View.OnClickListener() {
+        radioYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editMessage.setText("Solicitação aceita!\n" +
@@ -53,7 +66,7 @@ public class MyDialogFragment extends DialogFragment {
                         "Hora: "+Util.stringToDiffDate(evento.getdata_inicio(),evento.getdata_fim()));
             }
         });
-        radioYes.setOnClickListener(new View.OnClickListener() {
+        radioNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editMessage.setText("Solicitação recusada!\n" +
@@ -70,18 +83,39 @@ public class MyDialogFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 if (radioYes.isChecked()){
-
+                    new UploadRespostaProf(getActivity(), new OnTaskCompletedUpload() {
+                        @Override
+                        public void onTaskCompleted(int integer) {
+                            Toast.makeText(getActivity(), "Evento criado com sucesso!", Toast.LENGTH_SHORT).show();
+                            // Chamando app para envio de email!
+                            Intent email = new Intent(Intent.ACTION_SEND);
+                            email.putExtra(Intent.EXTRA_EMAIL, new String[]{evento.getEmail()});
+                            email.putExtra(Intent.EXTRA_SUBJECT, editAssunto.getText().toString());
+                            email.putExtra(Intent.EXTRA_TEXT, editMessage.getText().toString());
+                            email.setType("message/rfc822");
+                            startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                            dismiss();
+                            actionListener.onUpdate();
+                        }
+                    }).execute("http://ufam-automation.net/marcosmoura/deleteAndInsert.php?Evento_id="+evento.getId());
                 } else {
-
+                    new UploadRespostaProf(getActivity(), new OnTaskCompletedUpload() {
+                        @Override
+                        public void onTaskCompleted(int integer) {
+                            Toast.makeText(getActivity(), "Evento deletado com sucesso!", Toast.LENGTH_SHORT).show();
+                            // Chamando app para envio de email!
+                            Intent email = new Intent(Intent.ACTION_SEND);
+                            email.putExtra(Intent.EXTRA_EMAIL, new String[]{evento.getEmail()});
+                            email.putExtra(Intent.EXTRA_SUBJECT, editAssunto.getText().toString());
+                            email.putExtra(Intent.EXTRA_TEXT, editMessage.getText().toString());
+                            email.setType("message/rfc822");
+                            startActivity(Intent.createChooser(email, "Choose an Email client :"));
+                            dismiss();
+                            actionListener.onUpdate();
+                        }
+                    }).execute("http://ufam-automation.net/marcosmoura/deleteEventTemp.php?Evento_id="+evento.getId());
                 }
-                // Chamando app para envio de email!
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, new String[]{evento.getEmail()});
-                email.putExtra(Intent.EXTRA_SUBJECT, editAssunto.getText().toString());
-                email.putExtra(Intent.EXTRA_TEXT, editMessage.getText().toString());
-                email.setType("message/rfc822");
-                startActivity(Intent.createChooser(email, "Choose an Email client :"));
-                dismiss();
+
             }
         });
 

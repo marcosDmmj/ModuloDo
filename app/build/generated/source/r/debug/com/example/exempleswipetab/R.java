@@ -3258,7 +3258,6 @@ containing a value of this type.
         public static final int unknown=0x7f02008f;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f0b00a4;
         public static final int action0=0x7f0b00ab;
         public static final int action_bar=0x7f0b006e;
         public static final int action_bar_activity_content=0x7f0b0000;
@@ -3427,7 +3426,8 @@ containing a value of this type.
         public static final int status_bar_latest_event_content=0x7f0b00ad;
         public static final int submenuarrow=0x7f0b0068;
         public static final int submit_area=0x7f0b0079;
-        public static final int swipeRefreshEventPendedtes=0x7f0b00a2;
+        public static final int swipeRefreshEventosPendentes=0x7f0b00a2;
+        public static final int swipeRefreshNextEvents=0x7f0b00a4;
         public static final int tabMode=0x7f0b0018;
         public static final int text=0x7f0b00bd;
         public static final int text2=0x7f0b00bb;

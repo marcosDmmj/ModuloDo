@@ -6,15 +6,17 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class Evento implements Parcelable, Serializable{
+	private String id;
 	private String titulo;
 	private String nome;
 	private String data_inicio;
 	private String data_fim;
 	private String email;
 
-	public Evento(String titulo, String email, String nome,
+	public Evento(String id, String titulo, String email, String nome,
 				  String data_inicio, String data_fim) {
 		super();
+		this.id = id;
 		this.titulo = titulo;
 		this.nome = nome;
 		this.data_inicio = data_inicio;
@@ -24,6 +26,7 @@ public class Evento implements Parcelable, Serializable{
 
 
 	protected Evento(Parcel in) {
+		id = in.readString();
 		titulo = in.readString();
 		nome = in.readString();
 		data_inicio = in.readString();
@@ -90,15 +93,24 @@ public class Evento implements Parcelable, Serializable{
 
 	@Override
 	public int describeContents() {
-		return 5;
+		return 6;
 	}
 
 	@Override
 	public void writeToParcel(Parcel parcel, int i) {
+		parcel.writeString(id);
 		parcel.writeString(titulo);
 		parcel.writeString(nome);
 		parcel.writeString(data_inicio);
 		parcel.writeString(data_fim);
 		parcel.writeString(email);
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

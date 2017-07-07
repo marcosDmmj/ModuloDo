@@ -19,34 +19,34 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Created by denis on 06/07/17.
+ * Created by denis on 07/07/17.
  */
 
-public class DownloadDiaAsync extends AsyncTask<String, Void, ArrayList<Evento>> {
+public class DownloadEventosPendentesAsync extends AsyncTask<String, Void, ArrayList<Evento>> {
     Context c;
     private ProgressDialog dialog;
-    public OnTaskCompleted onTaskCompleted = null;
+    public OnTaskCompleted taskCompleted = null;
 
-    public DownloadDiaAsync(Context c, OnTaskCompleted onTaskCompleted) {
-        this.c = c;
-        this.onTaskCompleted = onTaskCompleted;
+    public DownloadEventosPendentesAsync(Context context, OnTaskCompleted taskCompleted) {
+        this.c = context;
+        this.taskCompleted = taskCompleted;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = ProgressDialog.show(c, "Aguarde", "Baixando dados, Por favor aguarde!");
     }
+
     @Override
     protected ArrayList<Evento> doInBackground(String... params) {
         ArrayList<Evento> resultEvents = new ArrayList<>();
-        // Baixando Eventos de um dia específico!
+        // Baixando Eventos pendentes!
+        Log.d("DownloadEventosPendents","Baixando eventos");
         try {
             URL url;
             HttpURLConnection urlConnection;
-            url = new URL("http://ufam-automation.net/marcosmoura/selectbyDate.php?Data="+params[0]);
+            url = new URL("http://ufam-automation.net/marcosmoura/getEventsTemp.php");
 
-            Thread.sleep(1000);
             urlConnection = (HttpURLConnection) url.openConnection();
 
             int responseCode = urlConnection.getResponseCode();
@@ -73,19 +73,12 @@ public class DownloadDiaAsync extends AsyncTask<String, Void, ArrayList<Evento>>
         }
 
         return resultEvents;
-    }
 
-    @Override
-    protected void onCancelled() {
-        super.onCancelled();
-        dialog.dismiss();
     }
 
     @Override
     protected void onPostExecute(ArrayList<Evento> eventoArrayList) {
         super.onPostExecute(eventoArrayList);
-        Log.d("DownloadDiaAsync","Era pra dar dismiss aqui!");
-        dialog.dismiss();
-        onTaskCompleted.onTaskCompleted(eventoArrayList);
+        taskCompleted.onTaskCompleted(eventoArrayList);
     }
 }

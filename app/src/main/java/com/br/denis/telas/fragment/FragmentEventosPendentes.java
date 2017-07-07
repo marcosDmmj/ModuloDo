@@ -13,8 +13,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.br.denis.classesBasicas.Evento;
+import com.br.denis.classesBasicas.OnTaskCompleted;
 import com.br.denis.telas.adapters.CustomAdapterListEvents;
 import com.br.denis.telas.adapters.CustomAdapterListEventsPendentes;
+import com.br.denis.webservice.DownloadDiaAsync;
+import com.br.denis.webservice.DownloadEventosPendentesAsync;
 import com.example.exempleswipetab.R;
 
 import java.util.ArrayList;
@@ -32,15 +35,7 @@ public class FragmentEventosPendentes extends Fragment {
 		super.onActivityCreated(bundle);
 
 		ListView listView = (ListView) getActivity().findViewById(R.id.myListEventosPendentes);
-        final SwipeRefreshLayout swipeRefreshEventPendedtes = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipeRefreshEventPendedtes);
-        swipeRefreshEventPendedtes.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                Toast.makeText(getActivity(), "Refresh!", Toast.LENGTH_SHORT).show();
-                swipeRefreshEventPendedtes.setRefreshing(false);
-            }
 
-        });
         ArrayList<Evento> eventosTemp = getActivity().getIntent().getParcelableArrayListExtra("eventosTemp");
         final CustomAdapterListEventsPendentes eventosAdapter = new CustomAdapterListEventsPendentes(getActivity(),R.layout.item_evento, eventosTemp);
         listView.setAdapter(eventosAdapter);
@@ -61,9 +56,39 @@ public class FragmentEventosPendentes extends Fragment {
 
                 // Create and show the dialog.
                 MyDialogFragment newFragment = MyDialogFragment.newInstance(evento);
+                newFragment.setActionListener(new MyDialogFragment.ActionListener() {
+                    @Override
+                    public void onUpdate() {
+                        new DownloadEventosPendentesAsync(getActivity(), new OnTaskCompleted() {
+                            @Override
+                            public void onTaskCompleted(ArrayList<Evento> eventoArrayList) {
+                                eventosAdapter.clear();
+                                eventosAdapter.addAll(eventoArrayList);
+                                eventosAdapter.notifyDataSetChanged();
+                            }
+                        }).execute();
+                    }
+                });
                 newFragment.show(ft, "dialog");
 
             }
+        });
+        final SwipeRefreshLayout swipeRefreshEventosPendentes = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipeRefreshEventosPendentes);
+        swipeRefreshEventosPendentes.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new DownloadEventosPendentesAsync(getActivity(), new OnTaskCompleted() {
+                    @Override
+                    public void onTaskCompleted(ArrayList<Evento> eventoArrayList) {
+                        eventosAdapter.clear();
+                        eventosAdapter.addAll(eventoArrayList);
+                        eventosAdapter.notifyDataSetChanged();
+                        Toast.makeText(getActivity(), "Eventos atualizados!", Toast.LENGTH_SHORT).show();
+                        swipeRefreshEventosPendentes.setRefreshing(false);
+                    }
+                }).execute();
+            }
+
         });
         TextView emptyView = (TextView) getActivity().findViewById(android.R.id.empty);
         listView.setEmptyView(emptyView);
