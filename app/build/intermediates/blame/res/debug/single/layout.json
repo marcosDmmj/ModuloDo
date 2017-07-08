@@ -20,12 +20,12 @@
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
         "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/home/denis/.android/build-cache/7d6d4a2ac1ed757b2a32a71e0c270e969a20a1c0/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/home/denis/StudioProjects/ModuloDoProfessor/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
